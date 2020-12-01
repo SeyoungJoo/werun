@@ -1,31 +1,52 @@
 class RequestsController < ApplicationController
+
+  def index
+    @requests = Request.all
+    @user = User.all
+  end
+
   def new
     @request = Request.new
 
-    @receiver = User.find(params[:id])
+    @receiver = User.find(params[:runner_id])
     @sender = current_user
   end
 
   def create
     @request = Request.new(request_params)
+    @receiver = User.find(params[:runner_id])
     @request.sender_id = current_user.id
     @request.receiver_id = @receiver.id
     @request.status = 'Pending'
 
     if @request.save
-      redirect_to page_path(current_user.id)
+      redirect_to dashboard_path
     else
       render :new
     end
   end
 
   def destroy
-    # @request = Request.find(params[:id])
-    # @request.sender_id = @sender.id
-    # @request.receiver_id = current_user.id
+    @request = Request.find(params[:id])
+    @request.destroy
 
+    redirect_to dashboard_path
+  end
 
+  def approve
+    @request = Request.find(params[:request_id])
+    @request.status = "Approved"
+    @request.save
 
+    redirect_to dashboard_path
+  end
+
+  def reject
+    @request = Request.find(params[:request_id])
+    @request.status = "Rejected"
+    @request.save
+
+    redirect_to dashboard_path
   end
 
   private
@@ -34,26 +55,3 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:start_time, :end_time)
   end
 end
-
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @bag = @booking.bag
-  #   @booking.destroy
-  #   redirect_to bag_path(@bag)
-  # end
-
-  # def approve
-  #   @booking = Booking.find(params[:booking_id])
-  #   @bag = @booking.bag
-  #   @bag.available = false
-  #   @booking.approved = true
-  #   @booking.save
-  #   @bag.save
-  #   redirect_to dashboard_path(current_user.id)
-  # end
-
-  # private
-
-  # def booking_params
-  #   params.require(:booking).permit(:start_date, :end_date, :bag_id)
-  # end

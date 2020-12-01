@@ -1,0 +1,54 @@
+<div class="container">
+  <p> <%= current_user.first_name %> <%= current_user.last_name %> </p>
+  <p><%= current_user.address %></p>
+
+  <h3>Requests that I've received</h3>
+    <% @received_requests.each do |request| %>
+      <% if request.status == 'Pending' %>
+        <div>
+          <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+          <p><%= request.sender.address %></p>
+          <p><%= request.start_time %> ~ <%= request.end_time %></p>
+          <p>current status : <%= request.status %></p>
+          <%= form_with(url: "/requests/#{request.id}/approvals", method: "post") do %>
+            <%= submit_tag("Approve") %>
+          <% end %>
+          <%= form_with(url: "/requests/#{request.id}/rejects", method: "post") do %>
+            <%= submit_tag("Reject") %>
+          <% end %>
+        </div>
+      <% else %>
+        <% if request.status == 'Approved' %>
+          <div>
+            <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+            <p><%= request.sender.address %></p>
+            <p><%= request.start_time %> ~ <%= request.end_time %></p>
+            <p>current status : <%= request.status %></p>
+            <a>I want to chat with <%= request.sender.first_name %></a>
+          </div>
+        <% else %>
+          <div>
+            <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+            <p><%= request.sender.address %></p>
+            <p><%= request.start_time %> ~ <%= request.end_time %></p>
+            <p>current status : <%= request.status %></p>
+            <%= link_to "Delete",
+                        request_path(request),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" }%>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  <h3>Requests that I've sent</h3>
+    <% @sent_requests.each do |request| %>
+      <div>
+        <p>I want to run with <%= request.receiver.first_name %></p>
+        <p>current status : <%= request.status %></p>
+        <p>start time: <%= request.start_time %></p>
+        <p>end time: <%= request.end_time %></p>
+      </div>
+    <% end %>
+
+</div>

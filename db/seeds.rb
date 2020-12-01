@@ -16,7 +16,7 @@ user1 = User.create!(
   level: 1,
   email: "christine@gmail.com",
   password: 123456,
-  lat:37.49902782015005,
+  lat: 37.49902782015005,
   lng: 127.04871332623296,
   image: "https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80"
 )
