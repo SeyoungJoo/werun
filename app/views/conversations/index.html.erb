@@ -2,8 +2,8 @@
 
 <% @conversations.each do |conversation| %>
     <% if @user.id == conversation.user1_id %>
-    <p>Conversation with user <%= conversation.user2_id %> <p>
+    <p>Conversation with user <%= conversation.user2.first_name %> <p>
     <% elsif @user.id == conversation.user2_id %>  
-    <p>Conversation with user <%= conversation.user1_id %> <p>
+    <p>Conversation with user <%= conversation.user1.first_name %> <p>
     <% end %> 
 <% end %> 
