@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#home'
   resources :conversations, only: [ :index, :show ] do
     resources :messages, only: :create
-  end  
-  
+  end
+
   resources :pages, only: [:index, :show]
   get "/dashboard", to: 'pages#dashboard'
   resources :runners, only: [:index, :show, :edit, :update] do
@@ -16,6 +17,6 @@ Rails.application.routes.draw do
     post 'approvals', to: 'requests#approve'
     post 'rejects', to: 'requests#reject'
   end
- 
+
   resource :profile, only: [:edit, :update, :show]
 end
