@@ -3,6 +3,7 @@ class RunnersController < ApplicationController
   end
 
   def show
+    @runner = current_user
   end
 
   def edit
