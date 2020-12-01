@@ -1,0 +1,7 @@
+<p>this page will show a list of past conversations<p>
+
+
+
+<% @conversations.each do |conversation| %>
+<p>Conversation between user <%= conversation.user1_id %> and user <%= conversation.user2_id %> <p>
+<% end %> 

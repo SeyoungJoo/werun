@@ -17,10 +17,7 @@ user1 = User.create!(
   password: 123456,
   lat:37.49902782015005,
   lng: 127.04871332623296,
-<<<<<<< HEAD
   image: "https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80"
-=======
->>>>>>> 54d8758b69a335a3955db59bfceb8a0f4e2eb0b9
 )
 
 user2 = User.create!(
@@ -32,12 +29,8 @@ user2 = User.create!(
   email: "harry@gmail.com",
   password: 123456,
   lat: 37.58031052526968,
-<<<<<<< HEAD
   lng: 127.05621757530638,
   image: "https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
-=======
-  lng: 127.05621757530638
->>>>>>> 54d8758b69a335a3955db59bfceb8a0f4e2eb0b9
 )
 
 user3 = User.create!(
@@ -49,12 +42,8 @@ user3 = User.create!(
   email: "juyeon@gmail.com",
   password: 123456,
   lat: 37.50716535430781,
-<<<<<<< HEAD
   lng: 127.08683715296864,
   image: "https://images.unsplash.com/photo-1566277913310-9834504c22e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-=======
-  lng: 127.08683715296864
->>>>>>> 54d8758b69a335a3955db59bfceb8a0f4e2eb0b9
 )
 
 user4 = User.create!(
@@ -66,12 +55,8 @@ user4 = User.create!(
   email: "seyoung@gmail.com",
   password: 123456,
   lat: 37.56365744540896, 
-<<<<<<< HEAD
   lng: 126.943968534323,
   image: "https://images.unsplash.com/photo-1604961410267-9f76682d25e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80"
-=======
-  lng: 126.943968534323
->>>>>>> 54d8758b69a335a3955db59bfceb8a0f4e2eb0b9
 )
 
 conversation1 = Conversation.create!(
