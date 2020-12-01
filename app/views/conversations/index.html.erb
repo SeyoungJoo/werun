@@ -1,7 +1,9 @@
 <p>this page will show a list of past conversations<p>
 
-
-
 <% @conversations.each do |conversation| %>
-<p>Conversation between user <%= conversation.user1_id %> and user <%= conversation.user2_id %> <p>
+    <% if @user.id == conversation.user1_id %>
+    <p>Conversation with user <%= conversation.user2_id %> <p>
+    <% elsif @user.id == conversation.user2_id %>  
+    <p>Conversation with user <%= conversation.user1_id %> <p>
+    <% end %> 
 <% end %> 
