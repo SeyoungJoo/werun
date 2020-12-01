@@ -10,6 +10,22 @@
   width: 40px;
 }
 
+.navbar-brand{
+  border-radius: 50%;
+}
+
 .navbar{
+  position: absolute;
+  width: 100%;
   background: transparent;
+  box-shadow: none;
+  .nav-item{
+    color: $beige;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.nav-item:hover{
+  color: $beige;
 }
