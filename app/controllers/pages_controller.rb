@@ -6,4 +6,7 @@ class PagesController < ApplicationController
     @received_requests = current_user.received_requests
     @sent_requests = current_user.sent_requests
   end
+  
+  def home
+  end
 end

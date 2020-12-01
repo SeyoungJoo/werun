@@ -1,0 +1,12 @@
+<h1>Chatroom</h1>
+
+<div id="messages" data-chatroom-id="<%= @conversation.id %>">
+  <% @conversation.messages.each do |message| %>
+  <%= render "messages/message", message: message %>
+  <% end %>
+</div>
+
+<%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
+  <%= f.input :contents, label: false, placeholder: "Type your message here" %>
+  <%= f.button :submit %>
+<% end %>
