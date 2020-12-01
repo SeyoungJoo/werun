@@ -1,0 +1,8 @@
+<h1>Profiles#edit</h1>
+<p>Find me in app/views/profiles/edit.html.erb</p>
+
+ <%= simple_form_for(@user, url: profile_path) do |f| %>
+    <%= f.input :email %>
+    <%= f.submit "Edit my information", class: "btn btn-secondary" %>
+  <% end %>
+
