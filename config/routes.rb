@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-
-  devise_for :users
   root to: 'pages#home'
-    resources :conversations, only: [ :index, :show ] do
-     resources :messages, only: :create
-    end
+  resources :conversations, only: [ :index, :show ] do
+    resources :messages, only: :create
+  end  
+  
   resources :pages, only: [:index, :show]
-  resources :runners, only: [:index, :show]
-  resources :request, only: [:new, :create, :destroy]
+  get "/dashboard", to: 'pages#dashboard'
+  resources :runners, only: [:index, :show, :edit, :update] do
+    resources :requests, only: [:new, :create]
+  end
+  resources :requests, only: [:destroy]
   resources :events, only: [:new, :create]
+  resources :requests do
+    post 'approvals', to: 'requests#approve'
+    post 'rejects', to: 'requests#reject'
+  end
+ 
   resource :profile, only: [:edit, :update, :show]
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
-
