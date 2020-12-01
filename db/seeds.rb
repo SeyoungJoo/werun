@@ -127,4 +127,3 @@ request3 = Request.create!(
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
-

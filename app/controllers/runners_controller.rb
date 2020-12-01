@@ -1,14 +1,9 @@
 class RunnersController < ApplicationController
   def index
+    @runners = User.all
   end
 
   def show
-    @runner = current_user
-  end
-
-  def edit
-  end
-
-  def update
+    @runner = User.find(params[:id])
   end
 end

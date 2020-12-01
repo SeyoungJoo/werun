@@ -1,2 +1,8 @@
 <h1>Runners#index</h1>
 <p>Find me in app/views/runners/index.html.erb</p>
+
+<% @runners.each do |runner| %>
+<%= runner.first_name %>
+<%= runner.last_name %><br>
+<%= runner.address %>
+<% end %>
