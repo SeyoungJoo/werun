@@ -1,3 +1,4 @@
+
 require "open-uri"
 require "date"
 
@@ -15,7 +16,7 @@ user1 = User.create!(
   level: 1,
   email: "christine@gmail.com",
   password: 123456,
-  lat:37.49902782015005,
+  lat: 37.49902782015005,
   lng: 127.04871332623296,
   image: "https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80"
 )
@@ -54,19 +55,19 @@ user4 = User.create!(
   level: 5,
   email: "seyoung@gmail.com",
   password: 123456,
-  lat: 37.56365744540896, 
+  lat: 37.56365744540896,
   lng: 126.943968534323,
   image: "https://images.unsplash.com/photo-1604961410267-9f76682d25e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80"
 )
 
 conversation1 = Conversation.create!(
   user1_id: user1.id,
-  user2_id: user2.id  
+  user2_id: user2.id
 )
 
 conversation2 = Conversation.create!(
   user1_id: user3.id,
-  user2_id: user4.id  
+  user2_id: user4.id
 )
 
 Track1 = Track.create!(
@@ -127,4 +128,3 @@ request3 = Request.create!(
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
-
