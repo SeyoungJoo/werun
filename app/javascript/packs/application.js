@@ -29,7 +29,10 @@ import { initConversationCable } from '../channels/conversation_channel';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  flatpickr('.datepicker');
+  flatpickr('.datepicker', {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+  });
   initConversationCable();
 });
 
