@@ -1,5 +1,7 @@
 class ConversationsController < ApplicationController
   def index
+    @conversations = policy_scope(Conversation)
+    @user = current_user
   end
 
   def show
@@ -7,8 +9,6 @@ class ConversationsController < ApplicationController
     @conversations = Conversation.all
     @conversation = Conversation.find(params[:id]) 
     @message = Message.new
-
     authorize @conversation
-    authorize @message
   end
 end

@@ -15,8 +15,10 @@
 }
 
 .navbar{
+  position: sticky;
+  top:0;
   width: 100%;
-  background: transparent;
+  background: $beige;
   box-shadow: none;
   .nav-item{
     color: $beige;

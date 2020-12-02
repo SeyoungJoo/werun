@@ -1,11 +1,15 @@
-<div class="container">
-<p>this page will show a list of past conversations<p>
+<div class="chat-page">
 
-<% @conversations.each do |conversation| %>
-    <% if @user.id == conversation.user1_id %>
-    <p>Conversation with <%= conversation.user2.first_name %> <p>
-    <% elsif @user.id == conversation.user2_id %>  
-    <p>Conversation with <%= conversation.user1.first_name %> <p>
+  <div class="chat-bar">  
+    <% @conversations.each do |conversation| %>
+      <% if @user.id == conversation.user1_id %>
+        <%= link_to conversation.user2.first_name, conversation %>  
+      <% elsif @user.id == conversation.user2_id %>  
+        <%= link_to conversation.user1.first_name, conversation %> 
+      <% end %> 
     <% end %> 
-<% end %> 
+  </div>
+
+  <div class="chatroom">
+  </div>
 </div>

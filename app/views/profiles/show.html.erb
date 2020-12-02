@@ -29,7 +29,7 @@
             <p><%= request.sender.address %></p>
             <p><%= request.start_time %> ~ <%= request.end_time %></p>
             <p>current status : <%= request.status %></p>
-            <a>I want to chat with <%= request.sender.first_name %></a>
+            <%= link_to "I want to chat with #{request.sender.first_name}", conversations_path %>
           </div>
         <% else %>
           <div>
