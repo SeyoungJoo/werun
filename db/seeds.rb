@@ -6,6 +6,7 @@ Request.destroy_all
 Message.destroy_all
 Conversation.destroy_all
 Track.destroy_all
+Event.destroy_all
 User.destroy_all
 
 user1 = User.new(
@@ -143,6 +144,13 @@ request3 = Request.create!(
   receiver: user1,
   sender: user4,
   status: "Rejected",
+  start_time: Time.now() - 1.hour,
+  end_time: Time.now() + 1.hour
+)
+
+event1 = Event.create!(
+  user1_id: user1.id,
+  user2_id: user2.id,
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
