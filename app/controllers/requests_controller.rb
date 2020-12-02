@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new(request_params)
+    @request = Request.new
     @receiver = User.find(params[:runner_id])
     @request.sender_id = current_user.id
     @request.receiver_id = @receiver.id
