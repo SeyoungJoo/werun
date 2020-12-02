@@ -1,0 +1,29 @@
+.chat-page {
+    display: flex;
+    grid-gap: 20px;
+}
+
+.chat-bar {
+  padding: 20px 0px;
+  width: 160px;
+  height: 100vh;
+  font-family: $headers-font;
+  background-color: $light-blue;
+  color: white;
+  text-align: center;
+}
+
+.chatroom {
+  padding: 20px 0px;
+  flex-grow: 1;
+}
+
+.author {
+  font-family: $headers-font;
+  margin: 0;
+}
+
+.time {
+  font-family: $body-font;
+  opacity: 70%;
+}
