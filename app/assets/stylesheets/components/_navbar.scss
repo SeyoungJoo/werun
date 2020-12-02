@@ -16,9 +16,13 @@
 
 .nav-link{
   color: $blue;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .nav-link:hover{
   color: $dark-blue;
+}
+
+.nav-item{
+ padding-right: 8px;
 }
