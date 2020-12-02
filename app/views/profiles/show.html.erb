@@ -62,10 +62,18 @@
 
       <h3>Requests that I've sent</h3>
         <% @sent_requests.each do |request| %>
-          <div>
-            <p>I want to run with <%= request.receiver.first_name %></p>
-            <p>current status : <%= request.status %></p>
-          </div>
+          <% if request.status == 'Approved' %>
+            <div>
+              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+              <p>current status : <%= request.status %></p>
+              <p>I want to chat with <%= request.receiver.first_name %></p>
+            </div>
+          <% else %>
+            <div>
+              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+              <p>current status : <%= request.status %></p>
+            </div>
+          <% end %>
         <% end %>
     </div>
     <div>
