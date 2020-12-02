@@ -10,15 +10,17 @@
   width: 40px;
 }
 
-.img-circle{
+.navbar-brand{
   border-radius: 50%;
 }
 
-.nav-link{
-  color: $blue;
-  font-size: 20px;
+.nav-item:hover{
+  color: $beige;
 }
 
-.nav-link:hover{
-  color: $dark-blue;
+.navbar-position{
+  margin-bottom: 32px;
+  height: 100px;
+  width: 100%;
+  box-shadow: none;
 }
