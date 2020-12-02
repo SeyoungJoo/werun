@@ -1,8 +1,10 @@
 <h1>Runners#index</h1>
-<p>Find me in app/views/runners/index.html.erb</p>
 
 <% @runners.each do |runner| %>
-<%= runner.first_name %>
-<%= runner.last_name %><br>
-<%= runner.address %>
+  <%= runner.first_name %><%= runner.last_name %><br>
+  <%= runner.address %>
+  <%= link_to "Send a buddy request",
+            runner_requests_path(runner),
+            method: :create,
+            data: { confirm: "Do you want to send a buddy request?" }%>
 <% end %>

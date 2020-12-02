@@ -1,17 +1,7 @@
 // Specific CSS for your home-page
-.image-box{
-  width: 100%;
-  height: 450px;
-  background-image: url('main.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center top;
-  background-size: cover;
-}
 
-.box-center{
-  padding: 200px 0;
-  text-align: center;
+.banner-content{
+  margin-top:32px;
 }
 
 .input-box {
@@ -22,36 +12,19 @@
   font-size: 17px;
 }
 
-.button {
-  background-color:#16a596;
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 16px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 24px;
-}
-
-.button:hover{
-  text-decoration: none;
-  color: white;
-  font-size: 25px;
-  transform: ease-in-out;
-}
-
 .slogan {
-  padding-top: 16px;
+  margin-top:16px;
   color: white;
   font-family: $headers-font;
   text-align: center;
+  font-size: 36px;
 }
 
 .description-box {
   display: flex;
   justify-content: space-around;
-  padding-top: 32px;
-  position: relative;
+  margin-top: 60px;
+  margin-bottom: 100px;
 }
 
 .card-contrainer{
@@ -62,17 +35,11 @@
 .card-contrainer-bottom-one{
   width: 200px;
   text-align: center;
-  position: absolute;
-  top: 130px;
-  left: 400px;
 }
 
 .card-contrainer-bottom-two{
   width: 200px;
   text-align: center;
-  position: absolute;
-  top: 130px;
-  right: 400px;
 }
 
 .img-circular{
@@ -82,7 +49,8 @@
 }
 
 .card-description{
-  font-family: $headers-font;
-  font-size: 16px;
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 20px;
   padding-top: 16px;
 }

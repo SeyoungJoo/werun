@@ -1,0 +1,19 @@
+.for-flex-box {
+  display: flex;
+}
+.user-info-box {
+  background-color: $blue;
+  margin-right: 2em;
+}
+.user-info-text {
+  background-color: white;
+  margin: 0 1em;
+  padding: 1em;
+}
+.user-info-text p {
+  margin-bottom: 0.1em;
+}
+.user-info-name {
+  text-align: center;
+  font-weight: bold;
+}

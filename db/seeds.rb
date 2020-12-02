@@ -1,4 +1,3 @@
-
 require "open-uri"
 require "date"
 
@@ -6,9 +5,10 @@ Request.destroy_all
 Message.destroy_all
 Conversation.destroy_all
 Track.destroy_all
+Event.destroy_all
 User.destroy_all
 
-user1 = User.create!(
+user1 = User.new(
   first_name: "Christine",
   last_name: "Jung",
   address: "Gangnam-gu",
@@ -17,11 +17,14 @@ user1 = User.create!(
   email: "christine@gmail.com",
   password: 123456,
   lat: 37.49902782015005,
-  lng: 127.04871332623296,
-  image: "https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80"
+  lng: 127.04871332623296
 )
 
-user2 = User.create!(
+file = URI.open("https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80")
+user1.image.attach(io: file, filename: 'user1photo.png', content_type: 'image/png')
+user1.save!
+
+user2 = User.new(
   first_name: "Harry",
   last_name: "Kim",
   address: "Dongdaemun-gu",
@@ -30,11 +33,15 @@ user2 = User.create!(
   email: "harry@gmail.com",
   password: 123456,
   lat: 37.58031052526968,
-  lng: 127.05621757530638,
-  image: "https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
+  lng: 127.05621757530638
 )
 
-user3 = User.create!(
+file = URI.open("https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80")
+user2.image.attach(io: file, filename: 'user2photo.png', content_type: 'image/png')
+user2.save!
+
+
+user3 = User.new(
   first_name: "Juyeon",
   last_name: "Kim",
   address: "Jamsil-dong",
@@ -43,11 +50,16 @@ user3 = User.create!(
   email: "juyeon@gmail.com",
   password: 123456,
   lat: 37.50716535430781,
-  lng: 127.08683715296864,
-  image: "https://images.unsplash.com/photo-1566277913310-9834504c22e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+  lng: 127.08683715296864
 )
 
-user4 = User.create!(
+file = URI.open("https://images.unsplash.com/photo-1566277913310-9834504c22e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
+user3.image.attach(io: file, filename: 'user3photo.png', content_type: 'image/png')
+user3.save!
+
+
+
+user4 = User.new(
   first_name: "Seyoung",
   last_name: "Joo",
   address: "Sinchon-dong",
@@ -56,9 +68,13 @@ user4 = User.create!(
   email: "seyoung@gmail.com",
   password: 123456,
   lat: 37.56365744540896,
-  lng: 126.943968534323,
-  image: "https://images.unsplash.com/photo-1604961410267-9f76682d25e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80"
+  lng: 126.943968534323
 )
+
+file = URI.open("https://images.unsplash.com/photo-1604961410267-9f76682d25e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80")
+user4.image.attach(io: file, filename: 'user4photo.png', content_type: 'image/png')
+user4.save!
+
 
 conversation1 = Conversation.create!(
   user1_id: user1.id,
@@ -116,7 +132,7 @@ request1 = Request.create!(
 request2 = Request.create!(
   receiver: user3,
   sender: user4,
-  status: "Accepted",
+  status: "Approved",
   start_time: Time.now(),
   end_time: Time.now() + 2.hour
 )
@@ -125,6 +141,41 @@ request3 = Request.create!(
   receiver: user1,
   sender: user4,
   status: "Rejected",
+  start_time: Time.now() - 1.hour,
+  end_time: Time.now() + 1.hour
+)
+
+event1 = Event.create!(
+  user1_id: user1.id,
+  user2_id: user2.id,
+  start_time: Time.now(),
+  end_time: Time.now() + 2.hour
+)
+
+event2 = Event.create!(
+  user1_id: user1.id,
+  user2_id: user3.id,
+  start_time: Time.now() - 1.hour,
+  end_time: Time.now() + 1.hour
+)
+
+event3 = Event.create!(
+  user1_id: user1.id,
+  user2_id: user4.id,
+  start_time: Time.now() - 1.hour,
+  end_time: Time.now() + 1.hour
+)
+
+event4 = Event.create!(
+  user1_id: user2.id,
+  user2_id: user3.id,
+  start_time: Time.now(),
+  end_time: Time.now() + 2.hour
+)
+
+event5 = Event.create!(
+  user1_id: user3.id,
+  user2_id: user4.id,
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
