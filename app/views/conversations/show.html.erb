@@ -1,12 +1,24 @@
-<h1>Chatroom</h1>
+<div class="chat-page">
 
-<div id="messages" data-chatroom-id="<%= @conversation.id %>">
-  <% @conversation.messages.each do |message| %>
-  <%= render "messages/message", message: message %>
-  <% end %>
+  <div class="chat-bar">  
+    <% @conversations.each do |conversation| %>
+      <% if @user.id == conversation.user1_id %>
+        <%= link_to conversation.user2.first_name, conversation %>  
+      <% elsif @user.id == conversation.user2_id %>  
+        <%= link_to conversation.user1.first_name, conversation %> 
+      <% end %> 
+    <% end %> 
+  </div>
+
+  <div class="chatroom">
+    <div id="messages" data-chatroom-id="<%= @conversation.id %>">
+      <% @conversation.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
+      <%= f.input :contents, label: false, placeholder: "Type your message here" %>
+      <%= f.button :submit, "Send Message"%>
+    <% end %>
+  </div>
 </div>
-
-<%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
-  <%= f.input :contents, label: false, placeholder: "Type your message here" %>
-  <%= f.button :submit %>
-<% end %>
