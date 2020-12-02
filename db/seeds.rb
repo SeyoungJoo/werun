@@ -132,7 +132,7 @@ request1 = Request.create!(
 request2 = Request.create!(
   receiver: user3,
   sender: user4,
-  status: "Accepted",
+  status: "Approved",
   start_time: Time.now(),
   end_time: Time.now() + 2.hour
 )
@@ -148,6 +148,34 @@ request3 = Request.create!(
 event1 = Event.create!(
   user1_id: user1.id,
   user2_id: user2.id,
+  start_time: Time.now(),
+  end_time: Time.now() + 2.hour
+)
+
+event2 = Event.create!(
+  user1_id: user1.id,
+  user2_id: user3.id,
+  start_time: Time.now() - 1.hour,
+  end_time: Time.now() + 1.hour
+)
+
+event3 = Event.create!(
+  user1_id: user1.id,
+  user2_id: user4.id,
+  start_time: Time.now() - 1.hour,
+  end_time: Time.now() + 1.hour
+)
+
+event4 = Event.create!(
+  user1_id: user2.id,
+  user2_id: user3.id,
+  start_time: Time.now(),
+  end_time: Time.now() + 2.hour
+)
+
+event5 = Event.create!(
+  user1_id: user3.id,
+  user2_id: user4.id,
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
