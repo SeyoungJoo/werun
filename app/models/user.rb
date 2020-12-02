@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :tracks, dependent: :destroy
 
+  has_one_attached :image
+
 end
