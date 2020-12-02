@@ -2,7 +2,7 @@
 
 <div class="container">
   <h3>My Information</h3>
-<%= cl_image_tag @user.image.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @user.image.key, height: 300, width: 400, crop: :fill %>
   <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
   <p>Location: <%= current_user.address %></p>
   <p>Email: <%= current_user.email %></p>
