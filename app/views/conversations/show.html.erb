@@ -11,14 +11,17 @@
   </div>
 
   <div class="chatroom">
-    <div id="messages" data-chatroom-id="<%= @conversation.id %>">
+    <div class="chat-part" id="messages" data-chatroom-id="<%= @conversation.id %>">
       <% @conversation.messages.each do |message| %>
       <%= render "messages/message", message: message %>
       <% end %>
     </div>
-    <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
-      <%= f.input :contents, label: false, placeholder: "Type your message here" %>
-      <%= f.button :submit, "Send Message"%>
-    <% end %>
+    <div class="form">
+      <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
+        <%= f.input :contents, label: false, placeholder: "Type your message here", input_html: { class: 'type-box' } %>
+        <%= f.button :submit, "Send Message", class: 'submit-button' %>
+      <% end %>
+    </div>
+  <%= link_to "Send Calendar Invite", new_event_path %>
   </div>
 </div>
