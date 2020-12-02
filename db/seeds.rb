@@ -1,4 +1,3 @@
-
 require "open-uri"
 require "date"
 
@@ -24,8 +23,6 @@ user1 = User.new(
 file = URI.open("https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80")
 user1.image.attach(io: file, filename: 'user1photo.png', content_type: 'image/png')
 user1.save!
-
-
 
 user2 = User.new(
   first_name: "Harry",
