@@ -1,2 +1,10 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<div class="container">
+  <h1>Do you want to run with <%= @receiver.first_name %>?</h1>
+
+  <%= simple_form_for [ @receiver, @request ], url: runner_requests_path do |f| %>
+    <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.submit "Send request" %>
+  <% end %>
+
+</div>
