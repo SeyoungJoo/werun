@@ -1,8 +1,8 @@
 class RequestsController < ApplicationController
 
   def index
-    @requests = Request.all
-    @user = User.all
+    @requests = policy_scope(Request).order(created_at: :desc)
+    @user = policy_scope(User).order(created_at: :desc)
   end
 
   def new
@@ -10,6 +10,8 @@ class RequestsController < ApplicationController
 
     @receiver = User.find(params[:runner_id])
     @sender = current_user
+
+    authorize @request
   end
 
   def create
@@ -24,6 +26,8 @@ class RequestsController < ApplicationController
     else
       render :new
     end
+
+    authorize @request
   end
 
   def destroy
@@ -31,6 +35,7 @@ class RequestsController < ApplicationController
     @request.destroy
 
     redirect_to profile_path
+    authorize @request
   end
 
   def approve
@@ -39,6 +44,7 @@ class RequestsController < ApplicationController
     @request.save
 
     redirect_to profile_path
+    authorize @request
   end
 
   def reject
@@ -47,6 +53,7 @@ class RequestsController < ApplicationController
     @request.save
 
     redirect_to profile_path
+    authorize @request
   end
 
   private
