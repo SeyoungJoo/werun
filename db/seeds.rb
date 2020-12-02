@@ -1,4 +1,3 @@
-
 require "open-uri"
 require "date"
 
@@ -7,6 +6,7 @@ Message.destroy_all
 Conversation.destroy_all
 Track.destroy_all
 User.destroy_all
+
 
 user1 = User.create!(
   first_name: "Christine",
