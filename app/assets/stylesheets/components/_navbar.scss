@@ -16,7 +16,8 @@
 
 .nav-link{
   color: $blue;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .nav-link:hover{
@@ -25,4 +26,15 @@
 
 .nav-item{
  padding-right: 8px;
+}
+
+.navbar-home {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  .navbar-wagon-link {
+    color: white;
+    font-weight: bold;
+  }
 }
