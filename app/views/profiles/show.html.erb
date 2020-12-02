@@ -1,6 +1,6 @@
 <div class="container for-flex-box mt-3">
   <div class="user-info-box">
-    <img src=<% current_user.image %> alt="user-image" class="avatar">
+    <%= cl_image_tag @user.image.key, height: 300, width: 400, crop: :fill %>
     <p class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></p>
     <div class="user-info-text">
       <p>Age: <%= current_user.age %></p>
@@ -9,6 +9,7 @@
       <p>Running Level: <%= current_user.level %></p>
     </div>
   </div>
+
 
   <div>
     <div>
@@ -58,6 +59,7 @@
                             data: { confirm: "Are you sure?" }%>
               </div>
             <% end %>
+
           <% end %>
         <% end %>
 

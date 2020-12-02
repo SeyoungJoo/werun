@@ -1,5 +1,15 @@
 <div>
-  <div class="image-box">
+<%= content_for(:navbar_class, "navbar-home") %>
+
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>Change your life: learn to code!</h1>
+    <p>Le Wagon brings technical skills to creative people</p>
+    <%= link_to "Start now", new_user_session_path, class: "btn btn-lg btn-primary"  %>
+  </div>
+</div>
+
+  <%# <div class="image-box">
    <div class="box-center">
       <div class="button-container">
         <input type="text" placeholder="Your Location" class="input-box">
@@ -10,7 +20,7 @@
         <h2>Find Your Running Buddy Anywhere</h2>
       </div>
    </div>
-  </div>
+  </div> %>
 
   <div class="description-box">
     <div class="card-contrainer">
