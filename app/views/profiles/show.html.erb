@@ -1,9 +1,11 @@
-<h2>Profile page (dashboard)</h2>
- <%= @user.email %>
+<h2>Dashboard</h2>
 
 <div class="container">
-  <p> <%= current_user.first_name %> <%= current_user.last_name %> </p>
-  <p><%= current_user.address %></p>
+  <h3>My Information</h3>
+  <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+  <p>Location: <%= current_user.address %></p>
+  <p>Email: <%= current_user.email %></p>
+  <p>Running Level: <%= current_user.level %></p>
 
   <h3>Requests that I've received</h3>
     <% @received_requests.each do |request| %>

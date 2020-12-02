@@ -20,7 +20,7 @@ class RequestsController < ApplicationController
     @request.status = 'Pending'
 
     if @request.save
-      redirect_to dashboard_path
+      redirect_to profile_path
     else
       render :new
     end
@@ -30,7 +30,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.destroy
 
-    redirect_to dashboard_path
+    redirect_to profile_path
   end
 
   def approve
@@ -38,7 +38,7 @@ class RequestsController < ApplicationController
     @request.status = "Approved"
     @request.save
 
-    redirect_to dashboard_path
+    redirect_to profile_path
   end
 
   def reject
@@ -46,7 +46,7 @@ class RequestsController < ApplicationController
     @request.status = "Rejected"
     @request.save
 
-    redirect_to dashboard_path
+    redirect_to profile_path
   end
 
   private
