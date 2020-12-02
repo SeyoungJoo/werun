@@ -4,8 +4,8 @@ class ConversationsController < ApplicationController
 
   def show
     @user = current_user
-    @conversations = Conversation.all
-    @conversation = Conversation.find(params[:id]) 
+    @conversations = policy_scope(Conversation).order(created_at: :desc)
+    @conversation = Conversation.find(params[:id])
     @message = Message.new
 
     authorize @conversation
