@@ -48,28 +48,31 @@
       <h3>Requests that I've received</h3>
         <% @received_requests.each do |request| %>
           <% if request.status == 'Pending' %>
-              <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
-              <p>Buddy request from <%= request.sender.first_name %> <%= request.sender.last_name %></p>
+              <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
+              <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
+              <p>Buddy request from <strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
               <p><%= request.sender.address %></p>
-              <p>current status : <%= request.status %></p>
+              <p>Current Status : <%= request.status %></p>
               <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                <%= submit_tag("Approve") %>
+                <%= submit_tag("Approve", :class => "submit-button") %>
               <% end %>
               <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                <%= submit_tag("Reject") %>
+                <%= submit_tag("Reject", :class => "submit-button") %>
               <% end %>
             </div>
           <% else %>
             <% if request.status == 'Rejected' %>
               <div>
-                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
+                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
+                 <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
                 <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
                 <p><%= request.sender.address %></p>
-                <p>current status : <%= request.status %></p>
+                <p>Current Status : <%= request.status %></p>
                 <%= link_to "Delete this request",
                             request_path(request),
                             method: :delete,
-                            data: { confirm: "Are you sure?" }%>
+                            data: { confirm: "Are you sure?" }, 
+                            class: "calendar-button" %>
               </div>
             <% end %>
 
@@ -81,13 +84,13 @@
           <% if request.status == 'Approved' %>
             <div>
               <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-              <p>current status : <%= request.status %></p>
+              <p>Current Status : <%= request.status %></p>
               <p>I want to chat with <%= request.receiver.first_name %></p>
             </div>
           <% else %>
             <div>
               <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-              <p>current status : <%= request.status %></p>
+              <p>Current Status : <%= request.status %></p>
             </div>
           <% end %>
         <% end %>
