@@ -1,25 +1,25 @@
-<div class="container card-container">
-  <div class="row">
-    <div class="col-md">
-          <h1 class="header-style">Runner Listings</h1>
-          <% @runners.each do |runner| %>
-
-           <%= link_to runner_path(runner) do cl_image_tag runner.image.key, style: 'height:100px; width:100px;margin-bottom:20px;', crop: :fill, class: "card-img-top" end %>
-          <%= runner.first_name %><%= runner.last_name %>
-          <%= runner.address %>
-          <%= link_to "Send a buddy request",
-                    runner_requests_path(runner),
-                    method: :create,
-                    data: { confirm: "Do you want to send a buddy request?" }%>
-          <% end %>
+<div class="map-page">
+  
+  <div class="container card-container">
+    <div class="search-option">Distance | <%= link_to "Find" %>
     </div>
+    
+    <div class="row">
+    <div class="col-md-9 map">
+        <div id="map"
+              style="width: 100%; height: 80vh;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
 
-     <div class="col-md">
-       <div id="map"
-            style="width: 100%; height: 80vh;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-       </div>
-     </div>
+      <div class="col-md-3 runners-list">
+            <h1 class="header-style">Runners Near Me</h1>
+            <% @runners.each do |runner| %>
+            <%= cl_image_tag runner.image.key, crop: :fill, class: "card-img-top" %>
+            <% end %>
+      </div>
+
+    </div>
   </div>
 </div>

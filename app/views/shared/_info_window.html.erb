@@ -1,4 +1,11 @@
-<%= cl_image_tag runner.image.key, crop: :fill, width:100 %>
-<h3><%= runner.first_name %> <%= runner.last_name %></h3>
-<p>🏠<%=runner.address %></p>
-<p>🏃‍♂️Level.<%= runner.level %></p>
+<%= cl_image_tag runner.image.key, class: "map-runner-image", crop: :fill %>
+<h3 class="map-runner-name"><%= runner.first_name %> <%= runner.last_name %></h3>
+<p class="map-runner-info">🏠 <%=runner.address %></p>
+<p class="map-runner-info">🏃‍♂️ Level.<%= runner.level %></p>
+<p><%=link_to "Buddy request", 
+      runner_requests_path(runner),
+      method: :create,
+      data: { confirm: "Do you want to send a buddy request?" },
+      class: "btn btn-md btn-primary buddy-request-button"
+    %>
+</p>

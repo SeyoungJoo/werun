@@ -10,7 +10,7 @@
 #map {
   position: sticky;
   top: 0;
-  border: 3px $blue solid;
+  border: 4px $light-blue solid;
 }
 
 .mapboxgl-popup {
@@ -35,4 +35,8 @@
 
 .marker:hover{
   padding: 30px;
+}
+
+.search-option{
+  margin-bottom: 32px;
 }
