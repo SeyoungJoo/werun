@@ -5,7 +5,9 @@ class RunnersController < ApplicationController
     @markers = @runners.geocoded.map do |runner|
       {
         lat: runner.latitude,
-        lng: runner.longitude
+        lng: runner.longitude,
+        infoWindow: render_to_string(partial: "shared/info_window", locals: { runner: runner }),
+        image_url: helpers.asset_url('fake-avatar.jpg')
       }
     end
   end
