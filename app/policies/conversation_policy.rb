@@ -8,4 +8,8 @@ class ConversationPolicy < ApplicationPolicy
   def show?
     record.user1 == user || record.user2 == user
   end
+
+  def create?
+    true
+  end
 end

@@ -5,6 +5,7 @@
   background-color: $blue;
   margin-right: 2em;
   padding: 0.8em;
+  width: 270px;
 }
 .user-info-text {
   background-color: $beige;
@@ -28,8 +29,22 @@
 }
 .one-buddy {
   text-align: center;
+  padding: 10px;
 }
-.all-buddies {
-  display: flex;
-  justify-content: space-around;
+.one-buddy p {
+  margin-bottom: 0;
+}
+.buddy-info {
+  background-color: $beige;
+  padding: 10px;
+  border-radius: 1em;
+}
+.buddy-info p {
+  margin-bottom: 0;
+}
+.buddy-info a {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
 }
