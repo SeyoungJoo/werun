@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
     @user = current_user
     @received_requests = current_user.received_requests
     @sent_requests = current_user.sent_requests
+    @events = current_user.user1_events + current_user.user2_events
 
     authorize @user
   end
