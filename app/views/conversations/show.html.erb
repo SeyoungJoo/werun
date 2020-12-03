@@ -18,10 +18,10 @@
     </div>
     <div class="form">
       <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
-        <%= f.input :contents, label: false, placeholder: "Type your message here", input_html: { class: 'type-box' } %>
+        <%= f.text_field :contents, label: false, placeholder: "Type your message here", class: 'type-box' %>
         <%= f.button :submit, "Send Message", class: 'submit-button' %>
+        <%= link_to "Send Calendar Invite", new_event_path, class: 'submit-button' %>
       <% end %>
     </div>
-  <%= link_to "Send Calendar Invite", new_event_path %>
   </div>
 </div>

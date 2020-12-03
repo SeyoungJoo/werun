@@ -6,10 +6,10 @@
 .chat-bar {
   position: sticky;
   top: 70px;
-  margin-right:50px;
+  margin-right:20px;
   padding: 20px 0px;
   width: 160px;
-  height: 200vh;
+  height: 89vh;
   font-family: $headers-font;
   background-color: $blue;
   text-align: center;
@@ -28,12 +28,14 @@
 }
 
 .chatroom {
+  height: 65vh;
   flex-grow: 1;
   padding: 20px 20px;
 }
 
 .chat-part {
-  overflow: scroll;
+  height: 55vh;
+  overflow-y: scroll;
   margin-bottom: 20px; 
 }
 
@@ -48,8 +50,22 @@
 }
 
 .type-box {
-  display: inline-block;
   border-radius: 4px;
+  display: block;
+  width: 95%;
+  height: calc(3em + 0.75rem + 2px);
+  text-align: top;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .form {
@@ -61,14 +77,21 @@
 
 .submit-button {
   background-color: $blue;
-  color: white;
   border-radius: 4px;
-}
-
-.submit-button {
   text-decoration: none;
   color: white;
   opacity: 50%;
+}
+
+.submit-button:link {
+  background-color: $blue;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  opacity: 50%;
+  padding: 6.8px;
+  display: inline-block;
+  margin: 0;
 }
 
 .submit-button:hover {
