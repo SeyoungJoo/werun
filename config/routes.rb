@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   get "/dashboard", to: 'pages#dashboard'
   resources :runners, only: [:index, :show, :edit, :update] do
     resources :requests, only: [:new, :create]
+    resources :events, only: [:new, :create]
   end
+
   resources :requests, only: [:destroy]
-  resources :events, only: [:new, :create]
+
   resources :requests do
-    post 'approvals', to: 'requests#approve'
-    post 'rejects', to: 'requests#reject'
+    post 'approve', to: 'requests#approve'
+    post 'reject', to: 'requests#reject'
   end
 
   resource :profile, only: [:edit, :update, :show]
