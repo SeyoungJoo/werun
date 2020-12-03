@@ -20,7 +20,7 @@ user1 = User.new(
   lng: 127.04871332623296
 )
 
-file = URI.open("https://images.unsplash.com/photo-1604138808764-e873853af44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1217&q=80")
+file = File.open(File.join(Rails.root, "/app/assets/images/runner1.jpg"))
 user1.image.attach(io: file, filename: 'user1photo.png', content_type: 'image/png')
 user1.save!
 
@@ -36,7 +36,7 @@ user2 = User.new(
   lng: 127.05621757530638
 )
 
-file = URI.open("https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80")
+file = File.open(File.join(Rails.root, "/app/assets/images/runner2.jpg"))
 user2.image.attach(io: file, filename: 'user2photo.png', content_type: 'image/png')
 user2.save!
 
@@ -52,12 +52,9 @@ user3 = User.new(
   lat: 37.50716535430781,
   lng: 127.08683715296864
 )
-
-file = URI.open("https://images.unsplash.com/photo-1566277913310-9834504c22e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
+file = File.open(File.join(Rails.root, "/app/assets/images/runner3.jpg"))
 user3.image.attach(io: file, filename: 'user3photo.png', content_type: 'image/png')
 user3.save!
-
-
 
 user4 = User.new(
   first_name: "Seyoung",
@@ -71,7 +68,7 @@ user4 = User.new(
   lng: 126.943968534323
 )
 
-file = URI.open("https://images.unsplash.com/photo-1604961410267-9f76682d25e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80")
+file = File.open(File.join(Rails.root, "/app/assets/images/runner4.jpg"))
 user4.image.attach(io: file, filename: 'user4photo.png', content_type: 'image/png')
 user4.save!
 

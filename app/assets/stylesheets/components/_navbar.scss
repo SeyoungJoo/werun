@@ -14,11 +14,6 @@
   border-radius: 50%;
 }
 
-
-// .navbar{
-//   position: sticky;
-//   top:0;
-
 .nav-link{
   color: $blue;
   font-size: 18px;
@@ -36,7 +31,7 @@
 .navbar-home {
   position: absolute;
   width: 100%;
-  background: $beige;
+  background: transparent;
   box-shadow: none;
   .navbar-wagon-link {
     color: white;
