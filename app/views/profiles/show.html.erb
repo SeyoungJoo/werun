@@ -23,8 +23,6 @@
       <h3>Requests that I've received</h3>
         <% @received_requests.each do |request| %>
           <% if request.status == 'Pending' %>
-         
-             <%= cl_image_path request.sender.image.key %>
               <%= cl_image_tag request.sender.image.key %>
 
               <img src=<% request.sender.image.key %> alt="picture of sender">
@@ -41,7 +39,7 @@
           <% else %>
             <% if request.status == 'Approved' %>
               <div>
-                <img src=<% request.sender.image %> alt="picture of sender">
+                <img src=<% request.sender.image.key %> alt="picture of sender">
                 <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
                 <p><%= request.sender.address %></p>
                 <p>current status : <%= request.status %></p>
@@ -49,7 +47,7 @@
               </div>
             <% else %>
               <div>
-                <img src=<% request.sender.image %> alt="picture of sender">
+                <img src=<% request.sender.image.key %> alt="picture of sender">
                 <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
                 <p><%= request.sender.address %></p>
                 <p>current status : <%= request.status %></p>
