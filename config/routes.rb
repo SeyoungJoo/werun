@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :runners, only: [:index, :show, :edit, :update] do
     resources :requests, only: [:new, :create]
     resources :events, only: [:new, :create]
+    resources :conversations, only: [:create]
   end
 
   resources :requests, only: [:destroy]
