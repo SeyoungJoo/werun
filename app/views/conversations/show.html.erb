@@ -23,7 +23,7 @@
         <%= f.text_field :contents, label: false, placeholder: "Type your message here", class: 'type-box' %>
         <div class="buttons">
           <%= f.button :submit, "Send Message", class: 'submit-button' %>
-          <%= link_to "Send Calendar Invite", new_event_path, class: 'calendar-button' %>
+          <%= link_to "Send Calendar Invite", new_runner_event_path(@partner), class: 'calendar-button' %>
         </div>
         <% end %>
 
