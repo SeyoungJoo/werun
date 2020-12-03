@@ -36,4 +36,9 @@ document.addEventListener('turbolinks:load', () => {
   initConversationCable();
 });
 
+//geocoding
+import { initMapbox } from '../plugins/map';
 
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
