@@ -4,15 +4,11 @@
 .user-info-box {
   background-color: $blue;
   margin-right: 2em;
-  height: 500px;
-}
-.user-info-box img{
-  border-radius: 4px;
-  margin: 10px;
+  padding: 0.8em;
 }
 .user-info-text {
-  background-color: white;
-  margin: 0 1em;
+  background-color: $beige;
+  border-radius: 1em;
   padding: 1em;
 }
 .user-info-text p {
@@ -21,4 +17,19 @@
 .user-info-name {
   text-align: center;
   font-weight: bold;
+  margin: 0.5em 0;
+}
+.user-buddies {
+  margin-top: 1em;
+}
+.user-buddies h4 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.one-buddy {
+  text-align: center;
+}
+.all-buddies {
+  display: flex;
+  justify-content: space-around;
 }

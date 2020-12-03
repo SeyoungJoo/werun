@@ -16,7 +16,7 @@ user1 = User.new(
   level: 1,
   email: "christine@gmail.com",
   password: 123456,
-  latitude: 37.514138201135026, 
+  latitude: 37.514138201135026,
   longitude: 127.04819778559019
 )
 
@@ -32,7 +32,7 @@ user2 = User.new(
   level: 4,
   email: "harry@gmail.com",
   password: 123456,
-  latitude: 37.5923479327058, 
+  latitude: 37.5923479327058,
   longitude: 127.04402947916739
 )
 
@@ -64,7 +64,7 @@ user4 = User.new(
   level: 5,
   email: "seyoung@gmail.com",
   password: 123456,
-  latitude: 37.56479363210303, 
+  latitude: 37.56479363210303,
   longitude: 126.93949057607337
 )
 
@@ -146,21 +146,21 @@ event1 = Event.create!(
   user1_id: user1.id,
   user2_id: user2.id,
   start_time: Time.now(),
-  end_time: Time.now() + 48.hour
+  end_time: Time.now() + 2.hour
 )
 
 event2 = Event.create!(
   user1_id: user1.id,
   user2_id: user4.id,
   start_time: Time.now() - 37.hour,
-  end_time: Time.now() - 1.hour
+  end_time: Time.now() - 35.hour
 )
 
 event3 = Event.create!(
   user1_id: user2.id,
   user2_id: user4.id,
-  start_time: Time.now() + 6.hour,
-  end_time: Time.now() + 28.hour
+  start_time: Time.now() + 28.hour,
+  end_time: Time.now() + 30.hour
 )
 
 event4 = Event.create!(
@@ -173,6 +173,6 @@ event4 = Event.create!(
 event5 = Event.create!(
   user1_id: user3.id,
   user2_id: user1.id,
-  start_time: Time.now() - 1.hour,
-  end_time: Time.now() + 10.hour
+  start_time: Time.now() + 120.hour,
+  end_time: Time.now() + 121.hour
 )
