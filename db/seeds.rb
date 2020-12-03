@@ -16,8 +16,8 @@ user1 = User.new(
   level: 1,
   email: "christine@gmail.com",
   password: 123456,
-  lat: 37.49902782015005,
-  lng: 127.04871332623296
+  latitude: 37.514138201135026, 
+  longitude: 127.04819778559019
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/runner1.jpg"))
@@ -32,8 +32,8 @@ user2 = User.new(
   level: 4,
   email: "harry@gmail.com",
   password: 123456,
-  lat: 37.58031052526968,
-  lng: 127.05621757530638
+  latitude: 37.5923479327058, 
+  longitude: 127.04402947916739
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/runner2.jpg"))
@@ -49,8 +49,8 @@ user3 = User.new(
   level: 3,
   email: "juyeon@gmail.com",
   password: 123456,
-  lat: 37.50716535430781,
-  lng: 127.08683715296864
+  latitude: 37.50738631538989,
+  longitude: 127.08533508197621
 )
 file = File.open(File.join(Rails.root, "/app/assets/images/runner3.jpg"))
 user3.image.attach(io: file, filename: 'user3photo.png', content_type: 'image/png')
@@ -64,8 +64,8 @@ user4 = User.new(
   level: 5,
   email: "seyoung@gmail.com",
   password: 123456,
-  lat: 37.56365744540896,
-  lng: 126.943968534323
+  latitude: 37.56479363210303, 
+  longitude: 126.93949057607337
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/runner4.jpg"))
