@@ -10,7 +10,6 @@
     </div>
   </div>
 
-
   <div>
     <div>
       <h1>Calendar</h1>
@@ -23,9 +22,7 @@
       <h3>Requests that I've received</h3>
         <% @received_requests.each do |request| %>
           <% if request.status == 'Pending' %>
-              <%= cl_image_tag request.sender.image.key %>
-
-              <img src=<% request.sender.image.key %> alt="picture of sender">
+              <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
               <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
               <p><%= request.sender.address %></p>
               <p>current status : <%= request.status %></p>
@@ -39,7 +36,7 @@
           <% else %>
             <% if request.status == 'Approved' %>
               <div>
-                <img src=<% request.sender.image.key %> alt="picture of sender">
+                <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
                 <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
                 <p><%= request.sender.address %></p>
                 <p>current status : <%= request.status %></p>
@@ -47,7 +44,7 @@
               </div>
             <% else %>
               <div>
-                <img src=<% request.sender.image.key %> alt="picture of sender">
+                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
                 <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
                 <p><%= request.sender.address %></p>
                 <p>current status : <%= request.status %></p>
@@ -78,19 +75,14 @@
         <% end %>
     </div>
     <div>
-
-    </div>
-    <div>
       <h1>My running buddies</h1>
       <% @received_requests.each do |request| %>
         <% if request.status == 'Approved' %>
-          <img src=<% request.sender.image %> alt='image of buddy'>
+          <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
           <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
           <%= link_to "I want to chat with #{request.sender.first_name}", conversations_path %>
         <% end %>
       <% end %>
 
     </div>
-
-
 </div>
