@@ -1,12 +1,26 @@
 <div class="container for-flex-box mt-3">
   <div class="user-info-box">
-    <%= cl_image_tag @user.image.key, height: 250, width: 300, crop: :fill, class: "mb-2" %>
-    <p class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></p>
+    <%= cl_image_tag @user.image.key, height: 250, width: 300, crop: :fill, class: "user-avatar" %>
+    <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
     <div class="user-info-text">
       <p>Age: <%= current_user.age %></p>
       <p>Location: <%= current_user.address %></p>
       <p>Email: <%= current_user.email %></p>
       <p>Running Level: <%= current_user.level %></p>
+    </div>
+
+    <div class="user-buddies">
+      <h4>My running buddies</h4>
+      <div class="all-buddies">
+      <% @received_requests.each do |request| %>
+        <% if request.status == 'Approved' %>
+          <div class="one-buddy">
+            <%= cl_image_tag request.sender.image.key, height: 100, width: 100, class: "buddy-avatar" %>
+            <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
     </div>
   </div>
 
@@ -35,7 +49,7 @@
         <% @received_requests.each do |request| %>
           <% if request.status == 'Pending' %>
               <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
-              <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+              <p>Buddy request from <%= request.sender.first_name %> <%= request.sender.last_name %></p>
               <p><%= request.sender.address %></p>
               <p>current status : <%= request.status %></p>
               <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
@@ -52,7 +66,7 @@
                 <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
                 <p><%= request.sender.address %></p>
                 <p>current status : <%= request.status %></p>
-                <%= link_to "Delete",
+                <%= link_to "Delete this request",
                             request_path(request),
                             method: :delete,
                             data: { confirm: "Are you sure?" }%>
@@ -77,17 +91,6 @@
             </div>
           <% end %>
         <% end %>
-    </div>
-
-    <div>
-      <h1>My running buddies</h1>
-      <% @received_requests.each do |request| %>
-        <% if request.status == 'Approved' %>
-          <%= cl_image_tag request.sender.image.key, height: 200, width: 200%>
-          <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
-          <%= link_to "I want to chat with #{request.sender.first_name}", conversations_path %>
-        <% end %>
-      <% end %>
     </div>
 
 </div>
