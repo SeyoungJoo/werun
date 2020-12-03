@@ -1,13 +1,13 @@
 <div class="chat-page">
 
-  <div class="chat-bar">  
+  <div class="chat-bar">
     <% @conversations.each do |conversation| %>
       <% if @user.id == conversation.user1_id %>
-        <%= link_to conversation.user2.first_name, conversation %>  
-      <% elsif @user.id == conversation.user2_id %>  
-        <%= link_to conversation.user1.first_name, conversation %> 
-      <% end %> 
-    <% end %> 
+        <%= link_to conversation.user2.first_name, conversation %>
+      <% elsif @user.id == conversation.user2_id %>
+        <%= link_to conversation.user1.first_name, conversation %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="chatroom">
@@ -20,7 +20,7 @@
       <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
         <%= f.text_field :contents, label: false, placeholder: "Type your message here", class: 'type-box' %>
         <%= f.button :submit, "Send Message", class: 'submit-button' %>
-        <%= link_to "Send Calendar Invite", new_event_path, class: 'submit-button' %>
+        <%= link_to "Send Calendar Invite", new_runner_event_path(@partner), class: 'submit-button' %>
       <% end %>
     </div>
   </div>
