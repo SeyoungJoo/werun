@@ -11,6 +11,7 @@
   </div>
 
   <div>
+
     <div>
       <h1>Calendar</h1>
       <%= month_calendar(events: @events) do |date, events| %>
@@ -37,10 +38,10 @@
               <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
               <p><%= request.sender.address %></p>
               <p>current status : <%= request.status %></p>
-              <%= form_with(url: "/requests/#{request.id}/approvals", method: "post") do %>
+              <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
                 <%= submit_tag("Approve") %>
               <% end %>
-              <%= form_with(url: "/requests/#{request.id}/rejects", method: "post") do %>
+              <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
                 <%= submit_tag("Reject") %>
               <% end %>
             </div>
@@ -77,6 +78,7 @@
           <% end %>
         <% end %>
     </div>
+
     <div>
       <h1>My running buddies</h1>
       <% @received_requests.each do |request| %>
@@ -86,6 +88,6 @@
           <%= link_to "I want to chat with #{request.sender.first_name}", conversations_path %>
         <% end %>
       <% end %>
-
     </div>
+
 </div>
