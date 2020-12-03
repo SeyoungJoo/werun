@@ -6,19 +6,20 @@
 .chat-bar {
   position: sticky;
   top: 70px;
-  margin-right:20px;
+  margin-right:10px;
   padding: 20px 0px;
   width: 160px;
   height: 89vh;
   font-family: $headers-font;
-  background-color: $blue;
+  background-color: rgba(55, 151, 164, 0.5);
   text-align: center;
+  border-radius: 4px;
 }
 
 .chat-bar a:link, { 
   text-decoration: none ; 
   color: white;
-  opacity: 50%;
+  opacity: 80%;
 }
 
 .chat-bar a:hover, .chat-bar a:active, .chat-bar a:visited { 
@@ -75,27 +76,63 @@
   padding-bottom: 20px;
 }
 
+.buttons {
+  display: flex;
+  width: 95%;
+  grid-gap: 10px;
+  justify-content: flex-end;
+}
+
+.buttons a{
+  color: white;
+}
+
 .submit-button {
   background-color: $blue;
+  border: none;
   border-radius: 4px;
   text-decoration: none;
   color: white;
   opacity: 50%;
 }
 
-.submit-button:link {
+.calendar-button:link {
   background-color: $blue;
   border-radius: 4px;
   text-decoration: none;
   color: white;
   opacity: 50%;
-  padding: 6.8px;
+  padding: 6px 12px;
   display: inline-block;
   margin: 0;
+}
+
+
+.calendar-button:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 100%;
 }
 
 .submit-button:hover {
   color: white;
   text-decoration: none;
   opacity: 100%;
+}
+
+.chat-avatar-big {
+  border-radius: 50%;
+  background: cover;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.chat-avatar-small {
+  border-radius: 50%;
+  background: cover;
+  object-fit: cover;
+}
+
+.chat-first-line {
+  display: flex;
 }
