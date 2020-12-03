@@ -13,9 +13,7 @@ class MessagesController < ApplicationController
     else
       render "conversations/show"
     end
-
     authorize @message
-    authorize @conversation
   end
 
   private
