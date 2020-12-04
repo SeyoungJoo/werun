@@ -1,6 +1,31 @@
 <footer>
   <p class="footer-logo">We Run</p>
-  <p><a href="mailto:werun@gmail.com">Contact</a></p>
-  <p>About</p>
-  <p></p>
+   <p><a href="mailto:werun@gmail.com" class="contact">Contact</a></p>
+
+  <div class="d-flex justify-content-around footer-box">
+    <div class="team-members">
+      <%= link_to "https://github.com/SeyoungJoo", target: :_blank do %>
+      <%= image_tag "team1.JPG", class: "avatar-large" %>
+      <% end %>
+
+      <%= link_to "https://github.com/christinejung92", target: :_blank do %>
+      <%= image_tag "team2.JPG", class: "avatar-large"%>
+      <% end %>
+
+      <%= link_to "https://github.com/woid1221", target: :_blank do %>
+      <%= image_tag "team4.JPG", class: "avatar-large"%>
+      <% end %>
+
+      <%= link_to "https://github.com/Jay-JYKim91", target: :_blank do %>
+      <%= image_tag "team3.JPG", class: "avatar-large"%>
+      <% end %>
+    </div>
+
+    <div class="le-wagon-logo">
+      <%= link_to "https://www.lewagon.com", target: :_blank do %>
+      <%= image_tag "lewagon.png", class: "avatar-large"%>
+      <% end %>
+    </div>
+
+  </div>
 </footer>

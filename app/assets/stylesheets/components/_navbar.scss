@@ -14,13 +14,11 @@
   border-radius: 50%;
 }
 
-.navbar{
-  position: sticky;
-}
 
 .nav-link{
-  font-family: $headers-font;
+  font-family: $body-font;
   color: $dark-blue;
+  font-weight: bolder;
   font-size: 18px;
 }
 

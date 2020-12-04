@@ -11,7 +11,7 @@ User.destroy_all
 user1 = User.new(
   first_name: "Christine",
   last_name: "Jung",
-  address: "Seoul Gangnam",
+  address: "Seoul Shindang",
   age: 28,
   level: 3,
   email: "christine@gmail.com",
@@ -55,7 +55,7 @@ user2.save!
 user3 = User.new(
   first_name: "Juyeon",
   last_name: "Kim",
-  address: "Seoul Sindang",
+  address: "Seoul Shindang",
   age: 27,
   level: 1,
   email: "juyeon@gmail.com",
@@ -75,7 +75,7 @@ user3.save!
 user4 = User.new(
   first_name: "Seyoung",
   last_name: "Joo",
-  address: "Seoul Sindang",
+  address: "Seoul Gangnam",
   age: 21,
   level: 2,
   email: "seyoung@gmail.com",
@@ -96,7 +96,7 @@ user4.save!
 user5 = User.new(
   first_name: "Justin",
   last_name: "Dirk",
-  address: "Seoul Gangnam",
+  address: "Seoul Shindang",
   age: 28,
   level: 5,
   email: "justin@gmail.com",
@@ -117,7 +117,7 @@ user5.save!
 user6 = User.new(
   first_name: "Jason",
   last_name: "Fredman",
-  address: "Seoul Sindang",
+  address: "Seoul Shindang",
   age: 25,
   level: 5,
   email: "jason@gmail.com",
@@ -159,7 +159,7 @@ user7.save!
 user8 = User.new(
   first_name: "Julia",
   last_name: "Roberts",
-  address: "Seoul Sindang",
+  address: "Seoul Shindang",
   age: 23,
   level: 3,
   email: "julia@gmail.com",
@@ -180,7 +180,7 @@ user8.save!
 user9 = User.new(
   first_name: "Rebecca",
   last_name: "Smith",
-  address: "Seoul Sindang",
+  address: "Seoul Shindang",
   age: 23,
   level: 3,
   email: "rebecca@gmail.com",
