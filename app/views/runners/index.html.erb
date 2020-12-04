@@ -1,7 +1,44 @@
 <div class="map-page">
 
   <div class="container card-container">
-    <div class="search-option">Distance | <%= link_to "Find" %>
+    <div class="search-option">
+       <select class="distance select2" name="distance">
+        <option value="">within 5km</option>
+        <option value="">within 10km</option>
+        <option value="">within 25km</option>
+        <option value="">within 50km</option>
+      </select>
+
+      <select class="running-level select2" name="running-level">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+      </select>
+
+      <select class="gender select2" name="gender">
+        <option value="">Female</option>
+        <option value="">Male</option>
+      </select>
+
+      <select class="preferred-day select2" name="preferred-day">
+        <option value="">Weekdays</option>
+        <option value="">Weekend</option>
+      </select>
+
+      <select class="preferred-time select2" name="preferred-time">
+        <option value="">Morning</option>
+        <option value="">Afternoon</option>
+        <option value="">Evening</option>
+      </select>
+
+      <select class="pet select2" name="pet">
+        <option value="">Yes</option>
+        <option value="">No</option>
+      </select>
+
+      <%= link_to "Find" %>
     </div>
 
     <div class="row">
