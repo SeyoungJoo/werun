@@ -7,7 +7,7 @@ const initMapbox = () => {
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 2000 });
+    map.fitBounds(bounds, { padding: 50, maxZoom: 10, duration: 2000 });
   };
 
   const addMarkersToMap = (map, markers) => {
@@ -24,7 +24,7 @@ const initMapbox = () => {
       element.style.backgroundRepeat = 'round';
       element.style.width = '50px';
       element.style.height = '50px';
-  
+      
       // Pass the element as an argument to the new marker
       const newMarker = new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
@@ -37,7 +37,7 @@ const initMapbox = () => {
       newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
       // We put a microphone on listening for a mouseleave event
       newMarker.getElement().addEventListener('mouseleave', (e) =>  toggleCardHighlighting(e) );
-     
+  
     });
 
     
@@ -64,8 +64,8 @@ const initMapbox = () => {
   
   const toggleCardHighlighting = (event) => {
     // We select the card corresponding to the marker's id
-    const card = document.querySelector(`[data-flat-id="${event.currentTarget.dataset.markerId}"]`);
-    console.log(event);
+    const card = document.querySelector(`[data-marker-id="${event.currentTarget.dataset.markerId}"]`);
+    console.log(card);
     // Then we toggle the class "highlight github" to the card
     card.classList.toggle('highlight');
     }

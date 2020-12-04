@@ -1,0 +1,11 @@
+<%= form_tag runners_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "input-box",
+    placeholder: "Where do you live?"
+  %>
+
+  <%= button_tag(type: "submit", class: "btn btn-lg btn-primary") do %>
+Find
+  <% end %>
+<% end %>

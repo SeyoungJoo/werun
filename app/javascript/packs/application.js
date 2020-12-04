@@ -20,18 +20,13 @@ import "../plugins/flatpickr"
 // External imports
 import "bootstrap";
 import { initConversationCable } from '../channels/conversation_channel';
+import { initMapbox } from '../plugins/map';
 
 document.addEventListener('turbolinks:load', () => {
+  initMapbox(); 
   flatpickr('.datepicker', {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
   });
   initConversationCable();
 });
-
-//geocoding
-import { initMapbox } from '../plugins/map';
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})

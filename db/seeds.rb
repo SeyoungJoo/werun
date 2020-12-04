@@ -11,7 +11,7 @@ User.destroy_all
 user1 = User.new(
   first_name: "Christine",
   last_name: "Jung",
-  address: "Gangnam-gu",
+  address: "Seoul Gangnam",
   age: 28,
   level: 1,
   email: "christine@gmail.com",
@@ -27,7 +27,7 @@ user1.save!
 user2 = User.new(
   first_name: "Harry",
   last_name: "Kim",
-  address: "Dongdaemun-gu",
+  address: "Seoul Dongdaemun",
   age: 23,
   level: 4,
   email: "harry@gmail.com",
@@ -44,7 +44,7 @@ user2.save!
 user3 = User.new(
   first_name: "Juyeon",
   last_name: "Kim",
-  address: "Jamsil-dong",
+  address: "Seoul Jamsil",
   age: 27,
   level: 3,
   email: "juyeon@gmail.com",
