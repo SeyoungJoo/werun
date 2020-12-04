@@ -2,7 +2,8 @@
   <%= text_field_tag :query,
     params[:query],
     class: "input-box",
-    placeholder: "Where do you live?"
+    placeholder: "Where do you live?",
+    autocomplete: 'off'
   %>
 
   <%= button_tag(type: "submit", class: "btn btn-lg btn-primary") do %>

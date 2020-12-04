@@ -1,6 +1,7 @@
 <div class="map-page">
 
   <div class="container card-container">
+    <h1 class="header-style">Runners Near Me</h1>
     <div class="search-option">
        <select class="distance select2" name="distance">
         <option value="">within 5km</option>
@@ -51,7 +52,6 @@
       </div>
 
       <div class="cards col-md-4 runners-list">
-            <h1 class="header-style">Runners Near Me</h1>
             <% @runners.each do |runner| %>
               <% if runner == current_user %>
               <% else %>
@@ -60,7 +60,9 @@
                  <%= cl_image_tag runner.image.key, crop: :fill, class: "card-img-top" %>
                 </div>
                 <div class="card-body">
-                <%= runner.first_name%> <%= runner.last_name%>
+                <strong><%= runner.first_name%> <%= runner.last_name%></strong>
+                <br/>
+                 <%= runner.introduction%>
                </div>
                </div>
               <% end %>

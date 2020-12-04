@@ -12,11 +12,29 @@
 }
 
 .slogan {
-  margin-top:16px;
+  margin:16px;
+ 
   color: white;
   font-family: $headers-font;
   text-align: center;
   font-size: 36px;
+}
+
+.discover-button {
+  background-color: $blue;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  margin: 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.discover-button:hover{
+  background-color:beige;
+  color: $blue;
+  text-decoration: none;
 }
 
 .description-box {
@@ -54,7 +72,3 @@
   padding-top: 16px;
 }
 
-// .discover-button {
-//   background-color: $light-blue;
-//   color: $beige;
-// }
