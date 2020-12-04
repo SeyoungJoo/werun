@@ -1,2 +1,29 @@
-<h1>Tracks#index</h1>
-<p>Find me in app/views/tracks/index.html.erb</p>
+<div class="map-page">
+
+  <div class="container card-container">
+
+    <div class="row">
+    <div class="col-md-8 map">
+        <div id="map"
+              style="width: 100%; height: 80vh;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+
+      <div class="cards col-md-4 runners-list">
+            <h1 class="header-style">Tracks Near Me</h1>
+            <% @tracks.each do |track| %>
+              <div class="card index-card d-flex align-self-center">
+                <div class="card-body">
+                <%= track.keyword%>
+                <br>
+                <%= track.description%>
+               </div>
+               </div>
+            <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
