@@ -1,31 +1,26 @@
 // Specific CSS for your home-page
-
-.banner-content{
-  margin-top:32px;
-}
-
 .input-box {
   padding: 10px;
   border: none;
-  margin-right: 8px;
+  margin-right: 16px;
   font-size: 17px;
 }
 
 .slogan {
-  margin:16px;
- 
+  margin-top: 32px;
+  margin-bottom: 64px;
   color: white;
   font-family: $headers-font;
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .discover-button {
   background-color: $blue;
   color: white;
-  padding: 12px 28px;
+  padding: 16px 32px;
   border-radius: 8px;
-  margin: 16px;
   text-decoration: none;
   font-size: 16px;
   font-weight: bolder;
@@ -38,37 +33,36 @@
 }
 
 .description-box {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 60px;
-  margin-bottom: 100px;
-}
-
-.card-contrainer{
-  width: 200px;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  height: 100vh;
   text-align: center;
+  position:relative;
 }
 
-.card-contrainer-bottom-one{
-  width: 200px;
-  text-align: center;
+.how-it-works {
+  display: inline-block;
+  padding-bottom: 100px;
+  font-size: 50px;
+  opacity: 80%;
 }
 
-.card-contrainer-bottom-two{
-  width: 200px;
+.card-container{
+  width: 250px;
   text-align: center;
 }
 
 .img-circular{
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .card-description{
   font-family: $body-font;
-  font-weight: bold;
   font-size: 20px;
-  padding-top: 16px;
+  padding-top: 40px;
 }
 

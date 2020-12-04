@@ -3,13 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Galada&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 // Define fonts for body and headers
 $body-font:  'Montserrat', sans-serif;
-$headers-font: 'Roboto Mono', monospace;
+$headers-font: 'Roboto', sans-serif;
 $logo-font: 'Galada', cursive;
-$navbar-font: 'Ubuntu', sans-serif;
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

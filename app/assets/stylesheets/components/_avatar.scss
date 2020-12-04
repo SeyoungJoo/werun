@@ -7,7 +7,6 @@
 }
 
 .avatar:hover {
-  opacity: 70%;
   cursor: pointer;
   border: 2px solid $blue;
 }
@@ -16,6 +15,7 @@
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
