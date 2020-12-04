@@ -13,4 +13,4 @@ const initConversationCable = () => {
   }
 }
 
-export { initConversationCable };
+export { initConversationCable }
