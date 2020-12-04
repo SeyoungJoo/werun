@@ -1,6 +1,8 @@
-<div class="container for-flex-box mt-3">
+<div class="profile-page mt-5">
+
+<div class="container for-grid-box">
   <div class="user-info-box">
-    <%= cl_image_tag @user.image.key, height: 200, width: 250, crop: :fill, class: "user-avatar" %>
+    <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
     <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
     <div class="user-info-text">
       <p>Age: <%= current_user.age %></p>
@@ -8,105 +10,111 @@
       <p>Email: <%= current_user.email %></p>
       <p>Running Level: <%= current_user.level %></p>
     </div>
+  </div>
 
-    <div class="user-buddies">
-      <h4>My running buddies</h4>
-      <div class="all-buddies">
-      <% @received_requests.each do |request| %>
-        <% if request.status == 'Approved' %>
-          <div class="one-buddy" data-toggle="collapse"
+  <div>
+    <h2>Calendar</h2>
+    <%= month_calendar(events: @events) do |date, events| %>
+      <%= date.day %>
+
+      <% events.each do |event| %>
+        <div>
+          <% if current_user == event.user1 %>
+            <p>Run with <%= event.user2.first_name %></p>
+          <% else %>
+            <p>Run with <%= event.user1.first_name %></p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="user-buddies">
+    <h4>My running buddies</h4>
+    <div class="all-buddies">
+    <% @received_requests.each do |request| %>
+      <% if request.status == 'Approved' %>
+        <div class="one-buddy" data-toggle="collapse"
           data-target="#buddy-info<%= request.id %>" role="button"
           aria-expanded="false" aria-controls="collapseExample">
-            <%= cl_image_tag request.sender.image.key, height: 100, width: 100, class: "buddy-avatar" %>
-            <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+          <%= cl_image_tag request.sender.image.key, height: 100, width: 100, class: "buddy-avatar" %>
+          <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+        </div>
+        <div class="collapse multi-collapse" id="buddy-info<%= request.id %>">
+          <div class="buddy-info">
+            <p>Age: <%= request.sender.age %></p>
+            <p>Location: <%= request.sender.address %></p>
+            <p>Email: <%= request.sender.email %></p>
+            <p>Running Level: <%= request.sender.level %></p>
+            <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
+              <%= submit_tag("chat") %>
+            <% end %>
           </div>
-          <div class="collapse multi-collapse" id="buddy-info<%= request.id %>">
-            <div class="buddy-info">
-              <p>Age: <%= request.sender.age %></p>
-              <p>Location: <%= request.sender.address %></p>
-              <p>Email: <%= request.sender.email %></p>
-              <p>Running Level: <%= request.sender.level %></p>
-              <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
-                <%= submit_tag("chat") %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        </div>
       <% end %>
-      </div>
+    <% end %>
     </div>
   </div>
 
   <div>
+  </div>
 
-    <div>
-      <h1>Calendar</h1>
-      <%= month_calendar(events: @events) do |date, events| %>
-        <%= date.day %>
 
-        <% events.each do |event| %>
+  <div>
+    <h2>Requests</h2>
+
+    <h3>Requests that I've received</h3>
+    <% @received_requests.each do |request| %>
+      <% if request.status == 'Pending' %>
+        <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
+        <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
+        <p>Buddy request from <strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
+          <p><%= request.sender.address %></p>
+          <p>Current Status : <%= request.status %></p>
+          <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
+            <%= submit_tag("Approve", :class => "submit-button") %>
+          <% end %>
+          <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
+            <%= submit_tag("Reject", :class => "submit-button") %>
+          <% end %>
+        </div>
+      <% else %>
+        <% if request.status == 'Rejected' %>
           <div>
-            <% if current_user == event.user1 %>
-              <p>Run with <%= event.user2.first_name %></p>
-            <% else %>
-              <p>Run with <%= event.user1.first_name %></p>
-            <% end %>
+            <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
+            <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
+            <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+            <p><%= request.sender.address %></p>
+            <p>Current Status : <%= request.status %></p>
+            <%= link_to "Delete this request",
+                        request_path(request),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" },
+                        class: "calendar-button" %>
           </div>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 
-    <div>
-      <h1>Requests</h1>
-      <h3>Requests that I've received</h3>
-        <% @received_requests.each do |request| %>
-          <% if request.status == 'Pending' %>
-              <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
-              <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
-              <p>Buddy request from <strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
-              <p><%= request.sender.address %></p>
-              <p>Current Status : <%= request.status %></p>
-              <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                <%= submit_tag("Approve", :class => "submit-button") %>
-              <% end %>
-              <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                <%= submit_tag("Reject", :class => "submit-button") %>
-              <% end %>
-            </div>
-          <% else %>
-            <% if request.status == 'Rejected' %>
-              <div>
-                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
-                 <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
-                <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
-                <p><%= request.sender.address %></p>
-                <p>Current Status : <%= request.status %></p>
-                <%= link_to "Delete this request",
-                            request_path(request),
-                            method: :delete,
-                            data: { confirm: "Are you sure?" }, 
-                            class: "calendar-button" %>
-              </div>
-            <% end %>
+  <div class="request-sent-box">
+    <h3>Requests that I've sent</h3>
+    <% @sent_requests.each do |request| %>
+      <% if request.status == 'Approved' %>
+        <div>
+          <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+          <p>Current Status : <%= request.status %></p>
+          <p>I want to chat with <%= request.receiver.first_name %></p>
+        </div>
+      <% else %>
+        <div>
+          <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+          <p>Current Status : <%= request.status %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-          <% end %>
-        <% end %>
-
-      <h3>Requests that I've sent</h3>
-        <% @sent_requests.each do |request| %>
-          <% if request.status == 'Approved' %>
-            <div>
-              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-              <p>Current Status : <%= request.status %></p>
-              <p>I want to chat with <%= request.receiver.first_name %></p>
-            </div>
-          <% else %>
-            <div>
-              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-              <p>Current Status : <%= request.status %></p>
-            </div>
-          <% end %>
-        <% end %>
-    </div>
+</div>
 
 </div>
