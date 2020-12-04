@@ -1,6 +1,8 @@
-<div class="container for-grid-box mt-3">
+<div class="profile-page mt-5">
+
+<div class="container for-grid-box">
   <div class="user-info-box">
-    <%= cl_image_tag @user.image.key, height: 150, width: 200, crop: :fill, class: "user-avatar" %>
+    <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
     <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
     <div class="user-info-text">
       <p>Age: <%= current_user.age %></p>
@@ -11,7 +13,7 @@
   </div>
 
   <div>
-    <h1>Calendar</h1>
+    <h2>Calendar</h2>
     <%= month_calendar(events: @events) do |date, events| %>
       <%= date.day %>
 
@@ -57,8 +59,9 @@
   <div>
   </div>
 
+
   <div>
-    <h1>Requests</h1>
+    <h2>Requests</h2>
 
     <h3>Requests that I've received</h3>
     <% @received_requests.each do |request| %>
@@ -94,7 +97,7 @@
     <% end %>
   </div>
 
-  <div>
+  <div class="request-sent-box">
     <h3>Requests that I've sent</h3>
     <% @sent_requests.each do |request| %>
       <% if request.status == 'Approved' %>
@@ -111,5 +114,7 @@
       <% end %>
     <% end %>
   </div>
+
+</div>
 
 </div>
