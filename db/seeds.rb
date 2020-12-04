@@ -32,7 +32,7 @@ user1.save!
 user2 = User.new(
   first_name: "Harry",
   last_name: "Kim",
-  address: "Seoul Dongdaemun",
+  address: "Seoul Gangnam",
   age: 23,
   level: 3,
   email: "harry@gmail.com",
@@ -55,7 +55,7 @@ user2.save!
 user3 = User.new(
   first_name: "Juyeon",
   last_name: "Kim",
-  address: "Seoul Jamsil",
+  address: "Seoul Sindang",
   age: 27,
   level: 1,
   email: "juyeon@gmail.com",
@@ -75,7 +75,7 @@ user3.save!
 user4 = User.new(
   first_name: "Seyoung",
   last_name: "Joo",
-  address: "Seoul Sinchon",
+  address: "Seoul Sindang",
   age: 21,
   level: 2,
   email: "seyoung@gmail.com",
@@ -117,7 +117,7 @@ user5.save!
 user6 = User.new(
   first_name: "Jason",
   last_name: "Fredman",
-  address: "Seoul Sinsa",
+  address: "Seoul Sindang",
   age: 25,
   level: 5,
   email: "jason@gmail.com",
@@ -159,7 +159,7 @@ user7.save!
 user8 = User.new(
   first_name: "Julia",
   last_name: "Roberts",
-  address: "Seoul Sinsa",
+  address: "Seoul Sindang",
   age: 23,
   level: 3,
   email: "julia@gmail.com",
@@ -201,7 +201,7 @@ user9.save!
 user10 = User.new(
   first_name: "Rick",
   last_name: "Warren",
-  address: "Ichon-dong",
+  address: "Seoul Gangnam",
   age: 23,
   level: 3,
   email: "rick@gmail.com",
