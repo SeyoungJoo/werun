@@ -1,0 +1,25 @@
+.map-runner-image{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.map-runner-name{
+  padding-top: 3px;
+  font-size: 24px;
+  font-weight: $headers-font;
+}
+
+.map-runner-info{
+  font-size: 16px;
+  font-weight: $body-font;
+}
+
+.buddy-request-button{
+  color: beige;
+  text-decoration: none;
+}
+
+.buddy-request-button:hover{
+  background-color: $light-blue;
+}

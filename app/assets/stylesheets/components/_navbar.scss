@@ -14,19 +14,18 @@
   border-radius: 50%;
 }
 
-
 .navbar{
   position: sticky;
 }
 
 .nav-link{
-  color: $blue;
+  font-family: $headers-font;
+  color: $dark-blue;
   font-size: 18px;
-  font-weight: bold;
 }
 
 .nav-link:hover{
-  color: $dark-blue;
+  color: $blue;
 }
 
 .nav-item{

@@ -36,7 +36,8 @@ const initMapbox = () => {
       // Put a microphone on the new marker listening for a mouseenter event
       newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
       // We put a microphone on listening for a mouseleave event
-      newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
+      newMarker.getElement().addEventListener('mouseleave', (e) =>  toggleCardHighlighting(e) );
+     
     });
 
     
@@ -64,6 +65,7 @@ const initMapbox = () => {
   const toggleCardHighlighting = (event) => {
     // We select the card corresponding to the marker's id
     const card = document.querySelector(`[data-flat-id="${event.currentTarget.dataset.markerId}"]`);
+    console.log(event);
     // Then we toggle the class "highlight github" to the card
     card.classList.toggle('highlight');
     }
