@@ -59,3 +59,34 @@
   text-align: center;
   font-weight: bold;
 }
+.one-sent-request {
+  // border: 1px solid $blue;
+  padding: 0.4em;
+  margin-bottom: 0.3em;
+  border-radius: 0.4em;
+  box-shadow: 1px 1px 2px #3797a4;
+}
+.one-sent-request p {
+  margin-bottom: 0;
+}
+.one-received-request {
+  display: flex;
+  // border: 1px solid $blue;
+  padding: 0.4em;
+  margin: 0.3em 1em 0.3em 0.3em;
+  border-radius: 0.4em;
+  box-shadow: 1px 1px 2px #3797a4;
+}
+.one-received-request p {
+  margin-bottom: 0;
+}
+.request-btn {
+  background-color: #3797a4;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  opacity: 50%;
+  padding: 0.2em;
+  margin-right: 0.3em;
+}
