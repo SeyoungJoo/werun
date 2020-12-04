@@ -18,6 +18,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initConversationCable } from '../channels/conversation_channel';
+import { initMapbox } from '../plugins/map';
 import "../plugins/flatpickr"
 import flatpickr from "flatpickr";
 import { initFlatpickr } from '../plugins/flatpickr'
@@ -26,14 +27,8 @@ import { initFlatpickr } from '../plugins/flatpickr'
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initConversationCable();
+  initMapbox();
   // initSweetalert('.buddy-request-button', {
   //   title: "Do you want to send a buddy request?",
   // });
-});
-
-//geocoding
-import { initMapbox } from '../plugins/map';
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
 });
