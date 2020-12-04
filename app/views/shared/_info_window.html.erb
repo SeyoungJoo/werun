@@ -6,7 +6,7 @@
 <p><%=link_to "Buddy request",
       runner_requests_path(runner),
       method: :post,
-      data: { confirm: "Do you want to send a buddy request?" },
+      data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
       class: "btn btn-md btn-primary buddy-request-button"
     %>
 </p>
