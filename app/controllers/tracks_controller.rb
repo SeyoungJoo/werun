@@ -1,6 +1,7 @@
 class TracksController < ApplicationController
   def index
     @tracks = policy_scope(Track).order(created_at: :desc)
+    
   end
 
   def show
@@ -29,6 +30,6 @@ class TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:name, :address, :description, :keyword, :start_lng, :end_lng, :start_lat, :end_lat)
+    params.require(:track).permit(:name, :description, :keyword)
   end
 end
