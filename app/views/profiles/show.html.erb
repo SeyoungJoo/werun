@@ -53,6 +53,27 @@
         </div>
       <% end %>
     <% end %>
+    <% @sent_requests.each do |request| %>
+      <% if request.status == 'Approved' %>
+        <div class="one-buddy" data-toggle="collapse"
+          data-target="#buddy-info<%= request.id %>" role="button"
+          aria-expanded="false" aria-controls="collapseExample">
+          <%= cl_image_tag request.receiver.image.key, height: 100, width: 100, class: "buddy-avatar" %>
+          <p><%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+        </div>
+        <div class="collapse multi-collapse" id="buddy-info<%= request.id %>">
+          <div class="buddy-info">
+            <p>Age: <%= request.receiver.age %></p>
+            <p>Location: <%= request.receiver.address %></p>
+            <p>Email: <%= request.receiver.email %></p>
+            <p>Running Level: <%= request.receiver.level %></p>
+            <%= form_with(url: "/runners/#{request.receiver.id}/conversations", method: "post") do %>
+              <%= submit_tag("chat") %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
 
