@@ -29,12 +29,12 @@ const initMapbox = () => {
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);
       mapMarkers.push(newMarker)
-      // We use the "getElement" funtion provided by mapbox-gl to access to the marker's HTML an set an id
-      newMarker.getElement().dataset.markerId = marker.id;
-      // Put a microphone on the new marker listening for a mouseenter event
-      newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
-      // We put a microphone on listening for a mouseleave event
-      newMarker.getElement().addEventListener('mouseleave', (e) =>  toggleCardHighlighting(e) );
+       // We use the "getElement" funtion provided by mapbox-gl to access to the marker's HTML an set an id
+       newMarker.getElement().dataset.markerId = marker.id;
+       // Put a microphone on the new marker listening for a mouseenter event
+       newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
+       // We put a microphone on listening for a mouseleave event
+       newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
   
     });
 
@@ -63,7 +63,6 @@ const initMapbox = () => {
   const toggleCardHighlighting = (event) => {
     // We select the card corresponding to the marker's id
     const card = document.querySelector(`[data-marker-id="${event.currentTarget.dataset.markerId}"]`);
-    console.log(card);
     // Then we toggle the class "highlight github" to the card
     card.classList.toggle('highlight');
     }

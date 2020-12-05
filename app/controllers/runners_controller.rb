@@ -18,7 +18,8 @@ class RunnersController < ApplicationController
         {
           lat: runner.latitude,
           lng: runner.longitude,
-          image_url: Cloudinary::Utils.cloudinary_url(runner.image.key)
+          image_url: Cloudinary::Utils.cloudinary_url(runner.image.key),
+          id: runner.id
         }
       end
     end

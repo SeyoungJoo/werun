@@ -45,15 +45,22 @@
       </div>
 
       <div class="runner-cards col-md-5">
+      
         <% @runners.each do |runner| %>
           <% if runner == current_user %>
           <% else %>
-           <div class="runner-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>)">
+           <div class="runner-card" id="runner-click" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>'); "data-marker-id="<%= runner.id %>">
             <strong><%= runner.first_name%> <%= runner.last_name%></strong>
             </div>
+  
           <% end %>
         <% end %>
       </div>
+
+ 
+
+
+    </div>
 
     </div>
   </div>
