@@ -4,27 +4,33 @@
    <h1 class="header-style">Find out other Runners near you</h1>
    <div class="search-option">
       <select class="running-level select2" name="running-level">
-        <option value="">Fast</option>
-        <option value="">Averge</option>
-        <option value="">Slow</option>
+      <option></option>
+        <option value="Fast">Fast</option>
+        <option value="Average">Average</option>
+        <option value="Slow">Slow</option>
       </select>
 
       <select class="gender select2" name="gender">
-        <option value="">Female</option>
-        <option value="">Male</option>
+        <option></option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
       </select>
 
       <select class="preferred-day select2" name="preferred-day">
-        <option value="">Weekdays</option>
-        <option value="">Weekend</option>
+        <option></option>
+        <option value="Weekdays">Weekdays</option>
+        <option value="Weekend">Weekend</option>
       </select>
 
       <select class="preferred-time select2" name="preferred-time">
-        <option value="">Morning</option>
-        <option value="">Afternoon</option>
-        <option value="">Evening</option>
+        <option></option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
       </select>
-      <%= link_to "Find" %>
+      <%= button_tag(type: "submit", class: "find") do %>
+      Find
+      <% end %>
     </div>
     </div>
      
