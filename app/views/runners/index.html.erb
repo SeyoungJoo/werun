@@ -1,42 +1,41 @@
 <div class="map-page">
-
-  <div class="container card-container">
-    <h1 class="header-style">Runners Near Me</h1>
-    <div class="search-option">
-       <select class="distance select2" name="distance">
-        <option value="">within 5km</option>
-        <option value="">within 10km</option>
-        <option value="">within 25km</option>
-        <option value="">within 50km</option>
-      </select>
-
+<div class="container card-container">
+  <div class="text-header">
+   <h1 class="header-style">Find out other Runners near you</h1>
+   <div class="search-option">
       <select class="running-level select2" name="running-level">
-        <option value="">Fast</option>
-        <option value="">Averge</option>
-        <option value="">Slow</option>
+      <option></option>
+        <option value="Fast">Fast</option>
+        <option value="Average">Average</option>
+        <option value="Slow">Slow</option>
       </select>
 
       <select class="gender select2" name="gender">
-        <option value="">Female</option>
-        <option value="">Male</option>
+        <option></option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
       </select>
 
       <select class="preferred-day select2" name="preferred-day">
-        <option value="">Weekdays</option>
-        <option value="">Weekend</option>
+        <option></option>
+        <option value="Weekdays">Weekdays</option>
+        <option value="Weekend">Weekend</option>
       </select>
 
       <select class="preferred-time select2" name="preferred-time">
-        <option value="">Morning</option>
-        <option value="">Afternoon</option>
-        <option value="">Evening</option>
+        <option></option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
       </select>
-
-      <%= link_to "Find" %>
+      <%= button_tag(type: "submit", class: "find") do %>
+      Find
+      <% end %>
     </div>
-
+    </div>
+     
     <div class="row">
-    <div class="col-md-7 map">
+      <div class="col-7 map">
         <div id="map"
               style="width: 100%; height: 100vh;"
               data-markers="<%= @markers.to_json %>"
@@ -44,24 +43,34 @@
         </div>
       </div>
 
-      <div class="runner-cards col-md-5">
-      
+     <div class="col-4 runner-cards">
         <% @runners.each do |runner| %>
           <% if runner == current_user %>
           <% else %>
            <div class="runner-card" id="runner-click" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>'); "data-marker-id="<%= runner.id %>">
             <strong><%= runner.first_name%> <%= runner.last_name%></strong>
             </div>
-  
+            
+          <div class="popup-card" id="popup-card">
+           <span class="close">x</span>
+              <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
+              <div class="runner-card-body">
+              <strong><%= runner.first_name%> <%= runner.last_name%></strong><br/>
+              <%= runner.gender %><br/>
+              <%= runner.address %><br/><br/>
+              <%= runner.introduction%><br/><br/>
+              <%=link_to "Buddy request",
+                runner_requests_path(runner),
+                method: :post,
+                data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
+                class: "btn btn-md btn-primary buddy-request-button"
+              %>
+              </div>
+        </div>
           <% end %>
         <% end %>
-      </div>
+     </div>
 
- 
-
-
-    </div>
-
-    </div>
   </div>
+</div>
 </div>
