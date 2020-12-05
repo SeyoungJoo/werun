@@ -11,11 +11,9 @@
       </select>
 
       <select class="running-level select2" name="running-level">
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
-        <option value="">5</option>
+        <option value="">Fast</option>
+        <option value="">Averge</option>
+        <option value="">Slow</option>
       </select>
 
       <select class="gender select2" name="gender">
@@ -34,13 +32,9 @@
         <option value="">Evening</option>
       </select>
 
-      <select class="pet select2" name="pet">
-        <option value="">Yes</option>
-        <option value="">No</option>
-      </select>
-
       <%= link_to "Find" %>
     </div>
+
 
     <div class="row">
     <div class="col-md-8 map">
@@ -63,10 +57,18 @@
                 <strong><%= runner.first_name%> <%= runner.last_name%></strong>
                 <br/>
                  <%= runner.introduction%>
+                 <%=link_to "Buddy request",
+      runner_requests_path(runner),
+      method: :post,
+      data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
+      class: "btn btn-md btn-primary buddy-request-button"
+    %>
                </div>
                </div>
               <% end %>
             <% end %>
+  
+
       </div>
 
     </div>
