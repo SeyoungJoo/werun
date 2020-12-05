@@ -1,38 +1,39 @@
-<div class="profile-page mt-5">
-
-<div class="container for-grid-box">
-  <div class="user-info-box">
-    <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
-    <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
-    <div class="user-info-text">
-      <p>Age: <%= current_user.age %></p>
-      <p>Location: <%= current_user.address %></p>
-      <p>Email: <%= current_user.email %></p>
-      <p>Running Level: <%= current_user.level %></p>
+<div class="profile-page">
+<div class="container wrapper"> 
+  <div class="item1 user-info-box">
+      <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
+      <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
+      <div class="user-info-text">
+        <p>Age: <%= current_user.age %></p>
+        <p>Location: <%= current_user.address %></p>
+        <p>Email: <%= current_user.email %></p>
+        <p>Running Level: <%= current_user.level %></p>
+      </div>
     </div>
-  </div>
 
-  <div>
-    <h2>Calendar</h2>
-    <%= month_calendar(events: @events) do |date, events| %>
-      <%= date.day %>
+    
+    <div class="item2">
+      <h3>Calendar</h3>
+      <%= month_calendar(events: @events) do |date, events| %>
+        <%= date.day %>
 
-      <% events.each do |event| %>
-        <div>
-          <% if current_user == event.user1 %>
-            <p>Run with <%= event.user2.first_name %>
-              from <%= event.start_time.hour %> to <%= event.end_time.hour %></p>
-          <% else %>
-            <p>Run with <%= event.user1.first_name %>
-              from <%= event.start_time.hour %> to <%= event.end_time.hour %></p>
-          <% end %>
-        </div>
+        <% events.each do |event| %>
+          <div>
+            <% if current_user == event.user1 %>
+              <p>Run with <%= event.user2.first_name %>
+                from <%= event.start_time.hour %> to <%= event.end_time.hour %></p>
+            <% else %>
+              <p>Run with <%= event.user1.first_name %>
+                from <%= event.start_time.hour %> to <%= event.end_time.hour %></p>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="user-buddies">
-    <h4>My running buddies</h4>
+
+    <div class="item3 user-buddies">
+    <h4>My Running Buddies</h4>
     <div class="all-buddies">
     <% @received_requests.each do |request| %>
       <% if request.status == 'Approved' %>
@@ -79,68 +80,65 @@
     </div>
   </div>
 
-  <div>
-  </div>
-
-
-  <div>
-    <h2>Requests</h2>
-
-    <h4>Requests that I've received</h4>
-    <% @received_requests.each do |request| %>
-      <% if request.status == 'Pending' %>
-        <div class="one-received-request">
-          <div>
-          <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
-          </div>
-          <div>
-            <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
-            <!-- <p>Buddy request from <strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p> -->
-              <p><%= request.sender.address %></p>
-              <p>Current Status : <%= request.status %></p>
-              <div class="d-flex">
-                <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                  <%= submit_tag("Approve", class: "request-btn") %>
-                <% end %>
-                <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                  <%= submit_tag("Reject", :class => "request-btn") %>
-                <% end %>
+    <h3 class="item4">Requests</h3>
+    <div class="item5 request-box">
+      <div class="request-received-box">
+        <h4>Received</h4>
+        <% @received_requests.each do |request| %>
+          <% if request.status == 'Pending' %>
+            <div class="one-received-request">
+              <div>
+              <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
               </div>
-          </div>
-        </div>
-      <% else %>
-        <% if request.status == 'Rejected' %>
-          <div class="one-received-request">
-            <div>
-            <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
+              <div>
+                <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
+                <!-- <p>Buddy request from <strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p> -->
+                  <p><%= request.sender.address %></p>
+                  <p>Current Status : <%= request.status %></p>
+                  <div class="d-flex">
+                    <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
+                      <%= submit_tag("Approve", class: "request-btn") %>
+                    <% end %>
+                    <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
+                      <%= submit_tag("Reject", :class => "request-btn") %>
+                    <% end %>
+                  </div>
+              </div>
             </div>
-            <div>
-              <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
-              <!-- <p><%= request.sender.first_name %> <%= request.sender.last_name %></p> -->
-              <p><%= request.sender.address %></p>
-              <p>Current Status : <%= request.status %></p>
-              <%= link_to "Delete this request",
-                          request_path(request),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" },
-                          class: "request-btn" %>
-            </div>
-          </div>
+          <% else %>
+            <% if request.status == 'Rejected' %>
+              <div class="one-received-request">
+                <div>
+                <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
+                </div>
+                <div>
+                  <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
+                  <!-- <p><%= request.sender.first_name %> <%= request.sender.last_name %></p> -->
+                  <p><%= request.sender.address %></p>
+                  <p>Current Status : <%= request.status %></p>
+                  <%= link_to "Delete this request",
+                              request_path(request),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" },
+                              class: "request-btn" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="request-sent-box">
-    <h4>Requests that I've sent</h4>
-    <% @sent_requests.each do |request| %>
-      <div class="one-sent-request">
-        <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-        <p>Current Status : <%= request.status %></p>
-      </div>
-    <% end %>
+        <div class="request-sent-box">
+          <h4>Sent</h4>
+          <% @sent_requests.each do |request| %>
+            <div class="one-sent-request">
+              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+              <p>Current Status : <%= request.status %></p>
+            </div>
+          <% end %>
+        </div>
   </div>
 
 </div>
-
 </div>
+ <%= render 'shared/footer' %>

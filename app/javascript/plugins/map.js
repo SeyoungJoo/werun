@@ -14,7 +14,6 @@ const initMapbox = () => {
     const mapMarkers = []
 
     markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
       // Create a HTML element for your custom marker
       const element = document.createElement('div');
@@ -28,7 +27,6 @@ const initMapbox = () => {
       // Pass the element as an argument to the new marker
       const newMarker = new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
         .addTo(map);
       mapMarkers.push(newMarker)
       // We use the "getElement" funtion provided by mapbox-gl to access to the marker's HTML an set an id
