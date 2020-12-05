@@ -25,14 +25,15 @@ import "../plugins/flatpickr"
 import { initFlatpickr } from '../plugins/flatpickr'
 // import { initSweetalert } from '../plugins/init_sweetalert';
 import { initSelect2 } from '../plugins/init_select2';
-// import { runner_card } from '../plugins/runner_card';
+import { initcard } from '../plugins/initcard';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initConversationCable();
   initMapbox();
   initSelect2();
-  // runner_card();
+  initcard();
+
   // initSweetalert('.buddy-request-button', {
   //   title: "Do you want to send a buddy request?",
   // });

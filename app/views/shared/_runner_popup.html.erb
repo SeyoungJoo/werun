@@ -1,6 +1,7 @@
      <%# popup-card %>
-       <div class="popup-card" id="popup-card">
+             <div class="popup-card" id="popup-card">
          <% @runners.each do |runner| %>
+   
            <span class="close">x</span>
           <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
           <div class="runner-card-body">
@@ -13,7 +14,21 @@
             class: "btn btn-md btn-primary buddy-request-button"
           %>
         </div>
-        </div>
-      <% end %>
-      </div>
       
+      <% end %>
+        </div>
+
+
+
+      
+     <div class="col-4 runner-cards">
+        <% @runners.each do |runner| %>
+          <% if runner == current_user %>
+          <% else %>
+           <div class="runner-card" id="runner-click" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>'); "data-marker-id="<%= runner.id %>">
+            <strong><%= runner.first_name%> <%= runner.last_name%></strong>
+            </div>
+          <% end %>
+        <% end %>
+        <%= render 'shared/runner_popup' %>
+     </div>
