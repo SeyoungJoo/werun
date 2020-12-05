@@ -1,0 +1,19 @@
+ <div class="cards col-md-4 runners-list">
+  <% @runners.each do |runner| %>
+    <div class="runner-card">
+      <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
+      <div class="runner-card-body">
+      <strong><%= runner.first_name%> <%= runner.last_name%></strong>        
+      <%= runner.introduction%>
+      <%=link_to "Buddy request",
+        runner_requests_path(runner),
+        method: :post,
+        data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
+        class: "btn btn-md btn-primary buddy-request-button"
+      %>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+
