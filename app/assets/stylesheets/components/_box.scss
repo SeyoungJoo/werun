@@ -6,7 +6,8 @@
 .wrapper{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-column-gap: 40px;
+  grid-row-gap: 10px;
   grid-auto-rows: auto auto auto;
 }
 
@@ -26,6 +27,7 @@
 }
 
 .item4{
+  padding-top: 20px;
   grid-column: 2;
   grid-row: 2;
 }
@@ -48,7 +50,6 @@
 
 .user-info-box {
   background-color: $blue;
-  margin-right: 2em;
   height: 450px;
   text-align: center;
   padding: 16px;
@@ -65,7 +66,6 @@
 }
 .user-info-name {
   text-align: center;
-  font-weight: bold;
   margin: 0.5em 0.3em;
 }
 .user-buddies {
@@ -126,4 +126,9 @@
   opacity: 50%;
   padding: 0.2em;
   margin-right: 0.3em;
+}
+
+.sent-box-align{
+  width: 200px;
+  text-align: left;
 }

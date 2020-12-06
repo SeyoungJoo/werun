@@ -11,7 +11,6 @@
       </div>
     </div>
 
-    
     <div class="item2">
       <h3>Calendar</h3>
       <%= month_calendar(events: @events) do |date, events| %>
@@ -30,7 +29,6 @@
         <% end %>
       <% end %>
     </div>
-
 
     <div class="item3 user-buddies">
     <h4>My Running Buddies</h4>
@@ -129,16 +127,16 @@
     </div>
 
         <div class="request-sent-box">
-          <h4>Sent</h4>
-          <% @sent_requests.each do |request| %>
-            <div class="one-sent-request">
-              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-              <p>Current Status : <%= request.status %></p>
-            </div>
-          <% end %>
+          <div class="sent-box-align">
+            <h4>Sent</h4>
+            <% @sent_requests.each do |request| %>
+              <div class="one-sent-request">
+                <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+                <p>Current Status : <%= request.status %></p>
+              </div>
+            <% end %>
+          </div>
         </div>
   </div>
-
 </div>
 </div>
-
