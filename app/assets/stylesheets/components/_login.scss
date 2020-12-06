@@ -1,0 +1,18 @@
+.login-container{
+  width: 600px;
+  margin: 80px auto;
+}
+
+.form-inputs{
+  padding: 20px 0;
+}
+
+.login-button{
+  background-color: $blue;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+}
+
+.login-button:hover{
+  color: $beige;
+}
