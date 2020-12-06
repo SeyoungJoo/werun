@@ -1,6 +1,18 @@
+.login-bg{
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), image-url("login-bg.jpg");
+  background-size: cover;
+  background-position: center top;
+}
+
 .login-container{
-  width: 600px;
+  padding: 64px;
+  width: 500px;
   margin: 80px auto;
+  background-color: rgba(255, 255, 255, .9);
 }
 
 .form-inputs{
@@ -15,4 +27,12 @@
 
 .login-button:hover{
   color: $beige;
+}
+
+.signup-text{
+  font-weight: bolder;
+}
+
+.password-forgot-text{
+  font-weight: bolder;
 }
