@@ -1,0 +1,32 @@
+.event-page{
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), image-url("event-bg.jpg");
+  background-size: cover;
+  background-position: center top;
+}
+
+.event-container{
+  padding: 64px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.event-header{
+  color: $blue;
+  font-family: $logo-font;
+  padding-bottom: 16px;
+}
+
+.event-button{
+  margin-top: 8px;
+  background-color: $blue;
+  text-decoration: none;
+  border: none;
+}
+
+.event-button:hover{
+  color: $beige;
+}

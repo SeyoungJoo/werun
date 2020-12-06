@@ -4,11 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Galada&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 // Define fonts for body and headers
 $body-font:  'Montserrat', sans-serif;
+$logo2-font: 'Abril Fatface', cursive;
 $headers-font: 'Roboto', sans-serif;
 $logo-font: 'Galada', cursive;
+$navbar-font: 'Space Grotesk', sans-serif;
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

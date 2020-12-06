@@ -223,7 +223,7 @@ user10.save!
 user11 = User.new(
   first_name: "Mizuki",
   last_name: "Saito",
-  address: "Mapo-gu",
+  address: "Shindang",
   age: 23,
   level: 3,
   email: "mizuki@gmail.com",
@@ -244,7 +244,7 @@ user11.save!
 user12 = User.new(
   first_name: "Allen",
   last_name: "Huang",
-  address: "Oksu-dong",
+  address: "shindang",
   age: 27,
   level: 2,
   email: "allen@gmail.com",
@@ -265,7 +265,7 @@ user12.save!
 user13 = User.new(
   first_name: "Vikas",
   last_name: "Gupta",
-  address: "Yongsan-gu",
+  address: "shindang",
   age: 23,
   level: 5,
   email: "vikas@gmail.com",
@@ -286,7 +286,7 @@ user13.save!
 user14 = User.new(
   first_name: "Stephanie",
   last_name: "Parks",
-  address: "Seocho-dong",
+  address: "gangnam",
   age: 27,
   level: 2,
   email: "stephanie@gmail.com",
@@ -307,7 +307,7 @@ user14.save!
 user15 = User.new(
   first_name: "Kelly",
   last_name: "Steven",
-  address: "Seocho-dong",
+  address: "Shindang",
   age: 27,
   level: 2,
   email: "kelly@gmail.com",
