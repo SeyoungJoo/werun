@@ -3,12 +3,12 @@
   <div class="chat-bar">  
     <% @conversations.each do |conversation| %>
       <% if @user.id == conversation.user1_id %>
-        <div class="chatbar-line">
+        <div class="chatbar-line <%= 'active' if @current_tab == conversation.user2 %>"> 
           <%= cl_image_tag conversation.user2.image.key, height: 25, width: 25, crop: :fill, class: "chat-avatar-small" %>
           <%= link_to conversation.user2.first_name, conversation %> 
         </div> 
       <% elsif @user.id == conversation.user2_id %>  
-        <div class="chatbar-line">
+        <div class="chatbar-line <%= 'active' if @current_tab == conversation.user1 %>">
           <%= cl_image_tag conversation.user1.image.key, height: 25, width: 25, crop: :fill, class: "chat-avatar-small" %>
           <%= link_to conversation.user1.first_name, conversation %> 
         </div> 
