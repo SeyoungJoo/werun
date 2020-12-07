@@ -12,8 +12,11 @@ class ConversationsController < ApplicationController
     @message = Message.new
     if @conversation.user1 == current_user
       @partner = @conversation.user2
+      @current_tab = @conversation.user2
     else
       @partner = @conversation.user1
+      @current_tab = @conversation.user1
+
     end
 
     authorize @conversation

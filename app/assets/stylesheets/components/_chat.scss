@@ -14,27 +14,32 @@
   width: 160px;
   height: 89vh;
   font-family: $headers-font;
-  background-color: rgba(55, 151, 164, 0.5);
+  background-color: #e7e7e7;
   text-align: center;
-}
-
-
-.chat-bar a:active, .chat-bar a:hover, .chat-bar a:visited{
-  opacity: 100%;
 }
 
 .chat-bar a { 
   text-decoration: none; 
-  color: white;
+  color: gray;
+  margin-left: 5px;
   opacity: 50%;
 }
 
-
 .chatbar-line {
-  display: inline-block;
+  display: flex;
   padding: 5px 20px;
 }
 
+.chatbar-line.active {
+  display: flex;
+  padding: 5px 20px;
+  background-color: rgba(55, 151, 164, 0.3);
+  width: 100%;
+}
+
+.chatbar-line.active a {
+  color: white;
+}
 
 .chatroom {
   height: 65vh;
