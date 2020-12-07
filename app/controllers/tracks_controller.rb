@@ -16,6 +16,7 @@ class TracksController < ApplicationController
         image_url: Cloudinary::Utils.cloudinary_url(track.image.key)
       }
     end
+
   end
 
   def show
