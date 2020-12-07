@@ -1,11 +1,22 @@
 <div class="message-container" id="message-<%= message.id %>">
-  <div class="chat-first-line">
-    <%= cl_image_tag message.user.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-big" %>
-    <div class="author-section">
-      <span class="author"><%= message.user.first_name %></span>
-      <small class="time"><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>  
-      <p><%= message.contents %></p>
+  <% if message.user.id == current_user.id %>
+    <div class="current-user-container">
+      <%= cl_image_tag message.user.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-big" %>
+      <div class="current-user">
+        <span class="author"><%= message.user.first_name %></span>
+        <small class="time"><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>  
+        <p><%= message.contents %></p>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="other-user-container">
+      <%= cl_image_tag message.user.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-big" %>
+      <div class="other-user">
+        <span class="author"><%= message.user.first_name %></span>
+        <small class="time"><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>  
+        <p><%= message.contents %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
 

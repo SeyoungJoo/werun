@@ -16,25 +16,25 @@
   font-family: $headers-font;
   background-color: rgba(55, 151, 164, 0.5);
   text-align: center;
-  border-radius: 4px;
 }
 
-.chat-bar a:link, { 
-  text-decoration: none ; 
-  color: white;
-  opacity: 80%;
-}
 
-.chat-bar a:hover, .chat-bar a:active, .chat-bar a:visited { 
-  text-decoration: none ; 
-  color: white;
+.chat-bar a:active, .chat-bar a:hover, .chat-bar a:visited{
   opacity: 100%;
 }
+
+.chat-bar a { 
+  text-decoration: none; 
+  color: white;
+  opacity: 50%;
+}
+
 
 .chatbar-line {
   display: inline-block;
   padding: 5px 20px;
 }
+
 
 .chatroom {
   height: 65vh;
@@ -50,7 +50,34 @@
 
 .author {
   font-family: $headers-font;
-  margin: 0;
+}
+
+.current-user-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+
+.current-user {
+  background-color:rgba(55, 151, 164, 0.2);;
+  border-radius: 10px;
+  color: $blue;
+  padding: 8px 8px 0 8px;
+  margin-bottom: 16px;
+}
+
+.other-user-container {
+  display: flex;
+  margin-left: 10px;
+}
+
+.other-user {
+  background-color:white;
+  border-radius: 10px;
+  color: $blue;
+  padding: 8px 8px 0 8px;
+  margin-bottom: 16px;
 }
 
 .time {
@@ -139,8 +166,4 @@
   border-radius: 50%;
   background: cover;
   object-fit: cover;
-}
-
-.chat-first-line {
-  display: flex;
 }
