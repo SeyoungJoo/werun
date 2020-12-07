@@ -4,7 +4,7 @@ class AddUsersInfoToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :last_name, :string
     add_column :users, :address, :string
     add_column :users, :age, :integer
-    add_column :users, :level, :integer
+    add_column :users, :level, :string
     add_column :users, :lng, :float
     add_column :users, :lat, :float
   end
