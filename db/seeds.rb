@@ -26,7 +26,7 @@ user1 = User.new(
   introduction: "I am originally from the States and just moved to Seoul. I am a regular runner and want to explore new running rails with beautiful scenary in Seoul. I also love outdoor activities like hiking or cycling, so anyone who shares same hobbies please DM me :)"
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner1.jpg"))
+file = File.open(File.join(Rails.root, "/app/assets/images/runner1.JPG"))
 user1.image.attach(io: file, filename: 'user1photo.png', content_type: 'image/png')
 user1.save!
 
@@ -90,7 +90,7 @@ user4 = User.new(
   introduction: "I am looking for a jogging mate with a pet. I run with my golden retriever everyday in the morning for about an hour. Please DM me if you have a pet and want to run with us :)"
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner4.jpg"))
+file = File.open(File.join(Rails.root, "/app/assets/images/runner4.JPG"))
 user4.image.attach(io: file, filename: 'user4photo.png', content_type: 'image/png')
 user4.save!
 
@@ -158,8 +158,8 @@ user7.image.attach(io: file, filename: 'user7photo.png', content_type: 'image/pn
 user7.save!
 
 user8 = User.new(
-  first_name: "Julia",
-  last_name: "Roberts",
+  first_name: "Jenny",
+  last_name: "kim",
   address: "Seoul Shindang",
   age: 23,
   level: "average",
@@ -179,12 +179,12 @@ user8.image.attach(io: file, filename: 'user8photo.png', content_type: 'image/pn
 user8.save!
 
 user9 = User.new(
-  first_name: "Rebecca",
-  last_name: "Smith",
+  first_name: "Suyeon",
+  last_name: "Lee",
   address: "Seoul Shindang",
   age: 23,
   level: "average",
-  email: "rebecca@gmail.com",
+  email: "suyeon@gmail.com",
   password: 123456,
   latitude: 37.56479363210303,
   longitude: 126.93949057607337,
