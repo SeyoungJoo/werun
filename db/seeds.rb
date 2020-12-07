@@ -336,38 +336,73 @@ conversation2 = Conversation.create!(
 
 Track1 = Track.create!(
   name: "Yeouido Hangang Park",
+  address: "Yeouido Hangang Park",
   description: "Large park on the river, with several km of paths",
   keyword: "Scenary Park",
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   user: user1
 )
+
+file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
+Track1.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+Track1.save!
 
 Track2 = Track.create!(
   name: "Olympic Stadium",
+  address: "Olympic Stadium",
   description: "Sports complex on site of 1988 games, with trails",
   keyword: "Sports complex",
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   user: user2
 )
 
+file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
+Track2.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+Track2.save!
+
 Track3 = Track.create!(
   name: "Bukhansan National Park",
+  address: "Bukhansan National Park",
   description: "Trail running in large park close to city",
   keyword: "Scenary Park",
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   user: user3
 )
 
+file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
+Track3.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+Track3.save!
+
 Track4 = Track.create!(
   name: "Cheonggyecheon Stream Trail",
+  address: "Cheonggyecheon Stream Trail",
   description: "11km below road, passing 22 bridges",
   keyword: "Along the river",
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   user: user4
 )
 
+file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
+Track4.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+Track4.save!
+
 Track5 = Track.create!(
   name: "Yangjaecheon Stream Trail",
+  address: "Yangjaecheon Stream Trail",
   description: "Bike path from Gwacheon to Gangnam",
   keyword: "Along the river",
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   user: user1
 )
+
+file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
+Track5.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+Track5.save!
 
 request1 = Request.create!(
   receiver: user1,

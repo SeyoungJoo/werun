@@ -5,10 +5,10 @@ class CreateTracks < ActiveRecord::Migration[6.0]
       t.string :address
       t.text :description
       t.string :keyword
-      t.float :start_lng
-      t.float :start_lat
-      t.float :end_lng
-      t.float :end_lat
+      t.float :latitude
+      t.string :image
+      t.float :longitude
+
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
