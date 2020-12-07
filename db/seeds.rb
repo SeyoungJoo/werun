@@ -339,19 +339,19 @@ Track1 = Track.create!(
   name: "Yeouido Hangang Park",
   address: "Yeouido Hangang Park",
   description: "Large park on the river, with several km of paths",
-  keyword: "Scenary Park",
+  keyword: "River view Track",
   latitude: 37.56479363210303,
   longitude: 126.93949057607337,
   user: user1
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
-Track1.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+file = File.open(File.join(Rails.root, "/app/assets/images/bike_path.jpg"))
+Track1.image.attach(io: file, filename: 'track1photo.png', content_type: 'image/png')
 Track1.save!
 
 Track2 = Track.create!(
   name: "Olympic Stadium",
-  address: "Olympic Stadium",
+  address: "Olympic Stadium Seoul",
   description: "Sports complex on site of 1988 games, with trails",
   keyword: "Sports complex",
   latitude: 37.56479363210303,
@@ -359,8 +359,8 @@ Track2 = Track.create!(
   user: user2
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
-Track2.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+file = File.open(File.join(Rails.root, "/app/assets/images/olympic_stadium.jpg"))
+Track2.image.attach(io: file, filename: 'track2photo.png', content_type: 'image/png')
 Track2.save!
 
 Track3 = Track.create!(
@@ -373,36 +373,36 @@ Track3 = Track.create!(
   user: user3
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
-Track3.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+file = File.open(File.join(Rails.root, "/app/assets/images/bukhansan.jpg"))
+Track3.image.attach(io: file, filename: 'track3photo.png', content_type: 'image/png')
 Track3.save!
 
 Track4 = Track.create!(
   name: "Cheonggyecheon Stream Trail",
   address: "Cheonggyecheon Stream Trail",
   description: "11km below road, passing 22 bridges",
-  keyword: "Along the river",
+  keyword: "City river trail",
   latitude: 37.56479363210303,
   longitude: 126.93949057607337,
   user: user4
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
-Track4.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+file = File.open(File.join(Rails.root, "/app/assets/images/cheonggye.jpg"))
+Track4.image.attach(io: file, filename: 'track4photo.png', content_type: 'image/png')
 Track4.save!
 
 Track5 = Track.create!(
   name: "Yangjaecheon Stream Trail",
   address: "Yangjaecheon Stream Trail",
   description: "Bike path from Gwacheon to Gangnam",
-  keyword: "Along the river",
+  keyword: "Run next to bike",
   latitude: 37.56479363210303,
   longitude: 126.93949057607337,
   user: user1
 )
 
-file = File.open(File.join(Rails.root, "/app/assets/images/runner15.jpg"))
-Track5.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/png')
+file = File.open(File.join(Rails.root, "/app/assets/images/yangjae.jpg"))
+Track5.image.attach(io: file, filename: 'track5phto.png', content_type: 'image/png')
 Track5.save!
 
 request1 = Request.create!(
