@@ -3,9 +3,10 @@
 }
 
 .runner-card{
+  background-color: $blue;
+  // background: linear-gradient(#16a591, #16a599);
   margin-bottom: 15px;
   background-size: cover;
-  background-position: center;
   height: 180px;
   width: 400px;
   display: flex;
@@ -16,7 +17,29 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5% 25%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+}
+
+.runner-img{
+  height: 100%;
+  width: 70%;
+  border-radius: 5% 25%;
+}
+
+.runner-card-text{
+  width: 30%;
+  padding: 8px;
+}
+
+.runner-card-header{
+  font-size: 20px;
+  margin: 4px;
+}
+
+.runner-card-location{
+  font-weight: lighter;
+  font-size: 15px;
 }
 
 .runner-card:hover {
@@ -34,7 +57,7 @@
   z-index: 1;
   top: 50px;
   width: 400px;
-  height: 650px;
+  height: 610px;
   overflow: auto;
   margin: 8px 16px;
   padding: 40px 32px;
@@ -61,6 +84,5 @@
   object-fit: cover;
   background: cover;
   border-radius: 16px;
-  margin-bottom:20px;
-  margin-left: 5px;
+  margin: 20px 0 20px 5px;
 }
