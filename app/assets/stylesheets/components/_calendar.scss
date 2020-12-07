@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
 }
+.calendar-heading a {
+  text-decoration: none;
+}
 .table p {
   font-size: 0.6em;
   margin-bottom: 0.4em;
@@ -14,4 +17,12 @@ table, th, td {
 }
 .has-events {
   background-color: #72c2cd;
+}
+.calendar-title {
+  font-weight: bold;
+  margin-bottom: 0.7em;
+  font-size: 1.3em;
+}
+.table thead th {
+  text-align: center;
 }
