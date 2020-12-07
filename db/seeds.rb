@@ -44,8 +44,8 @@ user2 = User.new(
   preferred_time: "morning",
   preferred_day: "weekdays",
   pet: false,
-  introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."   
-  
+  introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."
+
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/runner2.jpg"))
@@ -102,7 +102,7 @@ user5 = User.new(
   level: 5,
   email: "justin@gmail.com",
   password: 123456,
-  latitude: 37.549553, 
+  latitude: 37.549553,
   longitude: 127.007225,
   gender: "male",
   preferred_time: "morning",
@@ -123,7 +123,7 @@ user6 = User.new(
   level: 5,
   email: "jason@gmail.com",
   password: 123456,
-  latitude: 37.558330, 
+  latitude: 37.558330,
   longitude: 127.013857,
   gender: "male",
   preferred_time: "morning",
@@ -186,7 +186,7 @@ user9 = User.new(
   level: 3,
   email: "rebecca@gmail.com",
   password: 123456,
-  latitude: 37.559451, 
+  latitude: 37.559451,
   longitude: 127.011076,
   gender: "female",
   preferred_time: "afternoon",
@@ -433,33 +433,38 @@ event1 = Event.create!(
   user1_id: user1.id,
   user2_id: user2.id,
   start_time: Time.now(),
-  end_time: Time.now() + 2.hour
+  end_time: Time.now() + 2.hour,
+  location: "Hangang Park"
 )
 
 event2 = Event.create!(
   user1_id: user1.id,
   user2_id: user4.id,
   start_time: Time.now() - 37.hour,
-  end_time: Time.now() - 35.hour
+  end_time: Time.now() - 35.hour,
+  location: "Seoul forest"
 )
 
 event3 = Event.create!(
   user1_id: user2.id,
   user2_id: user4.id,
   start_time: Time.now() + 28.hour,
-  end_time: Time.now() + 30.hour
+  end_time: Time.now() + 30.hour,
+  location: "Cheonggyecheon"
 )
 
 event4 = Event.create!(
   user1_id: user2.id,
   user2_id: user3.id,
   start_time: Time.now() + 48.hour,
-  end_time: Time.now() + 50.hour
+  end_time: Time.now() + 50.hour,
+  location: "Namsan Park"
 )
 
 event5 = Event.create!(
   user1_id: user3.id,
   user2_id: user1.id,
   start_time: Time.now() + 120.hour,
-  end_time: Time.now() + 121.hour
+  end_time: Time.now() + 121.hour,
+  location: "bukhansan national park"
 )

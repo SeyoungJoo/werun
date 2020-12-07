@@ -1,36 +1,30 @@
-const initEventModal =() => {
+const initEventModal = () => {
+  // Get the modal
+  const modals = document.querySelectorAll(".event-modal");
+  modals.forEach((modal) => {
+    const eventId = modal.dataset.eventId;
+    const btn = document.getElementById(`event-click-${eventId}`);
 
-  const modals = document.getElementsByClassName("event-modal");
-  const clicks = document.getElementsByClassName("event-click");
-  const closes = document.getElementsByClassName("modal-close");
-  const funcs = [];
+    if (btn) {
+      btn.addEventListener("click", (event) => {
+        modal.style.display = "block";
+      });
+    };
 
-  function Modal(num) {
-    return function() {
-      clicks[num].onclick =  function() {
-        modals[num].style.display = "block";
-        console.log(num);
-      };
-      closes[num].onclick = function() {
-        modals[num].style.display = "none";
+    const close_modal = modal.querySelector(".modal-close");
+    if (close_modal) {
+        close_modal.onclick = function() {
+        modal.style.display = "none";
       };
     };
-  };
 
-  for(var i = 0; i < clicks.length; i++) {
-    funcs[i] = Modal(i);
-  };
+    // window.onclick = function(event) {
+    //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   };
+    // };
 
-  for(var j = 0; j < clicks.length; j++) {
-    funcs[j]();
-  };
-
-  window.onclick = function(event) {
-    if (event.target.className == "event-modal") {
-        event.target.style.display = "none";
-    };
-  };
-
+  });
 };
 
 export { initEventModal };
