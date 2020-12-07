@@ -41,9 +41,11 @@
           <% if runner == current_user %>
           <% else %>
            <div class="runner-card"  id="runner-click-<%= runner.id %>"
-           style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>'); "data-marker-id="<%= runner.id %>">
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>'); "
+          data-marker-id="<%= runner.id %>">
             <strong><%= runner.first_name%> <%= runner.last_name%></strong>
             </div>
+
 
           <div class="popup-card" id="popup-card" data-runner-id="<%= runner.id %>">
            <span class="close">x</span>
@@ -51,7 +53,9 @@
               <div class="runner-card-body">
               <strong><%= runner.first_name%> <%= runner.last_name%></strong><br/>
               <%= runner.gender %><br/>
-              <%= runner.address %><br/><br/>
+              🏡 <%= runner.address %><br/>
+              preference: <%= runner.preferred_day %> & <%= runner.preferred_time %><br/><br/>
+             
               <%= runner.introduction%><br/><br/>
               <%=link_to "Buddy request",
                 runner_requests_path(runner),

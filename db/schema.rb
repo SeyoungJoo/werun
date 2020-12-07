@@ -78,10 +78,9 @@ ActiveRecord::Schema.define(version: 2020_12_07_050057) do
     t.string "address"
     t.text "description"
     t.string "keyword"
-    t.float "start_lng"
-    t.float "start_lat"
-    t.float "end_lng"
-    t.float "end_lat"
+    t.float "latitude"
+    t.string "image"
+    t.float "longitude"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_050057) do
     t.string "last_name"
     t.string "address"
     t.integer "age"
-    t.integer "level"
+    t.string "level"
     t.float "longitude"
     t.float "latitude"
     t.string "image"
