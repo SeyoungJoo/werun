@@ -1,0 +1,20 @@
+.card {
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    flex-direction: row;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+  
+.card-img-top {
+    height:100%;
+    width:50%;
+    margin-bottom:20px;
+    border-radius: 1px;
+    margin-left: 5px;
+  }
+
+.card-body h2{
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+  }
