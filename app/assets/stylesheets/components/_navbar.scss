@@ -10,6 +10,11 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.nav-item.active a {
+  color: $dark-blue;
+  font-weight: bold;
+  text-shadow: none;
+}
 
 .img-circle{
   border-radius: 50%;
@@ -67,3 +72,8 @@
   color: $blue;
 }
 
+.badge-primary {
+  background-color: red;
+  position: absolute;
+  margin-left: 30px;
+}

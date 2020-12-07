@@ -3,6 +3,15 @@ class ConversationsController < ApplicationController
   def index
     @conversations = policy_scope(Conversation).order(created_at: :desc)
     @user = current_user
+    @current_tab = "Messages"
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
+
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
+      end
+    end
   end
 
   def show
@@ -14,6 +23,15 @@ class ConversationsController < ApplicationController
       @partner = @conversation.user2
     else
       @partner = @conversation.user1
+    end
+
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
+
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
+      end
     end
 
     authorize @conversation

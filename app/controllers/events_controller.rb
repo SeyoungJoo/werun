@@ -3,6 +3,15 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
 
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
+
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
+      end
+    end
+
     authorize @event
   end
 
