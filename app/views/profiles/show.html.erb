@@ -1,5 +1,5 @@
 <div class="profile-page">
-<div class="container wrapper"> 
+<div class="container wrapper">
   <div class="item1 user-info-box">
       <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
       <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
@@ -19,11 +19,16 @@
         <% events.each do |event| %>
           <div>
             <% if current_user == event.user1 %>
-              <p>Run with <%= event.user2.first_name %>
-                from <%= event.start_time.hour %> to <%= event.end_time.hour %></p>
+              <p class="event-click">Run with <%= event.user2.first_name %></p>
+              <div class="event-modal">
+                <div class="event-content">
+                  <p class="modal-close">X</p>
+                  <p>Running buddy: <%= event.user2.first_name %> <%= event.user2.last_name %></p>
+                  <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
+                </div>
+              </div>
             <% else %>
-              <p>Run with <%= event.user1.first_name %>
-                from <%= event.start_time.hour %> to <%= event.end_time.hour %></p>
+              <p class="event-click">Run with <%= event.user1.first_name %></p>
             <% end %>
           </div>
         <% end %>
@@ -31,7 +36,7 @@
     </div>
 
     <div class="item3 user-buddies">
-    <h4>My Running Buddies</h4>
+    <h4>My Buddies</h4>
     <div class="all-buddies">
     <% @received_requests.each do |request| %>
       <% if request.status == 'Approved' %>

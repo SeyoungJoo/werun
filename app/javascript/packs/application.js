@@ -33,9 +33,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSelect2();
   init_popup();
-
-  // initSweetalert('.buddy-request-button', {
-  //   title: "Do you want to send a buddy request?",
-  // });
 });
-
