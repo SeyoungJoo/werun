@@ -34,7 +34,7 @@
       <% end %>
     </div>
     </div>
-     
+
     <div class="row">
      <div class="col-5 runner-cards">
         <% @runners.each do |runner| %>
@@ -44,7 +44,7 @@
            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=Cloudinary::Utils.cloudinary_url(runner.image.key)%>'); "data-marker-id="<%= runner.id %>">
             <strong><%= runner.first_name%> <%= runner.last_name%></strong>
             </div>
-          
+
           <div class="popup-card" id="popup-card" data-runner-id="<%= runner.id %>">
            <span class="close">x</span>
               <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>

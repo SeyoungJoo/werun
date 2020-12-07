@@ -44,8 +44,8 @@ user2 = User.new(
   preferred_time: "morning",
   preferred_day: "weekdays",
   pet: false,
-  introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."   
-  
+  introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."
+
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/runner2.jpg"))
@@ -433,33 +433,38 @@ event1 = Event.create!(
   user1_id: user1.id,
   user2_id: user2.id,
   start_time: Time.now(),
-  end_time: Time.now() + 2.hour
+  end_time: Time.now() + 2.hour,
+  location: "Hangang Park"
 )
 
 event2 = Event.create!(
   user1_id: user1.id,
   user2_id: user4.id,
   start_time: Time.now() - 37.hour,
-  end_time: Time.now() - 35.hour
+  end_time: Time.now() - 35.hour,
+  location: "Seoul forest"
 )
 
 event3 = Event.create!(
   user1_id: user2.id,
   user2_id: user4.id,
   start_time: Time.now() + 28.hour,
-  end_time: Time.now() + 30.hour
+  end_time: Time.now() + 30.hour,
+  location: "Cheonggyecheon"
 )
 
 event4 = Event.create!(
   user1_id: user2.id,
   user2_id: user3.id,
   start_time: Time.now() + 48.hour,
-  end_time: Time.now() + 50.hour
+  end_time: Time.now() + 50.hour,
+  location: "Namsan Park"
 )
 
 event5 = Event.create!(
   user1_id: user3.id,
   user2_id: user1.id,
   start_time: Time.now() + 120.hour,
-  end_time: Time.now() + 121.hour
+  end_time: Time.now() + 121.hour,
+  location: "bukhansan national park"
 )

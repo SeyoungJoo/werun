@@ -1,7 +1,10 @@
+.event-modal {
+  display: none;
+}
 .event-content {
   position: absolute;
-  left: 40%;
-  top: 50%;
+  left: 45%;
+  top: 65%;
   background-color: $beige;
   border-radius: 4px;
   border: 1px solid black;
