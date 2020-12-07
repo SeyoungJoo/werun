@@ -20,7 +20,7 @@ const initMapbox = () => {
       element.className = 'marker';
       element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'cover';
-      element.style.backgroundRepeat = 'round';
+      // element.style.backgroundRepeat = 'round';
       element.style.width = '50px';
       element.style.height = '50px';
       
@@ -37,11 +37,10 @@ const initMapbox = () => {
        newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
   
     });
-
     
     const openInfoWindow = (mapMarkers) => {
       // Select all cards
-      const cards = document.querySelectorAll('.index-card');
+      const cards = document.querySelectorAll('.card');
       cards.forEach((card, index) => {
         // Put a microphone on each card listening for a mouseenter event
         card.addEventListener('mouseenter', () => {
@@ -55,14 +54,13 @@ const initMapbox = () => {
         });
       });
       }
-  
       openInfoWindow(mapMarkers);
   };
 
-  
   const toggleCardHighlighting = (event) => {
     // We select the card corresponding to the marker's id
     const card = document.querySelector(`[data-marker-id="${event.currentTarget.dataset.markerId}"]`);
+    console.log(event.currentTarget.dataset.markerId);
     // Then we toggle the class "highlight github" to the card
     card.classList.toggle('highlight');
     }
@@ -80,7 +78,6 @@ const initMapbox = () => {
     //calling the method
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-
      // Adding fancy little search bar
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));

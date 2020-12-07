@@ -17,8 +17,8 @@ user1 = User.new(
   level: "fast",
   email: "christine@gmail.com",
   password: 123456,
-  latitude: 37.551824,
-  longitude: 127.006495,
+  latitude: 37.514138201135026,
+  longitude: 127.04819778559019,
   gender: "female",
   preferred_time: "morning",
   preferred_day: "weekdays",
@@ -44,8 +44,8 @@ user2 = User.new(
   preferred_time: "morning",
   preferred_day: "weekdays",
   pet: false,
-  introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."   
-  
+  introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."
+
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/runner2.jpg"))
@@ -61,8 +61,8 @@ user3 = User.new(
   level: "average",
   email: "juyeon@gmail.com",
   password: 123456,
-  latitude: 37.551230,
-  longitude: 127.007551,
+  latitude: 37.50738631538989,
+  longitude: 127.08533508197621,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekdays",
@@ -102,8 +102,8 @@ user5 = User.new(
   level: "average",
   email: "justin@gmail.com",
   password: 123456,
-  latitude: 37.549553, 
-  longitude: 127.007225,
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   gender: "male",
   preferred_time: "morning",
   preferred_day: "weekdays",
@@ -123,8 +123,8 @@ user6 = User.new(
   level: "average",
   email: "jason@gmail.com",
   password: 123456,
-  latitude: 37.558330, 
-  longitude: 127.013857,
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   gender: "male",
   preferred_time: "morning",
   preferred_day: "weekdays",
@@ -165,8 +165,8 @@ user8 = User.new(
   level: "average",
   email: "julia@gmail.com",
   password: 123456,
-  latitude: 37.561512,
-  longitude:  127.017840,
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekend",
@@ -186,8 +186,8 @@ user9 = User.new(
   level: "average",
   email: "rebecca@gmail.com",
   password: 123456,
-  latitude: 37.559451, 
-  longitude: 127.011076,
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekdays",
@@ -223,7 +223,7 @@ user10.save!
 user11 = User.new(
   first_name: "Mizuki",
   last_name: "Saito",
-  address: "Shindang",
+  address: "Seoul Shindang",
   age: 23,
   level: "slow",
   email: "mizuki@gmail.com",
@@ -244,7 +244,7 @@ user11.save!
 user12 = User.new(
   first_name: "Allen",
   last_name: "Huang",
-  address: "shindang",
+  address: "Seoul shindang",
   age: 27,
   level: "average",
   email: "allen@gmail.com",
@@ -265,7 +265,7 @@ user12.save!
 user13 = User.new(
   first_name: "Vikas",
   last_name: "Gupta",
-  address: "shindang",
+  address: "Seoul shindang",
   age: 23,
   level: "fast",
   email: "vikas@gmail.com",
@@ -286,13 +286,13 @@ user13.save!
 user14 = User.new(
   first_name: "Stephanie",
   last_name: "Parks",
-  address: "gangnam",
+  address: "Seoul gangnam",
   age: 27,
   level: "average",
   email: "stephanie@gmail.com",
   password: 123456,
-  latitude: 37.551824,
-  longitude: 127.006495,
+  latitude: 37.56479363210303,
+  longitude: 126.93949057607337,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekdays",
@@ -307,7 +307,7 @@ user14.save!
 user15 = User.new(
   first_name: "Kelly",
   last_name: "Steven",
-  address: "Shindang",
+  address: "Seoul Shindang",
   age: 27,
   level: "slow",
   email: "kelly@gmail.com",
@@ -433,33 +433,38 @@ event1 = Event.create!(
   user1_id: user1.id,
   user2_id: user2.id,
   start_time: Time.now(),
-  end_time: Time.now() + 2.hour
+  end_time: Time.now() + 2.hour,
+  location: "Hangang Park"
 )
 
 event2 = Event.create!(
   user1_id: user1.id,
   user2_id: user4.id,
   start_time: Time.now() - 37.hour,
-  end_time: Time.now() - 35.hour
+  end_time: Time.now() - 35.hour,
+  location: "Seoul forest"
 )
 
 event3 = Event.create!(
   user1_id: user2.id,
   user2_id: user4.id,
   start_time: Time.now() + 28.hour,
-  end_time: Time.now() + 30.hour
+  end_time: Time.now() + 30.hour,
+  location: "Cheonggyecheon"
 )
 
 event4 = Event.create!(
   user1_id: user2.id,
   user2_id: user3.id,
   start_time: Time.now() + 48.hour,
-  end_time: Time.now() + 50.hour
+  end_time: Time.now() + 50.hour,
+  location: "Namsan Park"
 )
 
 event5 = Event.create!(
   user1_id: user3.id,
   user2_id: user1.id,
   start_time: Time.now() + 120.hour,
-  end_time: Time.now() + 121.hour
+  end_time: Time.now() + 121.hour,
+  location: "bukhansan national park"
 )

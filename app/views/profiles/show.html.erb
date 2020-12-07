@@ -5,8 +5,8 @@
       <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
       <div class="user-info-text">
         <p>Age: <%= current_user.age %></p>
-        <p>Location: <%= current_user.address %></p>
-        <p>Email: <%= current_user.email %></p>
+        <p>Location:<br><%= current_user.address %></p>
+        <p>Email:<br><%= current_user.email %></p>
         <p>Running Level: <%= current_user.level %></p>
       </div>
     </div>
@@ -19,16 +19,25 @@
         <% events.each do |event| %>
           <div>
             <% if current_user == event.user1 %>
-              <p class="event-click">Run with <%= event.user2.first_name %></p>
-              <div class="event-modal">
+              <p class="event-click" id="event-click-<%= event.id %>">Run with <%= event.user2.first_name %></p>
+              <div class="event-modal" data-event-id="<%= event.id %>">
                 <div class="event-content">
-                  <p class="modal-close">X</p>
+                  <p class="modal-close text-right">X</p>
                   <p>Running buddy: <%= event.user2.first_name %> <%= event.user2.last_name %></p>
                   <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
+                  <p>Meeting point: <%= event.location %></p>
                 </div>
               </div>
             <% else %>
-              <p class="event-click">Run with <%= event.user1.first_name %></p>
+              <p class="event-click" id="event-click-<%= event.id %>">Run with <%= event.user1.first_name %></p>
+              <div class="event-modal" data-event-id="<%= event.id %>">
+                <div class="event-content">
+                  <p class="modal-close text-right">X</p>
+                  <p>Running buddy: <%= event.user1.first_name %> <%= event.user1.last_name %></p>
+                  <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
+                  <p>Meeting point: <%= event.location %></p>
+                </div>
+              </div>
             <% end %>
           </div>
         <% end %>
@@ -53,7 +62,7 @@
             <p>Email: <%= request.sender.email %></p>
             <p>Running Level: <%= request.sender.level %></p>
             <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
-              <%= submit_tag("chat") %>
+              <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
             <% end %>
           </div>
         </div>
@@ -74,7 +83,7 @@
             <p>Email: <%= request.receiver.email %></p>
             <p>Running Level: <%= request.receiver.level %></p>
             <%= form_with(url: "/runners/#{request.receiver.id}/conversations", method: "post") do %>
-              <%= submit_tag("chat") %>
+              <%= submit_tag("Chat with #{request.receiver.first_name}", class: "chat-button mt-2") %>
             <% end %>
           </div>
         </div>
@@ -100,10 +109,10 @@
                   <p>Current Status : <%= request.status %></p>
                   <div class="d-flex">
                     <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                      <%= submit_tag("Approve", class: "request-btn") %>
+                      <%= submit_tag("Approve", class: "chat-button") %>
                     <% end %>
                     <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                      <%= submit_tag("Reject", :class => "request-btn") %>
+                      <%= submit_tag("Reject", class: "chat-button") %>
                     <% end %>
                   </div>
               </div>
@@ -115,15 +124,14 @@
                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
                 </div>
                 <div>
-                  <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
-                  <!-- <p><%= request.sender.first_name %> <%= request.sender.last_name %></p> -->
-                  <p><%= request.sender.address %></p>
-                  <p>Current Status : <%= request.status %></p>
+                    <p class="font-weight-bold"><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+                    <p><%= request.sender.address %></p>
+                  <p class="mb-1">Current Status : <%= request.status %></p>
                   <%= link_to "Delete this request",
                               request_path(request),
                               method: :delete,
                               data: { confirm: "Are you sure?" },
-                              class: "request-btn" %>
+                              class: "chat-button" %>
                 </div>
               </div>
             <% end %>

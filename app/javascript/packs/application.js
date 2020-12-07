@@ -21,11 +21,10 @@ import "bootstrap";
 import { initConversationCable } from '../channels/conversation_channel';
 import { initMapbox } from '../plugins/map';
 import "../plugins/flatpickr"
-// import flatpickr from "flatpickr";
 import { initFlatpickr } from '../plugins/flatpickr'
-// import { initSweetalert } from '../plugins/init_sweetalert';
 import { initSelect2 } from '../plugins/init_select2';
 import { init_popup } from '../plugins/initcard';
+import { initEventModal } from '../plugins/modal';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
@@ -33,4 +32,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSelect2();
   init_popup();
+  initEventModal();
 });
