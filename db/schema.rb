@@ -77,9 +77,10 @@ ActiveRecord::Schema.define(version: 2020_12_04_013811) do
     t.string "address"
     t.text "description"
     t.string "keyword"
-    t.float "latitude"
-    t.string "image"
-    t.float "longitude"
+    t.float "start_lng"
+    t.float "start_lat"
+    t.float "end_lng"
+    t.float "end_lat"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

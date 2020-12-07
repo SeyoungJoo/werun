@@ -1,0 +1,2 @@
+class ChageColum < ApplicationRecord
+end
