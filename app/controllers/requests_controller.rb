@@ -3,6 +3,15 @@ class RequestsController < ApplicationController
   def index
     @requests = policy_scope(Request).order(created_at: :desc)
     @user = policy_scope(User).order(created_at: :desc)
+
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
+
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
+      end
+    end
   end
 
   def new

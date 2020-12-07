@@ -16,11 +16,28 @@ class TracksController < ApplicationController
         image_url: Cloudinary::Utils.cloudinary_url(track.image.key)
       }
     end
+    @current_tab = "Tracks"
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
 
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
+      end
+    end
   end
 
   def show
     @track = Track.find(params[:id])
+
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
+
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
+      end
+    end
     authorize @track
   end
 
