@@ -1,17 +1,13 @@
-@media (min-width: 768px) {
-  .runner-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
-  }
-  }
+.card-container{
+  gap: 50px;
+}
 
 .runner-card{
-  margin: 8px 0;
+  margin-bottom: 15px;
   background-size: cover;
   background-position: center;
   height: 180px;
-  width: 250px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,29 +15,27 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 5% 25%; 
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.runner-card:hover{
+.runner-card:hover {
   transform: scale(1.05);
-  transition:  0.5s ease;;
+  transition:  0.5s ease;
+  opacity: 50%;
 }
 
 .popup-card{
   background: $white;
   border: 3px solid $blue;
   border-radius: 24px;
-  // background-image: url('card-bg.jpg');
   display: none;
   position: fixed;
   z-index: 1;
-  left: 0;
-  top: 0;
+  top: 50px;
   width: 400px;
   height: 650px;
   overflow: auto;
-  // background-color: $light-blue;
   margin: 8px 16px;
   padding: 40px 32px;
   text-align: center;

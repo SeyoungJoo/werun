@@ -1,9 +1,8 @@
-
 #map {
   position: sticky;
   top: 0;
   border: 2px $blue solid;
- 
+  border-radius: 32px;
 }
 
 .mapboxgl-popup {
@@ -21,9 +20,12 @@
 .marker {
   display: block;
   border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  background-size: 50px;
   border-radius: 50%;
   cursor: pointer;
-  padding: 0;
   }
 
 .marker:hover{

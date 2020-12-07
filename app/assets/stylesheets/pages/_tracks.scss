@@ -4,6 +4,7 @@
     flex-direction: row;
     padding-left: 16px;
     padding-right: 16px;
+    
 }
   
 .card-img-top {
@@ -17,4 +18,9 @@
 .card-body h2{
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
+  }
+
+  .cards :hover {
+    opacity: .6;
+    text-decoration: none;
   }

@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_050057) do
     t.string "last_name"
     t.string "address"
     t.integer "age"
-    t.integer "level"
+    t.string "level"
     t.float "longitude"
     t.float "latitude"
     t.string "image"

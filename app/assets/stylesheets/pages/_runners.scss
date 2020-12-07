@@ -44,7 +44,9 @@
 }
 
 .highlight{
-  border: 3px solid $blue;
+  opacity: 50%;
+  transform: scale(1.05);
+  transition:  0.5s ease;
 }
 
 .find{
