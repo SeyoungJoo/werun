@@ -1,7 +1,21 @@
 class TracksController < ApplicationController
   def index
     @tracks = policy_scope(Track).order(created_at: :desc)
-    
+
+    if params[:query].present?
+      @tracks = Track.search_by_address(params[:query])
+    else
+      @tracks = policy_scope(Track).order(created_at: :desc)
+    end
+
+    @markers = @tracks.geocoded.map do |track|
+      {
+        lat: track.latitude,
+        lng: track.longitude,
+        infoWindow: render_to_string(partial: "shared/info_window_track", locals: { track: track }),
+        image_url: Cloudinary::Utils.cloudinary_url(track.image.key)
+      }
+    end
   end
 
   def show
@@ -19,7 +33,7 @@ class TracksController < ApplicationController
     @track = Track.new(track_params)
 
     if @track.save
-      # redirect_to track_path
+       redirect_to track_path
     else
       render :new
     end
@@ -30,6 +44,6 @@ class TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:name, :description, :keyword)
+    params.require(:track).permit(:name, :description, :keyword, :address)
   end
 end
