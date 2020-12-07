@@ -42,3 +42,28 @@
     font-weight: bold;
   }
 }
+
+.navbar-lewagon2 {
+  justify-content: space-between;
+}
+
+.navbar-lewagon2 .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon2 .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-lewagon2 .nav-link{
+  font-family: $navbar-font;
+  color: $dark-blue;
+  font-size: 18px;
+  padding-left: 5px;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
+}
+
+.navbar-lewagon2 .nav-link:hover{
+  color: $blue;
+}
+
