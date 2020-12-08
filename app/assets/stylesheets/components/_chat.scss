@@ -10,35 +10,61 @@
   position: sticky;
   top: 70px;
   margin-right:10px;
-  padding: 20px 0px;
-  width: 160px;
-  height: 89vh;
+  padding:0px;
+  height: 63vh;
   font-family: $headers-font;
-  background-color: #e7e7e7;
+  background-color: $beige;
+  border-radius: 4px;
+  // border: 1px solid black;
+}
+.chat-bar-title {
+  display: inline-block;
   text-align: center;
+  padding: 1em;
+  width: 100%;
+  background-color: $blue;
+  margin-bottom: 1em;
+  color: $white;
+  border-radius: 4px;
+}
+.chat-bar-title h3 {
+  margin-bottom: 0;
+  font-size: 1.5em;
 }
 
-.chat-bar a { 
-  text-decoration: none; 
+.chat-bar a {
+  text-decoration: none;
   margin-left: 5px;
-  color: gray;
-  opacity: 50%;
+  // color: gray;
+  // opacity: 50%;
 }
 
 .chatbar-line {
   display: flex;
-  padding: 5px 20px;
+  align-items: center;
+  width: 100%;
+  padding: 7px 20px;
+  font-size: 1.5em;
+  margin-bottom: 0.3em;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.chatbar-line a {
+  width: 100%;
+  text-align: center;
+  color: $blue;
 }
 
 .chatbar-line.active {
   display: flex;
-  padding: 5px 20px;
-  background-color: rgba(55, 151, 164, 0.3);
+  padding: 10px 20px;
+  background-color: $beige;
   width: 100%;
+  border: 1px solid $blue;
 }
 
 .chatbar-line.active a {
-  color: white;
+  color: $blue;
 }
 
 .chatroom {
@@ -50,7 +76,7 @@
 .chat-part {
   height: 55vh;
   overflow-y: scroll;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .author {
@@ -105,7 +131,6 @@
   background-clip: padding-box;
   border: 1px solid #ced4da;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -116,45 +141,33 @@
   padding-bottom: 20px;
 }
 
-.buttons {
-  display: flex;
-  width: 95%;
-  grid-gap: 10px;
-  justify-content: flex-end;
-}
-
-.buttons a{
-  color: white;
-}
-
-.submit-button {
+.send-button {
   background-color: $blue;
   border: none;
+  height: 60px;
   border-radius: 4px;
   text-decoration: none;
   color: white;
-  opacity: 50%;
 }
 
-.calendar-button:link {
-  background-color: $blue;
+.calendar-button {
+  background-color: $beige;
   border-radius: 4px;
   text-decoration: none;
-  color: white;
-  opacity: 50%;
+  color: $blue;
   padding: 6px 12px;
   display: inline-block;
   margin: 0;
 }
-
-
-.calendar-button:hover {
-  color: white;
-  text-decoration: none;
-  opacity: 100%;
+.calendar-button a {
+  color: $blue;
 }
 
-.submit-button:hover {
+.calendar-button:hover {
+  font-weight: bold;
+}
+
+.send-button:hover {
   color: white;
   text-decoration: none;
   opacity: 100%;
@@ -164,11 +177,14 @@
   border-radius: 50%;
   background: cover;
   object-fit: cover;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .chat-avatar-small {
   border-radius: 50%;
   background: cover;
   object-fit: cover;
+}
+.type {
+  display: flex;
 }

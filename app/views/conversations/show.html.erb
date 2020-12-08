@@ -1,36 +1,46 @@
-<div class="chat-page">
+<div class="container">
+  <div class="chat-page">
 
-  <div class="chat-bar">  
-    <% @conversations.each do |conversation| %>
-      <% if @user.id == conversation.user1_id %>
-        <div class="chatbar-line <%= 'active' if @current_tab == conversation.user2 %>"> 
-          <%= cl_image_tag conversation.user2.image.key, height: 25, width: 25, crop: :fill, class: "chat-avatar-small" %>
-          <%= link_to conversation.user2.first_name, conversation %> 
-        </div> 
-      <% elsif @user.id == conversation.user2_id %>  
-        <div class="chatbar-line <%= 'active' if @current_tab == conversation.user1 %>">
-          <%= cl_image_tag conversation.user1.image.key, height: 25, width: 25, crop: :fill, class: "chat-avatar-small" %>
-          <%= link_to conversation.user1.first_name, conversation %> 
-        </div> 
-      <% end %> 
-    <% end %> 
-  </div>
+    <div class="chat-bar col-md-3">
+      <div class="chat-bar-title">
+        <h3>Chatting list</h3>
+      </div>
 
-  <div class="chatroom">
-    <div class="chat-part" id="messages" data-chatroom-id="<%= @conversation.id %>">
-      <% @conversation.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <% @conversations.each do |conversation| %>
+        <% if @user.id == conversation.user1_id %>
+          <div class="chatbar-line <%= 'active' if @current_tab == conversation.user2 %>">
+            <%= cl_image_tag conversation.user2.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-small" %>
+            <%= link_to conversation.user2.first_name, conversation %>
+          </div>
+        <% elsif @user.id == conversation.user2_id %>
+          <div class="chatbar-line <%= 'active' if @current_tab == conversation.user1 %>">
+            <%= cl_image_tag conversation.user1.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-small" %>
+            <%= link_to conversation.user1.first_name, conversation %>
+          </div>
+        <% end %>
       <% end %>
+
+      <div class="buttons">
+        <%= link_to "➕ Add schedule to calendar", new_runner_event_path(@partner), class: 'calendar-button' %>
+      </div>
     </div>
-    <div class="form">
-      <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
-        <%= f.text_field :contents, label: false, placeholder: "Type your message here", class: 'type-box', autocomplete: 'off' %>
-        <div class="buttons">
-          <%= f.button :submit, "Send Message", class: 'submit-button' %>
-          <%= link_to "Send Calendar Invite", new_runner_event_path(@partner), class: 'calendar-button' %>
-        </div>
+
+    <div class="chatroom col-md-9">
+      <div class="chat-part" id="messages" data-chatroom-id="<%= @conversation.id %>">
+        <% @conversation.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+        <% end %>
+      </div>
+      <div class="form">
+        <%= simple_form_for [ @conversation, @message ], remote: true, authenticity_token: true do |f| %>
+          <div class="type">
+            <%= f.text_field :contents, label: false, placeholder: "Type your message here", class: 'type-box', autocomplete: 'off' %>
+            <%= f.button :submit, "Send Message", class: 'send-button' %>
+          </div>
         <% end %>
 
+      </div>
     </div>
   </div>
+
 </div>
