@@ -14,7 +14,7 @@ class TracksController < ApplicationController
         lng: track.longitude,
         infoWindow: render_to_string(partial: "shared/info_window_track", locals: { track: track }),
         id: track.id,
-        image_url: helpers.asset_url('small_marker')
+        image_url: asset_url('small_marker.png')
       }
     end
     @current_tab = "Tracks"
