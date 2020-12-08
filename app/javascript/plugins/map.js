@@ -14,7 +14,7 @@ const initMapbox = () => {
     const mapMarkers = []
 
     markers.forEach((marker) => {
-
+      console.log(marker);
       // Create a HTML element for your custom marker
       const element = document.createElement('div');
       element.className = 'marker';

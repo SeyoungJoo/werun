@@ -1,10 +1,41 @@
 <div class="container">
   <h1 class="track-name"><%= @track.name %></h1>
+
   <div class="grid">
-    <div>
+    <div class="description-box">
       <p><%= @track.description %></p>
-      <a href="">Share this track</a>
+      <p class="keyword-title"><i class="fa fa-hashtag" aria-hidden="true"></i>Keywords</p>
+      <% @track.keyword.each do |keyword| %>
+        <div class="track-keywords">
+          <h6 class="one-keyword">#<%= keyword %></h6>
+        </div>
+      <% end %>
+
+      <br>
     </div>
+    
+     <button class="btn btn-md btn-primary buddy-request-button" id="track-click">Share this track</button>
+      <div>
+      <div class="popup-card" id="track-popup-card">
+        <span class="close">x</span>
+        <p>Choose your buddy</p>
+          <% @received_requests.each do |request| %>
+            <% if request.status == 'Approved' %>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+              </label>
+              <%= form_with(url: "/runners/#{request.sender.id}/conversations?", method: "post") do %>
+              <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
+            <% end %>
+            </div>
+            <% else %>
+            <% end %>
+            <% end %>
+            
+      </div>
+    
     <div>
       <%= cl_image_tag @track.image.key, crop: :fill %>
     </div>

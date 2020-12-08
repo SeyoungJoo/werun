@@ -24,7 +24,9 @@ import "../plugins/flatpickr"
 import { initFlatpickr } from '../plugins/flatpickr'
 import { initSelect2 } from '../plugins/init_select2';
 import { init_popup } from '../plugins/initcard';
+import { init_track_popup } from '../plugins/init_trackcard';
 import { initEventModal } from '../plugins/modal';
+
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
@@ -32,5 +34,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSelect2();
   init_popup();
+  init_track_popup();
   initEventModal();
 });

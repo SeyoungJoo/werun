@@ -38,8 +38,9 @@
 }
 
 .request-box{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3em;
 }
 
 .user-avatar{
@@ -84,7 +85,7 @@
 }
 .buddy-info {
   background-color: $beige;
-  padding: 5px;
+  // padding: 5px;
   border-radius: 1em;
   font-size: 0.8rem;
   text-align: center;
@@ -99,22 +100,22 @@
   font-weight: bold;
 }
 .one-sent-request {
-  // border: 1px solid $blue;
-  padding: 0.4em;
-  margin-bottom: 0.3em;
+  padding: 0.6em 1em;
+  margin: 0.3em 1em 0.5em 0.3em;
   border-radius: 0.4em;
   box-shadow: 1px 1px 2px #3797a4;
+  width: 250px;
 }
 .one-sent-request p {
   margin-bottom: 0;
 }
 .one-received-request {
   display: flex;
-  // border: 1px solid $blue;
-  padding: 0.4em;
-  margin: 0.3em 1em 0.3em 0.3em;
+  padding: 0.6em 1em;
+  margin: 0.3em 1em 0.5em 0.3em;
   border-radius: 0.4em;
   box-shadow: 1px 1px 2px #3797a4;
+  width: 350px;
 }
 .one-received-request p {
   margin-bottom: 0;
@@ -130,12 +131,31 @@
   padding: 4px;
   width: 100%;
   margin-right: 10px;
+  margin-top: 5px;
   color: #fff;
   background-color: #3797a4;
   border-color: #3797a4;
   font-weight: bold;
+  border: none;
 }
 .chat-button:hover {
   text-decoration: none;
   color: #fff;
+}
+.request-button {
+  background-color: #3797a4;
+  border: none;
+  padding: 4px 8px;
+  color: white;
+  margin-right: 0.3em;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.request-button:hover {
+  color: white;
+  text-decoration: none;
+}
+.btn-box {
+  display: flex;
+  justify-content: center;
 }
