@@ -92,7 +92,7 @@
     </div>
   </div>
 
-    <h3 class="item4">Requests</h3>
+    <h3 class="item4">Buddy Requests</h3>
     <div class="item5 request-box">
       <div class="request-received-box">
         <h4>Received</h4>
@@ -103,16 +103,15 @@
               <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
               </div>
               <div>
-                <%= link_to "#{request.sender.first_name} #{request.sender.last_name}", "" %>
-                <!-- <p>Buddy request from <strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p> -->
+                  <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
                   <p><%= request.sender.address %></p>
                   <p>Current Status : <%= request.status %></p>
-                  <div class="d-flex">
+                  <div class="btn-box">
                     <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                      <%= submit_tag("Approve", class: "chat-button") %>
+                      <%= submit_tag("Approve", class: "request-button") %>
                     <% end %>
                     <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                      <%= submit_tag("Reject", class: "chat-button") %>
+                      <%= submit_tag("Reject", class: "request-button") %>
                     <% end %>
                   </div>
               </div>
@@ -124,14 +123,17 @@
                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
                 </div>
                 <div>
-                    <p class="font-weight-bold"><%= request.sender.first_name %> <%= request.sender.last_name %></p>
-                    <p><%= request.sender.address %></p>
+                  <p class="font-weight-bold"><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+                  <p><%= request.sender.address %></p>
                   <p class="mb-1">Current Status : <%= request.status %></p>
-                  <%= link_to "Delete this request",
-                              request_path(request),
-                              method: :delete,
-                              data: { confirm: "Are you sure?" },
-                              class: "chat-button" %>
+                  <div class="btn-box">
+                    <%= link_to "Delete this request",
+                                request_path(request),
+                                method: :delete,
+                                data: { confirm: "Are you sure?" },
+                                class: "request-button " %>
+                  </div>
+
                 </div>
               </div>
             <% end %>

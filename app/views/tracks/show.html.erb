@@ -1,9 +1,18 @@
 <div class="container">
   <h1 class="track-name"><%= @track.name %></h1>
+
   <div class="grid">
-    <div>
+    <div class="description-box">
       <p><%= @track.description %></p>
-      <a href="">Share this track</a>
+      <p class="keyword-title"><i class="fa fa-hashtag" aria-hidden="true"></i>Keywords</p>
+      <% @track.keyword.each do |keyword| %>
+        <div class="track-keywords">
+          <h6 class="one-keyword">#<%= keyword %></h6>
+        </div>
+      <% end %>
+
+      <br>
+      <a href="" class="share-btn"><i class="fa fa-share-square" aria-hidden="true"></i> Share this track</a>
     </div>
     <div>
       <%= cl_image_tag @track.image.key, crop: :fill %>
