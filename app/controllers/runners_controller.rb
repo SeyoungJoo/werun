@@ -1,11 +1,27 @@
 class RunnersController < ApplicationController
   def index
     @runners = policy_scope(User).order(created_at: :desc)
-      if params[:query].present?
-        @runners = User.search_by_address(params[:query])
-      else
-        @runners = policy_scope(User).order(created_at: :desc)
-      end
+    if params[:address].present?
+      address_query = "address ILIKE :query"
+      @runners = @runners.where(address_query, query: "%#{params[:address_query]}%")
+    end
+
+    if params[:gender].present?
+      @runners = @runners.where(gender: params[:gender])
+    end
+
+    if params[:level].present?
+      @runners = @runners.where(level: params[:level])
+    end
+
+    if params[:preferred_day].present?
+      @runners = @runners.where(preferred_day: params[:preferred_day])
+    end
+
+    if params[:preferred_time].present?
+      @runners = @runners.where(preferred_time: params[:preferred_time])
+    end
+
 
     @markers = @runners.geocoded.map do |runner|
         if runner == current_user
