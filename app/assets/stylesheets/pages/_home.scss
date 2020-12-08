@@ -3,7 +3,6 @@
   padding: 10px;
   border: none;
   margin-right: 16px;
-  font-size: 17px;
 }
 
 .slogan {
@@ -17,8 +16,8 @@
 }
 
 .discover-button {
-  background-color: $blue;
-  color: white;
+  background-color: $beige;
+  color: $blue;
   padding: 16px 32px;
   border-radius: 8px;
   text-decoration: none;
@@ -27,8 +26,8 @@
 }
 
 .discover-button:hover{
-  background-color:beige;
-  color: $blue;
+  background-color: $blue;
+  color: $beige;
   text-decoration: none;
 }
 
