@@ -28,39 +28,35 @@
     </div>
 
     <div class="row">
-     <div class="col-5 runner-cards">
+      <div class="col-5 runner-cards">
         <% @runners.each do |runner| %>
           <% if runner == current_user %>
           <% else %>
-           <div class="runner-card"  id="runner-click-<%= runner.id %>"
-          data-marker-id="<%= runner.id %>">
-            
-            <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-img" %>
+           <div class="runner-card"  id="runner-click-<%= runner.id %>" data-marker-id="<%= runner.id %>">
+             <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-img" %>
            <div class="runner-card-text">
-            <p class="runner-card-header"><%= runner.first_name%> <%= runner.last_name%></p>
-            <p class="runner-card-location"><i class="fas fa-map-marker-alt"></i>  <%= runner.address %></p>
-            </div>
-            </div>
+             <p class="runner-card-header"><%= runner.first_name%> <%= runner.last_name%></p>
+             <p class="runner-card-location"><i class="fas fa-map-marker-alt"></i>  <%= runner.address %></p>
+           </div>
+      </div>
 
-
-          <div class="popup-card" id="popup-card" data-runner-id="<%= runner.id %>">
-           <span class="close">x</span>
-              <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
-              <div class="runner-card-body">
-              <strong><%= runner.first_name%> <%= runner.last_name%></strong><br/>
-              <%= runner.gender %><br/>
-              🏡 <%= runner.address %><br/>
-              preference: <%= runner.preferred_day %> & <%= runner.preferred_time %><br/><br/>
-             
-              <%= runner.introduction%><br/><br/>
-              <%=link_to "Buddy request",
-                runner_requests_path(runner),
-                method: :post,
-                data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
-                class: "btn btn-md btn-primary buddy-request-button"
-              %>
-              </div>
+      <div class="popup-card" id="popup-card" data-runner-id="<%= runner.id %>">
+        <span class="close">x</span>
+        <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
+        <div class="runner-card-body">
+          <strong><%= runner.first_name%> <%= runner.last_name%></strong><br/>
+          <%= runner.gender %><br/>
+          🏡 <%= runner.address %><br/>
+          preference: <%= runner.preferred_day %> & <%= runner.preferred_time %><br/><br/>
+          <%= runner.introduction%><br/><br/>
+          <%=link_to "Buddy request",
+            runner_requests_path(runner),
+            method: :post,
+            data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
+            class: "btn btn-md btn-primary buddy-request-button"
+          %>
         </div>
+      </div>
           <% end %>
         <% end %>
      </div>

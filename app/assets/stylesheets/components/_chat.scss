@@ -63,13 +63,13 @@
   margin-right: 50px;
 }
 
-
 .current-user {
   background-color:rgba(55, 151, 164, 0.2);;
   border-radius: 10px;
   color: $blue;
   padding: 8px 8px 0 8px;
   margin-bottom: 16px;
+  margin-right: 10px;
 }
 
 .other-user-container {
@@ -134,6 +134,7 @@
   text-decoration: none;
   color: white;
   opacity: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .calendar-button:link {
@@ -145,6 +146,7 @@
   padding: 6px 12px;
   display: inline-block;
   margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 

@@ -17,7 +17,7 @@
   </div>
 
   <div class="chatroom">
-    <div class="chat-part" id="messages" data-chatroom-id="<%= @conversation.id %>">
+    <div class="chat-part" id="messages" data-current-user-id="<%= current_user.id %>" data-chatroom-id="<%= @conversation.id %>">
       <% @conversation.messages.each do |message| %>
       <%= render "messages/message", message: message %>
       <% end %>
