@@ -14,8 +14,8 @@ class TracksController < ApplicationController
         lng: track.longitude,
         infoWindow: render_to_string(partial: "shared/info_window_track", locals: { track: track }),
         id: track.id,
-        image_url: helpers.asset_url('small_marker')
-      }
+        image_url: Cloudinary::Utils.cloudinary_url(track.image.key)
+    }
     end
     @current_tab = "Tracks"
     @received_requests = current_user.received_requests

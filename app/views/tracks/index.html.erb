@@ -7,7 +7,7 @@
 
           <% @tracks.each do |track| %>
             <%= link_to(track_path(track.id)) do%>
-            <div class="track-card">
+            <div class="track-card" data-marker-id="<%= track.id %>">
               <%= cl_image_tag track.image.key, crop: :fill, class: "track-card-img" %>
 
               <div class="card-body">
