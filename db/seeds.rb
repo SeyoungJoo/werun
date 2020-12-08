@@ -336,12 +336,12 @@ conversation2 = Conversation.create!(
 )
 
 Track1 = Track.create!(
-  name: "Yeouido Hangang Park",
-  address: "Yeouido Hangang Park",
-  description: "Large park on the river, with several km of paths",
-  keyword: "River view Track",
-  latitude: 37.56479363210303,
-  longitude: 126.93949057607337,
+  name: "Han River Paths",
+  address: "330, Yeouidong-ro, Yeongdeungpo-gu, Seoul, Republic of Korea",
+  description: "Running along the Han River (Han-Gang) is one of the most popular places to run in Seoul. It’s a wonderful greenbelt, with miles of flat paths between numerous bridges, with lots of options for loops. There are great views of the river, and it is possible to cross over most of the bridges spanning this route. The Banpo Bridge is beautifully lit at night. We offfer a couple of options here. To stay mainly on the south side, in Riverside Park (Banpo Hangang), the longest stretch is 5k (3 miles) between the Dongiak Bridge to the west and the Dongho Bridge to the East. It’s a 10k if you’d like to do the full out and back! Take a quick detour over to Seoraeseom, an artificially created island, with some nice paths (and refresher spots). Alternatively, a good loop is starting on the north side, near the Ichon Station, at Hangang Bridge. Run 3.2 km (2 miles) east to the Banpo Bridge, cross it over to the south side, and turn left, heading west about 1.6k (1 mile) to the Dongiak Bridge, to the end.",
+  keyword: ['Along the Water', 'Iconic', 'Multi-Use Trails'],
+  latitude: 37.528354,
+  longitude: 126.933920,
   user: user1
 )
 
@@ -351,11 +351,11 @@ Track1.save!
 
 Track2 = Track.create!(
   name: "Olympic Stadium",
-  address: "Olympic Stadium Seoul",
-  description: "Sports complex on site of 1988 games, with trails",
-  keyword: "Sports complex",
-  latitude: 37.56479363210303,
-  longitude: 126.93949057607337,
+  address: "424, Olympic-ro, Songpa-gu, Seoul, Republic of Korea",
+  description: "Situated in the southwest part of Seoul, Olympic Park, site of the 1988 summer games, still boasts six Olympic venues and 197 original sculptures set among the grounds. It’s a center for walking and running, with several marked paths of varying length. See the interactive map link. Centering on Mongchon Forest trails, enjoy Lakeside Lane, Fortress Lane, Memory Lane, Lovers’ Lane and Youth Lane, with lengths of 1.3 km to 4.3 km. Several are quite hilly! Youth Lane is especially meant for runners. Enjoy running though World Peace Gate, run around 88 Lake, and wonderful flower gardens.",
+  keyword: ['Multi-Use Trails'],
+  latitude: 37.519900,
+  longitude: 127.122485,
   user: user2
 )
 
@@ -365,11 +365,11 @@ Track2.save!
 
 Track3 = Track.create!(
   name: "Bukhansan National Park",
-  address: "Bukhansan National Park",
-  description: "Trail running in large park close to city",
-  keyword: "Scenary Park",
-  latitude: 37.56479363210303,
-  longitude: 126.93949057607337,
+  address: "64, Daeseomun-gil, Eunpyeong-gu, Seoul, Republic of Korea",
+  description: "This is a large national park north of Seoul, covering 78 square km. It’s a great place for a walk, hike, or trail run. Most of the trails are wooded, with varying surfaces. There are thousand-year-old temples, huge seated Buddhas carved into the sides of mountains, the Pukhansanseong (“Northern Mountain Fortress”), waterfalls, and all manner of exotic birds, surrounded by gorges and granite peak. There are great views, as well. There are several signed paths that are great for trail running. From the south-area entrance at Ui-dong (nearest to the city), you can select between a 9.1-K north-south trail (“Traversing Course”), an east-west 6.5-K (“Crossing Course”), or circular 7.1- and 8.1-K trails, among others. A more challenging option is to attempt Bukhansan Mountain, the highest peak of the city. It’s a challenging ascent but there are great views. Start at Bukhansanseong Hiking Support Center near Gupabal Station.",
+  keyword: ['Hilly', 'Trail Running'],
+  latitude: 37.654317,
+  longitude: 126.948526,
   user: user3
 )
 
@@ -379,11 +379,11 @@ Track3.save!
 
 Track4 = Track.create!(
   name: "Cheonggyecheon Stream Trail",
-  address: "Cheonggyecheon Stream Trail",
-  description: "11km below road, passing 22 bridges",
-  keyword: "City river trail",
-  latitude: 37.56479363210303,
-  longitude: 126.93949057607337,
+  address: "1, Cheonggyecheon-ro, Jongno-gu, Seoul, Republic of Korea",
+  description: "Cheonggyecheon Stream is a 10.9 km path, part of a major urban renewal project opened in 2005. It’s a great spot to walk or run right through the heart of the city. Much of the path is below the roadway, passing under 22 bridges, making for a tranquil spot among the bustle. The trail starts at the large Cheonggye Plaza, a bustling shopping and nightlife area, and runs east, passing near some of Seoul’s important sites, such as Deoksugung Palace, Seoul Plaza, the Sejong Center, Insa-dong Street, Changdeokgung Palace, and Changgyeonggung Palace, making for a good ‘runseeing tour’. It is about 3km (2 miles) to Dongdaemun Design Plaza, and about 6km to Yongdu. The waterfront area has become a popular area for culture and nightlife. Candle Fountain,  features magnificent lighting fixtures and a 4m high, two-tiered waterfall.",
+  keyword: ['Along the Water', 'Multi-Use Trails'],
+  latitude: 37.569118,
+  longitude: 126.978242,
   user: user4
 )
 
@@ -393,17 +393,73 @@ Track4.save!
 
 Track5 = Track.create!(
   name: "Yangjaecheon Stream Trail",
-  address: "Yangjaecheon Stream Trail",
-  description: "Bike path from Gwacheon to Gangnam",
-  keyword: "Run next to bike",
-  latitude: 37.56479363210303,
-  longitude: 126.93949057607337,
+  address: "40, Baumoe-ro 12-gil, Seocho-gu, Seoul, Republic of Korea",
+  description: "The Yangjaecheon stream is one of the tributaries of the Hangang River. A bike path runs from Gwacheon to Gangnam, which is great for running as well. It’s about 7 km one way between the Seoul Racehorse Park in the south, to Gangnam, near the Hangnyeoul Station. Much of the trail along the stream has a pleasant canopy and is below the road. There are paths along both sides of the water, in sections, and also separated bike and pedestrian paths, in sections. The road between Dogok-dong to Daechi is lined with around 830 stately metasequoia trees. It’s also pleasant at night, as the trees are backlit by the streetlights provide a wonderfully romantic atmosphere.",
+  keyword: ['Along the Water', 'Multi-Use Trails'],
+  latitude: 37.468399,
+  longitude: 127.031000,
   user: user1
 )
 
 file = File.open(File.join(Rails.root, "/app/assets/images/yangjae.jpg"))
-Track5.image.attach(io: file, filename: 'track5phto.png', content_type: 'image/png')
+Track5.image.attach(io: file, filename: 'track5photo.png', content_type: 'image/png')
 Track5.save!
+
+Track6 = Track.create!(
+  name: "Namsan Park",
+  address: "231, Samil-daero, Jung-gu, Seoul, Republic of Korea",
+  description: "900-foot high South Mountain (Namsan Park) is an oasis of green, right in the center of Seoul.  There are about 10 km of paved paths, offering multiple running options. For those who want a challenge, there are five ways to get to the top. The best option the 2k climb from the Seoul Arts center to the Seoul Tower, at the summit. There are great views. A good place to start is the Sungnyemun Gate (also known as Namdaemun Gate), a pagoda-style gate that was one of the old entrances to the city and dates back to the 14th Century. From there, turn left onto Sowollo road and continue until the base of Namsan mountain, about 2km.  The paved mountain run starts there, a steep 1km climb to the top.  One can then run back down the other side of the mountain, with viewing decks along the way, to do a loop.",
+  keyword: ['Great Views', 'Hilly', 'Iconic', 'Trail Running'],
+  latitude: 37.550883,
+  longitude: 126.990931,
+  user: user1
+)
+
+file = File.open(File.join(Rails.root, "/app/assets/images/namsan.jpeg"))
+Track6.image.attach(io: file, filename: 'track6photo.png', content_type: 'image/png')
+Track6.save!
+
+Track7 = Track.create!(
+  name: "Changdeokgung Secret Garden",
+  address: "99, Yulgok-ro, Jongno-gu, Seoul, Republic of Korea",
+  description: "Changdeokgung, also known as Changdeokgung Palace, is set within a large park in Jongno-gu, Seoul, South Korea. It is one of the “Five Grand Palaces” built by the kings of the Joseon Dynasty. The garden is open to the public and offers some lovely running over nearly 80 acres of trails. Since the garden is a major tourist attraction, it is best avoided during the peak hours. Note: fee required. One can put together a good 5 km on the garden trails and palace grounds.",
+  keyword: ['Iconic'],
+  latitude: 37.579968,
+  longitude: 126.991592,
+  user: user2
+)
+
+file = File.open(File.join(Rails.root, "/app/assets/images/changdeokgung.jpeg"))
+Track7.image.attach(io: file, filename: 'track7photo.png', content_type: 'image/png')
+Track7.save!
+
+Track8 = Track.create!(
+  name: "Ansan Trail",
+  address: "90, Yeonhui-ro 32-gil, Seodaemun-gu, Seoul, Republic of Korea",
+  description: "This is a hilly run with rewarding views of the city from the summit. It’s one of the better options near the city to get some trail running in, although it is possible to do it in regular running shoes. The summit is at 900 feet. Access can be from Great West Gate, or Yonsei University.",
+  keyword: ['Great Views', 'Hilly', 'Trail Running'],
+  latitude: 37.579296,
+  longitude: 126.941532,
+  user: user1
+)
+
+file = File.open(File.join(Rails.root, "/app/assets/images/ansan.jpeg"))
+Track8.image.attach(io: file, filename: 'track8photo.png', content_type: 'image/png')
+Track8.save!
+
+Track9 = Track.create!(
+  name: "World Cup Park",
+  address: "162, Hangangnanji-ro, Mapo-gu, Seoul, Republic of Korea",
+  description: "World Cup (Millennium) Park is built on the site of a former landfill in the Sangamdong-gil section of Seoul. This is a great spot for a run, as there are five interconnected parks adjacent to the World Cup stadium. There are miles of trails above the Han River, and there are great views from Haneul (Sky) Park. Run up the 291 stairs! One can put together a run of 5-8 miles without overlapping the trails. It’s about 5 miles around the ‘perimeter’ of the area.",
+  keyword: ['Parks', 'Multi-Use Trails'],
+  latitude: 37.565286,
+  longitude: 126.889372,
+  user: user8
+)
+
+file = File.open(File.join(Rails.root, "/app/assets/images/worldcup.png"))
+Track9.image.attach(io: file, filename: 'track9photo.png', content_type: 'image/png')
+Track9.save!
 
 request1 = Request.create!(
   receiver: user1,
@@ -466,5 +522,12 @@ event5 = Event.create!(
   user2_id: user1.id,
   start_time: Time.now() + 120.hour,
   end_time: Time.now() + 121.hour,
-  location: "bukhansan national park"
+  location: "Bukhansan national park"
 )
+
+puts "#{Request.count} - requests"
+puts "#{Message.count} - messages"
+puts "#{Conversation.count} - conversations"
+puts "#{Track.count} - tracks"
+puts "#{Event.count} - events"
+puts "#{User.count} - users"
