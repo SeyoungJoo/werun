@@ -1,7 +1,7 @@
 <div class="map-page">
 
   <div class="container card-container">
-    <h1 class="header-style">Tracks Near Me</h1>
+    <h1 class="header-style"><i class="fas fa-map-marked-alt"></i> Tracks Near Me</h1>
     <div class="row">
       <div class="cards col-md-8 tracks-list">
 
@@ -9,6 +9,7 @@
             <%= link_to(track_path(track.id)) do%>
             <div class="track-card">
               <%= cl_image_tag track.image.key, crop: :fill, class: "track-card-img" %>
+
               <div class="card-body">
                 <h3><%= track.name%></h3>
                 <% track.keyword.each do |keyword| %>

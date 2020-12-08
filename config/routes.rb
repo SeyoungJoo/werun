@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resource :profile, only: [:edit, :update, :show]
 
   resources :tracks, only: [:index, :show, :new, :create]
+
+  put '/track/:id/like', to: 'traks#like', as: 'like'
 end

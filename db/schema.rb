@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2020_12_08_022136) do
     t.string "location"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "track_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["track_id"], name: "index_likes_on_track_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "contents"
     t.bigint "user_id", null: false
@@ -113,6 +122,8 @@ ActiveRecord::Schema.define(version: 2020_12_08_022136) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "tracks"
+  add_foreign_key "likes", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "tracks", "users"
