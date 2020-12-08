@@ -13,6 +13,11 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :tracks, dependent: :destroy
 
+  has_many :likes, dependent: :destroy
+  def likes?(track)
+    track.likes.where(user_id: id).any?
+  end
+
   has_one_attached :image
 
   geocoded_by :address
