@@ -17,12 +17,13 @@
         <li class="nav-item <%= 'active' if @current_tab == 'Messages' %>">
           <%= link_to "Messages", conversations_path, class: "nav-link" %>
         </li>
-          <li class="nav-item <%= 'active' if @current_tab == 'Calendar' %>">
-          <%= link_to "Calendar", profile_path,class: "nav-link" %>
-        </li>
          <li class="nav-item <%= 'active' if @current_tab == 'Tracks' %>">
           <%= link_to "Tracks", tracks_path,class: "nav-link" %>
         </li>
+          <li class="nav-item <%= 'active' if @current_tab == 'Calendar' %>">
+          <%= link_to "Profile", profile_path,class: "nav-link" %>
+        </li>
+        
         <li class="nav-item dropdown">
          <% if current_user.image.attached? %>
           <% if @pending_requests.count == 0 %>

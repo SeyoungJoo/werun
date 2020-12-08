@@ -1,13 +1,16 @@
 <div class="profile-page">
 <div class="container wrapper">
+  <%# <h2 class="mydashboard">My Dashboard</h2> %>
   <div class="item1 user-info-box">
       <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
       <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
       <div class="user-info-text">
-        <p>Age: <%= current_user.age %></p>
-        <p>Location:<br><%= current_user.address %></p>
-        <p>Email:<br><%= current_user.email %></p>
-        <p>Running Level: <%= current_user.level %></p>
+        <p><%= current_user.age %> years old </p>
+        <p><i class="fas fa-venus-mars"></i> <%= current_user.gender %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= current_user.address %></p>
+        <p><i class="far fa-envelope"></i> <%= current_user.email %></p>
+        <p><i class="fas fa-running"></i> I'm a <%= current_user.level %> runner</p>
+        <p><i class="far fa-calendar-check"></i> <%= current_user.preferred_day %> / <%= current_user.preferred_time %> </p>
       </div>
     </div>
 
