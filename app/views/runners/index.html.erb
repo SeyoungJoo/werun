@@ -3,28 +3,39 @@
 <div class="container card-container">
   <div class="text-header">
    <h1 class="header-style"><i class="fas fa-search-location"></i>Find out other Runners near you</h1>
+    
+    <div class="form-row mb-5">
+      <%= form_tag runners_path, class:"form-inline", method: :get do%>
 
-    <div class="form-row">
- 
-    <%= form_tag runners_path, class:"form-inline mb-5 mr-0", method: :get do%>
-      <div class="form-group col-md-3">
-        <%= select_tag(:level, options_for_select([["Running Pace", ""],["Slow", "slow"],["Average", "average"],["Fast", "fast"]], params[:level]), class:"form-control form-group option-form mr-2")%>
-      </div>
+        <div>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Address",
+          autocomplete: 'off'
+        %>
+        </div>
+        
+        <div>
+        <%= select_tag(:level, options_for_select([["Running Pace", ""],["Slow", "slow"],["Average", "average"],["Fast", "fast"]], params[:level]), class:"form-control  option-form mr-1")%>
+        </div>
+    
+        <div>
+        <%= select_tag(:gender, options_for_select([["Gender", ""],["Female", "female"],["Male", "male"]], params[:gender] ), class:"form-control option-form mr-1 ") %>
+        </div>
 
-      <div class="form-group col-md-2">
-        <%= select_tag(:gender, options_for_select([["Gender", ""],["Female", "female"],["Male", "male"]], params[:gender] ), class:"form-control form-group option-form mr-2") %>
-      </div>
+        <div>
+        <%= select_tag(:preferred_day, options_for_select([["Day", ""], ["Weekdays", "weekdays"],["Weekend", "weekend"]], params[:preferred_day] ), class:"form-control option-form mr-1") %>
+        </div>
 
-      <div class="form-group col-md-3">
-        <%= select_tag(:preferred_day, options_for_select([["preferred_day", ""], ["Weekdays", "weekdays"],["Weekend", "weekend"]], params[:preferred_day] ), class:"form-control form-group option-form mr-2") %>
-      </div>
+        <div>
+        <%= select_tag(:preferred_time, options_for_select([["Time", ""], ["Morning", "morning"],["Afternoon", "afternoon"],["Evening", "evening"]], params[:preferred_time] ), class:"form-control option-form mr-2") %>
+        </div>
 
-      <div class="form-group col-md-3">
-        <%= select_tag(:preferred_time, options_for_select([["preferred_time", ""], ["Morning", "morning"],["Afternoon", "afternoon"],["Evening", "evening"]], params[:preferred_time] ), class:"form-control form-group option-form mr-4") %>
-      </div>
-
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+        <div>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
 
     <div class="row">
