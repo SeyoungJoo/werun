@@ -13,7 +13,13 @@
                 <h4><%= track.keyword%></h4>
                 <br>
                 <%= track.description%>
-             </div>
+            </div>
+            <% if track.liked?(current_user) %>
+              <%= button_to "Like", tracks_path, method: "put", disabled: true %>
+            <% else %>
+              <%= button_to "Like", tracks_path, method: "put"%>
+            <% end %>
+            
             </div>
           <% end %>
           <% end %>

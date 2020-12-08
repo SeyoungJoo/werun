@@ -48,6 +48,7 @@ class TracksController < ApplicationController
     authorize @track
   end
 
+
   def create
     @track = Track.new(track_params)
 
@@ -60,6 +61,10 @@ class TracksController < ApplicationController
     authorize @track
   end
 
+  def like 
+    @track = Track.find(params[:id])
+    Like.create(user_id: current_user.id, track_id: @track.id)
+  end
   private
 
   def track_params

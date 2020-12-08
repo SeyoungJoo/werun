@@ -25,5 +25,6 @@ Rails.application.routes.draw do
 
   resources :tracks, only: [:index, :show, :new, :create]
 
-  put '/track/:id/like', to: 'traks#like', as: 'like'
+
+  put '/track/:id/like', to: 'tracks#like', as: 'like'
 end
