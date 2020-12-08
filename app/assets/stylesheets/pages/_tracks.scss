@@ -1,27 +1,51 @@
-.card {
+.track-card {
     background-color: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     flex-direction: row;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-right: 16px;
-    padding-bottom: 16px;
+    display: flex;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.3em
 }
-  
-.card-img-top {
-    height:100%;
-    width:50%;
-    margin-bottom:20px;
-    border-radius: 1px;
-    margin-left: 5px;
+.tracks-list {
+  padding-left: 0;
+}
+
+.track-card-img {
+    height: 10em;
+    width: 18em;
+    // margin-left: 1em;
+    border-radius: 0.3em
   }
 
-.card-body h2{
+.card-body {
+  padding: 10px 20px;
+}
+
+.card-body h3 {
     font-weight: bold;
-    font-family: "Montserrat", sans-serif;
+    font-family: $body-font;
   }
 
   .cards :hover {
     opacity: .6;
     text-decoration: none;
+  }
+
+.track-keywords {
+  display: inline;
+}
+
+.one-keyword {
+  display: inline-block;
+  padding: 7px;
+  background-color: $blue;
+  color: white;
+  margin: 2px;
+  border-radius: 4px;
+}
+  .highlight{
+    opacity: 50%;
+    transform: scale(1.05);
+    transition:  0.5s ease;
   }

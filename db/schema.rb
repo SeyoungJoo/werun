@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_050057) do
+ActiveRecord::Schema.define(version: 2020_12_08_022136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2020_12_07_050057) do
     t.string "location"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "track_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["track_id"], name: "index_likes_on_track_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "contents"
     t.bigint "user_id", null: false
@@ -77,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_050057) do
     t.string "name"
     t.string "address"
     t.text "description"
-    t.string "keyword"
+    t.text "keyword", default: [], array: true
     t.float "latitude"
     t.string "image"
     t.float "longitude"
@@ -113,6 +122,8 @@ ActiveRecord::Schema.define(version: 2020_12_07_050057) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "tracks"
+  add_foreign_key "likes", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "tracks", "users"
