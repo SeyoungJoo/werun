@@ -8,7 +8,7 @@
   background-color: #73c3cd;
   border-radius: 4px;
   // border: 1px solid black;
-  padding: 10px;
+  padding: 10px 20px;
   font-family: $body-font;
   font-size: 1.4em;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -19,4 +19,10 @@
 }
 .event-click {
   cursor: pointer;
+}
+.modal-close.text-right {
+  margin-bottom: 0;
+}
+.event-content p {
+  margin-bottom: 0.2em;
 }

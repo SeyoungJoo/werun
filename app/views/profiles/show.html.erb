@@ -25,6 +25,7 @@
               <div class="event-modal" data-event-id="<%= event.id %>">
                 <div class="event-content">
                   <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
+                  <h5 class="text-center mb-3">Title</h5>
                   <p>Running buddy: <%= event.user2.first_name %> <%= event.user2.last_name %></p>
                   <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
                   <p>Meeting point: <%= event.location %></p>
@@ -35,6 +36,7 @@
               <div class="event-modal" data-event-id="<%= event.id %>">
                 <div class="event-content">
                   <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
+                  <h5 class="text-center mb-3">Title</h5>
                   <p>Running buddy: <%= event.user1.first_name %> <%= event.user1.last_name %></p>
                   <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
                   <p>Meeting point: <%= event.location %></p>
@@ -125,7 +127,7 @@
                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
                 </div>
                 <div>
-                  <p class="font-weight-bold"><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+                  <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
                   <p><%= request.sender.address %></p>
                   <p class="mb-1">Current Status : <%= request.status %></p>
                   <div class="btn-box">
