@@ -32,6 +32,7 @@ class TracksController < ApplicationController
   def show
     @track = Track.find(params[:id])
     @received_requests = current_user.received_requests
+    @sent_requests = current_user.sent_requests
     @pending_requests =[]
 
     @received_requests.each do |request|
