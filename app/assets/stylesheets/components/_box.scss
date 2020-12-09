@@ -6,7 +6,7 @@
 .wrapper{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
+  grid-column-gap: 50px;
   grid-row-gap: 10px;
   grid-auto-rows: auto auto auto;
 }
@@ -17,6 +17,7 @@
 }
 
 .item2 {
+  margin-top: 2em;
   grid-column: 2 / 4;
   grid-row: 1;
 }
@@ -49,33 +50,46 @@
   object-fit: cover;
 }
 
+.mydashboard{
+  font-family: $logo-font;
+  color: $blue;
+}
+
 .user-info-box {
+  margin-top: 1em;
   background-color: $blue;
-  height: 450px;
+  height: 500px;
   text-align: center;
   padding: 16px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .user-info-text {
   background-color: $beige;
   border-radius: 0.5em;
-  padding: 0.7em;
+  padding: 1.2em 0.7em;
   margin: 0.3em;
 }
 .user-info-text p {
-  margin-bottom: 0.1em;
+  margin-bottom: 0.2em;
 }
 .user-info-name {
   text-align: center;
-  margin: 0.5em 0.3em;
+  margin: 0.7em 0.3em;
+  opacity: 80%;
 }
 .user-buddies {
+  width:150px;
   margin-top: 1em;
 }
-.user-buddies h4 {
+.mybuddies{
   text-align: center;
   margin-bottom: 1em;
+  margin-top: 0.5em;
+  font-size: 23px;
+  font-family: $headers-font;
 }
+
 .one-buddy {
   text-align: center;
   padding: 10px;

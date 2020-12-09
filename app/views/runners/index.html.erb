@@ -5,12 +5,12 @@
    <h1 class="header-style"><i class="fas fa-search-location"></i>Find out other Runners near you</h1>
     
     <div class="form-row mb-5">
-      <%= form_tag runners_path, class:"form-inline", method: :get do%>
+      <%= form_tag runners_path, class:"form-inline mt-3 mb-3", method: :get do%>
 
         <div>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control mr-1",
           placeholder: "Address",
           autocomplete: 'off'
         %>
