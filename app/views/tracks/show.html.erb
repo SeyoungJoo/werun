@@ -1,8 +1,7 @@
 <div class="container">
   <h1 class="track-name"><%= @track.name %></h1>
-
-  <div class="grid">
-    <div class="description-box">
+  <div class="row">
+    <div class="description-box col-md-6">
       <p><%= @track.description %></p>
       <p class="keyword-title"><i class="fa fa-hashtag" aria-hidden="true"></i>Keywords</p>
       <% @track.keyword.each do |keyword| %>
@@ -11,28 +10,29 @@
         </div>
       <% end %>
       <br>
-    
-    <input id="foo" value="<%= track_url(@track) %>">
-    <br>  
-    <button class="btn btn-md btn-primary copy-button" data-clipboard-target="#foo">Copy Link</button>
-    <button class="btn btn-md btn-primary buddy-request-button" id="track-click">Send link to buddy</button>
-    <div class="small-popup-card" id="track-popup-card">
-      <span class="close">x</span>
-      <p>Choose your buddy</p>
-      <% @received_requests.each do |request| %>
-        <% if request.status == 'Approved' %>
-        <div class="form-check">
-          <%= form_with(url: "/runners/#{request.sender.id}/conversations?", method: "post") do %>
-          <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
+
+      <input id="foo" value="<%= track_url(@track) %>">
+      <br>
+      <button class="btn btn-md btn-primary copy-button" data-clipboard-target="#foo">Copy Link</button>
+      <button class="btn btn-md btn-primary buddy-request-button" id="track-click">Send link to buddy</button>
+      <div class="small-popup-card" id="track-popup-card">
+        <span class="close">x</span>
+        <p>Choose your buddy</p>
+        <% @received_requests.each do |request| %>
+          <% if request.status == 'Approved' %>
+            <div class="form-check">
+              <%= form_with(url: "/runners/#{request.sender.id}/conversations?", method: "post") do %>
+                <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
+              <% end %>
+            </div>
+          <% else %>
+          <% end %>
         <% end %>
-        </div>
-        <% else %>
-        <% end %>
-      <% end %>  
+      </div>
     </div>
-    </div>
-    <div>
-      <%= cl_image_tag @track.image.key, crop: :fill %>
+
+    <div class="col-md-6">
+      <%= cl_image_tag @track.image.key, crop: :fill, class: "track-image" %>
     </div>
   </div>
 </div>
