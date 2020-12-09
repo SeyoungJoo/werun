@@ -21,7 +21,7 @@ user1 = User.new(
   longitude: 127.010572,
   gender: "female",
   preferred_time: "morning",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: false,
   introduction: "I am originally from the States and just moved to Seoul. I am a regular runner and want to explore new running rails with beautiful scenary in Seoul. I also love outdoor activities like hiking or cycling, so anyone who shares same hobbies please DM me :)"
 )
@@ -42,7 +42,7 @@ user2 = User.new(
   longitude: 126.985607,
   gender: "male",
   preferred_time: "morning",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: false,
   introduction: "I am a regular runner. I usually go to Cheonggyecheon Stream Trail to run but want to explore some new rails in Seoul. I like outdoor sports in general so we can play other sports as well if you like."
 
@@ -65,7 +65,7 @@ user3 = User.new(
   longitude: 126.996379,
   gender: "female",
   preferred_time: "evening",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: false,
   introduction: "I haven't been actively working out recently but want to develop a healthy lifestyle. I am a beginner runner, and am looking for someone who is at similar level. I prefer to run in the evening time on weekdays after work."
 )
@@ -85,7 +85,7 @@ user4 = User.new(
   longitude: 126.979656,
   gender: "female",
   preferred_time: "morning",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: true,
   introduction: "I am looking for a jogging mate with a pet. I run with my golden retriever everyday in the morning for about an hour. Please DM me if you have a pet and want to run with us :)"
 )
@@ -106,7 +106,7 @@ user5 = User.new(
   longitude: 127.013014,
   gender: "male",
   preferred_time: "morning",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: false,
   introduction: "I am preparing for a marathon next year. I am looking for a running mate who is also preparing for a marathon and wnat to run with me everyday"
 )
@@ -190,7 +190,7 @@ user9 = User.new(
   longitude: 127.013223,
   gender: "female",
   preferred_time: "evening",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: false,
   introduction: "I am a freelance web-designer and have a flexible working hour. I prefer to run in the afternoon around my area but am generally flexible"
 )
@@ -295,7 +295,7 @@ user14 = User.new(
   longitude: 127.099472,
   gender: "female",
   preferred_time: "evening",
-  preferred_day: "weekdays",
+  preferred_day: "weekend",
   pet: true,
   introduction: "I jog with my pet every evening. She is 3 years old toy poodle. Looking for play/running-buddies who also have pets"
 )
