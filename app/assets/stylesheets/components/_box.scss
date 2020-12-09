@@ -26,10 +26,13 @@
 .request-received-box {
   background-color: white;
   margin-bottom: 3em;
+  padding: 0 0 2em 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .request-sent-box {
   background-color: white;
   margin-bottom: 3em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .user-info-text {
   background-color: $beige;
@@ -92,7 +95,7 @@
   padding: 0.6em 1em;
   margin: 0.5em;
   border-radius: 0.4em;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: $light-blue 0px 2px 8px 0px;
   width: 16em;
 }
 .one-sent-request p {
@@ -100,11 +103,12 @@
 }
 .one-received-request {
   display: flex;
-  padding: 0.6em 1em;
+  padding: 0.6em 0.6em;
   margin: 0.5em;
   border-radius: 0.4em;
   width: 98%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  // background-color: $light-blue;
+  box-shadow: $light-blue 0px 2px 8px 0px;
 }
 .one-received-request p {
   margin-bottom: 0;
