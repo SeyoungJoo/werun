@@ -1,9 +1,9 @@
 <div class="profile-page">
-<div class="container wrapper">
-  <div>
-    <h2 class="mydashboard"><i class="fas fa-id-card"></i> My Dashboard</h2>
-    <div class="item1 user-info-box">
+  <div class="container">
+  <h1 class="header-style text-center"><i class="fas fa-id-card"></i> My Dashboard</h1>
 
+  <div class="chat-page">
+    <div class="col-md-3 user-info-box">
       <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
       <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
       <div class="user-info-text">
@@ -15,9 +15,8 @@
         <p><i class="far fa-calendar-check"></i> <%= current_user.preferred_day %> / <%= current_user.preferred_time %> </p>
       </div>
     </div>
-  </div>
 
-    <div class="item2">
+    <div class="col-md-9">
       <%= month_calendar(events: @events) do |date, events| %>
         <%= date.day %>
 
@@ -50,58 +49,53 @@
         <% end %>
       <% end %>
     </div>
+  </div>
 
-    <div class="item3 user-buddies">
-    <p class="mybuddies">My Buddies</p>
+  <div class="buddies-part">
+    <p class="part-title">My running buddies</p>
     <div class="all-buddies">
     <% @received_requests.each do |request| %>
       <% if request.status == 'Approved' %>
-        <div class="one-buddy" data-toggle="collapse"
-          data-target="#buddy-info<%= request.id %>" role="button"
-          aria-expanded="false" aria-controls="collapseExample">
-          <%= cl_image_tag request.sender.image.key, height: 100, width: 100, class: "buddy-avatar" %>
-          <p><%= request.sender.first_name %> <%= request.sender.last_name %></p>
-        </div>
-        <div class="collapse multi-collapse" id="buddy-info<%= request.id %>">
-          <div class="buddy-info">
-            <p><i class="fas fa-map-marker-alt"></i> <%= request.sender.address %></p>
-            <p><i class="fas fa-running"></i> Running Pace: <%= request.sender.level %></p>
-            <p>prefer:  <%= request.sender.preferred_day %> / <%= request.sender.preferred_time %> </p>
-            <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
-              <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
-            <% end %>
+          <div class="buddy-card">
+            <%= cl_image_tag request.sender.image.key, class: "avatar-buddy" %>
+            <div class="buddy-card-text">
+              <p><strong><%= request.sender.first_name%> <%= request.sender.last_name%></strong></p>
+              <p><i class="fas fa-map-marker-alt"></i> <%= request.sender.address %></p>
+              <p><i class="fas fa-running"></i> I'm a <%= request.sender.level %> runner</p>
+              <p><i class="far fa-calendar-check"></i> <%= request.sender.preferred_day %> / <%= request.sender.preferred_time %> </p>
+              <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
+                <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
+              <% end %>
+            </div>
           </div>
-        </div>
       <% end %>
     <% end %>
     <% @sent_requests.each do |request| %>
       <% if request.status == 'Approved' %>
-        <div class="one-buddy" data-toggle="collapse"
-          data-target="#buddy-info<%= request.id %>" role="button"
-          aria-expanded="false" aria-controls="collapseExample">
-          <%= cl_image_tag request.receiver.image.key, height: 100, width: 100, class: "buddy-avatar" %>
-          <p><%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+        <div class="buddy-card">
+        <%= cl_image_tag request.receiver.image.key, class: "avatar-buddy" %>
+        <div class="buddy-card-text">
+          <p><strong><%= request.receiver.first_name%> <%= request.receiver.last_name%></strong></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= request.receiver.address %></p>
+          <p><i class="fas fa-running"></i> I'm a <%= request.receiver.level %> runner</p>
+          <p><i class="far fa-calendar-check"></i> <%= request.receiver.preferred_day %> / <%= request.receiver.preferred_time %> </p>
+          <%= form_with(url: "/runners/#{request.receiver.id}/conversations", method: "post") do %>
+            <%= submit_tag("Chat with #{request.receiver.first_name}", class: "chat-button mt-2") %>
+          <% end %>
         </div>
-        <div class="collapse multi-collapse" id="buddy-info<%= request.id %>">
-          <div class="buddy-info">
-            <p>Age: <%= request.receiver.age %></p>
-            <p>Location: <%= request.receiver.address %></p>
-            <p>Email: <%= request.receiver.email %></p>
-            <p>Running Level: <%= request.receiver.level %></p>
-            <%= form_with(url: "/runners/#{request.receiver.id}/conversations", method: "post") do %>
-              <%= submit_tag("Chat with #{request.receiver.first_name}", class: "chat-button mt-2") %>
-            <% end %>
-          </div>
         </div>
       <% end %>
-      <% end %>
+    <% end %>
     </div>
   </div>
 
-    <h3 class="item4">Buddy Requests</h3>
-    <div class="item5 request-box">
+  <div class="requests-part">
+    <p class="part-title">Buddy Requests</p>
+    <div class="request-box">
+
       <div class="request-received-box">
-        <h4>Received</h4>
+        <h4 class="request-title">Received</h4>
+
         <% @received_requests.each do |request| %>
           <% if request.status == 'Pending' %>
             <div class="one-received-request">
@@ -109,47 +103,29 @@
               <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
               </div>
               <div>
-                  <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
-                  <p><%= request.sender.address %></p>
-                  <p>Current Status : <%= request.status %></p>
-                  <div class="btn-box">
-                    <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                      <%= submit_tag("Approve", class: "request-button") %>
-                    <% end %>
-                    <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                      <%= submit_tag("Reject", class: "request-button") %>
-                    <% end %>
-                  </div>
+                <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
+                <p><%= request.sender.age %> years old</p>
+                <p><i class="fas fa-map-marker-alt"></i><%= request.sender.address %></p>
+                <p><i class="fas fa-running"></i> I'm a <%= request.sender.level %> runner</p>
+                <p><i class="fa fa-info" aria-hidden="true"></i> <%= request.sender.introduction %></p>
+                <div class="btn-box">
+                  <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
+                    <%= submit_tag("Approve", class: "request-button") %>
+                  <% end %>
+                  <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
+                    <%= submit_tag("Reject", class: "request-button") %>
+                  <% end %>
+                </div>
               </div>
             </div>
           <% else %>
-            <% if request.status == 'Rejected' %>
-              <div class="one-received-request">
-                <div>
-                <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
-                </div>
-                <div>
-                  <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
-                  <p><%= request.sender.address %></p>
-                  <p class="mb-1">Current Status : <%= request.status %></p>
-                  <div class="btn-box">
-                    <%= link_to "Delete this request",
-                                request_path(request),
-                                method: :delete,
-                                data: { confirm: "Are you sure?" },
-                                class: "request-button " %>
-                  </div>
-
-                </div>
-              </div>
-            <% end %>
           <% end %>
         <% end %>
     </div>
 
         <div class="request-sent-box">
           <div class="sent-box-align">
-            <h4>Sent</h4>
+            <h4 class="request-title">Sent</h4>
             <% @sent_requests.each do |request| %>
               <div class="one-sent-request">
                 <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
@@ -159,5 +135,5 @@
           </div>
         </div>
   </div>
-</div>
+  </div>
 </div>

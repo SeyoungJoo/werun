@@ -40,10 +40,19 @@
   object-fit: cover;
 }
 
-.avatar-request {
+.avatar-buddy {
   width: 100px;
   height: 100px;
   border-radius: 4px;
   object-fit: cover;
   margin-right: 0.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.avatar-request {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 1em;
 }
