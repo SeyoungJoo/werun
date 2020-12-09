@@ -15,12 +15,11 @@
 }
 
 .card-body h3 {
-    font-weight: bold;
+    font-size: 25px;
     font-family: $body-font;
   }
-
   .cards :hover {
-    // opacity: .6;
+    opacity: .8;
     text-decoration: none;
   }
 
@@ -35,6 +34,7 @@
   color: white;
   margin: 2px;
   border-radius: 32px;
+  font-size: 13px;
 }
   .highlight{
     opacity: 50%;
@@ -44,9 +44,7 @@
 
   .track-card{
     background-color: $blue;
-    // background: linear-gradient(#16a591, #16a599);
     margin-bottom: 15px;
-    
     background-size: cover;
     height: 250px;
     width: 700px;
@@ -54,19 +52,17 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 5% 25%;
+    border-radius: 25% 0 0 0;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     font-size: 16px;
   }
   .track-img{
     height: 100%;
     width: 50%;
-    border-radius: 5% 25%;
+    border-radius: 25% 0 0 0;
   }
-
   .track-link-hover {
     text-decoration: underline;
   }
