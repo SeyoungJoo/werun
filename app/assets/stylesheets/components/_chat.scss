@@ -11,8 +11,8 @@
 .chat-bar {
   position: sticky;
   top: 70px;
-  padding:0px;
-  height: 52vh;
+  padding: 0;
+  height: 56.5vh;
   font-family: $headers-font;
   background-color: white;
   border-radius: 4px;
@@ -164,11 +164,11 @@
   font-weight: bold;
   color: $blue;
   padding: 6px 12px;
+  margin-top: 2em;
   display: inline-block;
   text-align: center;
   font-size: 16px;
   border: 1px solid $blue;
-  margin: 10px 0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
