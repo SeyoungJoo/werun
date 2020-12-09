@@ -5,22 +5,21 @@
     <div class="row">
       <div class="cards col-md-8 tracks-list">
 
-          <% @tracks.each do |track| %>
-            <%= link_to(track_path(track.id)) do%>
-            <div class="track-card" data-marker-id="<%= track.id %>">
-              <%= cl_image_tag track.image.key, crop: :fill, class: "track-img" %>
+        <% @tracks.each do |track| %>
+          <%= link_to(track_path(track.id)) do%>
+          <div class="track-card" data-marker-id="<%= track.id %>">
+            <%= cl_image_tag track.image.key, crop: :fill, class: "track-img" %>
 
-              <div class="card-body">
-                <h3><%= track.name%></h3>
-                <p><%= track.description.split(/\W+/)[0..14 ].join(" ")%></p>
-                <p class="track-link-hover">. . . more</p>
-                <% track.keyword.each do |keyword| %>
-                  <div class="track-keywords">
-                    <h6 class="one-keyword">#<%= keyword %></h6>
-                  </div>
-                <% end %>            
-             </div>
-
+            <div class="card-body">
+              <h3><%= track.name%></h3>
+              <p><%= track.description.split(/\W+/)[0..14 ].join(" ")%></p>
+              <p class="track-link-hover">. . . more</p>
+              <% track.keyword.each do |keyword| %>
+                <div class="track-keywords">
+                  <h6 class="one-keyword">#<%= keyword %></h6>
+                </div>
+              <% end %>            
+            </div>
             </div>
           <% end %>
           <% end %>
