@@ -12,7 +12,7 @@ User.destroy_all
 user1 = User.new(
   first_name: "Christine",
   last_name: "Jung",
-  address: "Seoul Shindang 22 Majang-ro",
+  address: "Seoul Shindang 22",
   age: 28,
   level: "fast",
   email: "christine@gmail.com",
@@ -56,7 +56,7 @@ user2.save!
 user3 = User.new(
   first_name: "Juyeon",
   last_name: "Kim",
-  address: "Seoul Shindang 375 Toegye-ro",
+  address: "Seoul Shindang Toegye-ro",
   age: 27,
   level: "average",
   email: "juyeon@gmail.com",
@@ -76,7 +76,7 @@ user3.save!
 user4 = User.new(
   first_name: "Seyoung",
   last_name: "Joo",
-  address: "Seoul Gangnam 442 Irwon-dong",
+  address: "Seoul Gangnam Irwon-dong",
   age: 21,
   level: "slow",
   email: "seyoung@gmail.com",
@@ -97,7 +97,7 @@ user4.save!
 user5 = User.new(
   first_name: "Justin",
   last_name: "Dirk",
-  address: "Seoul Shindang Toegye-ro 11-gil",
+  address: "Seoul Shindang 11-gil",
   age: 28,
   level: "average",
   email: "justin@gmail.com",
@@ -118,7 +118,7 @@ user5.save!
 user6 = User.new(
   first_name: "Jason",
   last_name: "Fredman",
-  address: "Seoul Shindang Toegye-ro 73-gil",
+  address: "Seoul Gangnam 73-gil",
   age: 25,
   level: "average",
   email: "jason@gmail.com",
@@ -139,7 +139,7 @@ user6.save!
 user7 = User.new(
   first_name: "Jamie",
   last_name: "Dimon",
-  address: "Seoul Gangnam 731 Irwon-dong",
+  address: "Seoul Gangnam 731",
   age: 30,
   level: "fast",
   email: "jamie@gmail.com",
@@ -160,7 +160,7 @@ user7.save!
 user8 = User.new(
   first_name: "Jenny",
   last_name: "kim",
-  address: "Seoul Shindang Cheonggu-ro 22-gil",
+  address: "Seoul Cheonggu-ro 22-gil",
   age: 23,
   level: "average",
   email: "julia@gmail.com",
@@ -202,7 +202,7 @@ user9.save!
 user10 = User.new(
   first_name: "Rick",
   last_name: "Warren",
-  address: "Seoul Gangnam Gwangpyeong-ro",
+  address: "Seoul Gwangpyeong-ro",
   age: 23,
   level: "average",
   email: "rick@gmail.com",
@@ -265,7 +265,7 @@ user12.save!
 user13 = User.new(
   first_name: "Vikas",
   last_name: "Gupta",
-  address: "Seoul shindang 75 Dasan-ro",
+  address: "Seoul shindang Dasan-ro",
   age: 23,
   level: "fast",
   email: "vikas@gmail.com",
@@ -286,7 +286,7 @@ user13.save!
 user14 = User.new(
   first_name: "Stephanie",
   last_name: "Parks",
-  address: "Seoul gangnam 504 Jagok-dong",
+  address: "Seoul Jagok-dong",
   age: 27,
   level: "average",
   email: "stephanie@gmail.com",
@@ -307,7 +307,7 @@ user14.save!
 user15 = User.new(
   first_name: "Kelly",
   last_name: "Steven",
-  address: "Seoul Shindang Dongho-ro 11ba-gil",
+  address: "Seoul Shindang 11ba-gil",
   age: 27,
   level: "slow",
   email: "kelly@gmail.com",
