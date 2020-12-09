@@ -47,7 +47,9 @@
              <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-img" %>
            <div class="runner-card-text">
              <p class="runner-card-header"><%= runner.first_name%> <%= runner.last_name%></p>
-             <p class="runner-card-location"><i class="fas fa-map-marker-alt"></i>  <%= runner.address %></p>
+             <p class="runner-card-location"><i class="fas fa-map-marker-alt"></i> <%= runner.address %></p>
+             <p class="runner-card-location">🏃‍♂️ <%= runner.level %></p>
+             <p class="runner-card-location">📆 <%= runner.preferred_time %></p>
            </div>
       </div>
 
