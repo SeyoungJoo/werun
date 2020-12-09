@@ -1,25 +1,33 @@
 <div class="container">
+  <h1 class="header-style text-center"><i class="fa fa-comments" aria-hidden="true"></i>Chat with your running buddies</h1>
+
   <div class="chat-page">
-    <div class="chat-bar col-md-3">
-      <div class="chat-bar-title">
-        <h3>Chatting list</h3>
-      </div>
-      <% @conversations.each do |conversation| %>
-        <% if @user.id == conversation.user1_id %>
-          <div class="chatbar-line">
-            <%= cl_image_tag conversation.user2.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-big" %>
-            <%= link_to conversation.user2.first_name, conversation %>
-          </div>
-        <% elsif @user.id == conversation.user2_id %>
-          <div class="chatbar-line">
-            <%= cl_image_tag conversation.user1.image.key, height: 50, width: 50, crop: :fill, class: "chat-avatar-big" %>
-            <%= link_to conversation.user1.first_name, conversation %>
-          </div>
+
+    <div class="col-md-3">
+        <div class="chat-bar-title">
+          <h3>My buddies</h3>
+        </div>
+
+      <div class="chat-bar">
+
+        <% @conversations.each do |conversation| %>
+          <% if @user.id == conversation.user1_id %>
+            <div class="chatbar-line">
+              <%= cl_image_tag conversation.user2.image.key, height: 40, width: 40, crop: :fill, class: "chat-avatar-big" %>
+              <%= link_to "#{conversation.user2.first_name} #{conversation.user2.last_name}", conversation %>
+            </div>
+          <% elsif @user.id == conversation.user2_id %>
+            <div class="chatbar-line">
+              <%= cl_image_tag conversation.user1.image.key, height: 40, width: 40, crop: :fill, class: "chat-avatar-big" %>
+              <%= link_to "#{conversation.user1.first_name} #{conversation.user1.last_name}", conversation %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
 
-    <div class="chatroom col-md-9">
+
+    <div class="col-md-9">
     </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
 <div class="profile-page">
 <div class="container wrapper">
-
   <div>
     <h2 class="mydashboard"><i class="fas fa-id-card"></i> My Dashboard</h2>
     <div class="item1 user-info-box">
+
       <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
       <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
       <div class="user-info-text">
@@ -27,7 +27,8 @@
               <p class="event-click" id="event-click-<%= event.id %>">Run with <%= event.user2.first_name %></p>
               <div class="event-modal" data-event-id="<%= event.id %>">
                 <div class="event-content">
-                  <p class="modal-close text-right">X</p>
+                  <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
+                  <h5 class="text-center mb-3">Title</h5>
                   <p>Running buddy: <%= event.user2.first_name %> <%= event.user2.last_name %></p>
                   <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
                   <p>Meeting point: <%= event.location %></p>
@@ -38,6 +39,7 @@
               <div class="event-modal" data-event-id="<%= event.id %>">
                 <div class="event-content">
                   <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
+                  <h5 class="text-center mb-3">Title</h5>
                   <p>Running buddy: <%= event.user1.first_name %> <%= event.user1.last_name %></p>
                   <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
                   <p>Meeting point: <%= event.location %></p>
@@ -127,7 +129,7 @@
                 <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request"%>
                 </div>
                 <div>
-                  <p class="font-weight-bold"><%= request.sender.first_name %> <%= request.sender.last_name %></p>
+                  <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
                   <p><%= request.sender.address %></p>
                   <p class="mb-1">Current Status : <%= request.status %></p>
                   <div class="btn-box">
