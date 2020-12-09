@@ -3,7 +3,8 @@ class TracksController < ApplicationController
     @tracks = policy_scope(Track).order(created_at: :desc)
 
     if params[:query].present?
-      @tracks = Track.search_by_address(params[:query])
+      @tracks = Track.where("name ILIKE ?", "%#{params[:query]}%")
+      
     else
       @tracks = policy_scope(Track).order(created_at: :desc)
     end

@@ -2,6 +2,23 @@
 
   <div class="container card-container">
     <h1 class="header-style"><i class="fas fa-map-marked-alt"></i> Tracks Near Me</h1>
+
+
+    <div class="form-row mb-5">
+      <%= form_tag tracks_path, class:"form-inline mt-3 mb-3", method: :get do%>
+
+        <div>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mr-1",
+          placeholder: "Search",
+          autocomplete: 'off'
+        %>
+        </div>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+
     <div class="row">
       <div class="cards col-md-8 tracks-list">
 
