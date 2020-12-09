@@ -3,6 +3,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('data-confirm-modal')
+
 // require("data-confirm-modal")
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -36,4 +37,20 @@ document.addEventListener('turbolinks:load', () => {
   init_popup();
   init_track_popup();
   initEventModal();
+  var clipboard = new ClipboardJS('.btn');
+
+  clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger)
+    e.trigger.innerHTML = 'Copied';
+
+    e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
 });
+});
+
