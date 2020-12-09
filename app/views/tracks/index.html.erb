@@ -17,11 +17,6 @@
                     <h6 class="one-keyword">#<%= keyword %></h6>
                   </div>
                 <% end %>            
-         <% if track.liked?(current_user) %>
-              <%= button_to "Like", tracks_path, method: "put", disabled: true %>
-            <% else %>
-              <%= button_to "Like", tracks_path, method: "put"%>
-            <% end %>
              </div>
 
             </div>
