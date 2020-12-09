@@ -3,45 +3,10 @@
   margin-bottom: 15rem;
 }
 
-.wrapper{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 50px;
-  grid-row-gap: 10px;
-  grid-auto-rows: auto auto auto;
-}
-
-.item1 {
-  grid-column: 1;
-  grid-row: 1 / 4;
-}
-
-.item2 {
-  margin-top: 2em;
-  grid-column: 2 / 4;
-  grid-row: 1;
-}
-
-.item3 {
-  grid-column: 4;
-  grid-row: 1;
-}
-
-.item4{
-  padding-top: 20px;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.item5{
-  grid-column: 2 / 5;
-  grid-row: 3;
-}
-
 .request-box{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 3em;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 1em;
 }
 
 .user-avatar{
@@ -50,20 +15,21 @@
   object-fit: cover;
 }
 
-.mydashboard{
-  font-family: $logo-font;
-  color: $blue;
-}
-
 .user-info-box {
-  margin-top: 1em;
   background-color: $blue;
-  height: 500px;
+  height: 64vh;
   text-align: center;
   padding: 16px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
-
+.request-received-box {
+  background-color: white;
+  margin-bottom: 3em;
+}
+.request-sent-box {
+  background-color: white;
+  margin-bottom: 3em;
+}
 .user-info-text {
   background-color: $beige;
   border-radius: 0.5em;
@@ -78,18 +44,39 @@
   margin: 0.7em 0.3em;
   opacity: 80%;
 }
-.user-buddies {
-  width:150px;
-  margin-top: 1em;
+.buddies-part {
+  width:100%;
 }
-.mybuddies{
+
+.part-title {
   text-align: center;
   margin-bottom: 1em;
   margin-top: 0.5em;
-  font-size: 23px;
+  font-size: 24px;
   font-family: $headers-font;
 }
-
+.all-buddies {
+  display: flex;
+  // justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: white;
+}
+.buddy-card {
+  display: flex;
+  padding: 0.6em 1em;
+  margin: 0.5em 0.3em;
+  border-radius: 0.4em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: $light-blue;
+  width: 350px;
+}
+.buddy-card-text {
+  width: 100%;
+  height: auto;
+}
+.buddy-card-text p {
+  margin-bottom: 0;
+}
 .one-buddy {
   text-align: center;
   padding: 10px;
@@ -97,28 +84,13 @@
 .one-buddy p {
   margin-bottom: 0;
 }
-.buddy-info {
-  background-color: $beige;
-  // padding: 5px;
-  border-radius: 1em;
-  font-size: 0.8rem;
-  text-align: center;
-}
-.buddy-info p {
-  margin-bottom: 0;
-}
-.buddy-info a {
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-}
+
 .one-sent-request {
   padding: 0.6em 1em;
-  margin: 0.3em 1em 0.5em 0.3em;
+  margin: 0.5em;
   border-radius: 0.4em;
-  box-shadow: 1px 1px 2px #3797a4;
-  width: 250px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 16em;
 }
 .one-sent-request p {
   margin-bottom: 0;
@@ -126,10 +98,10 @@
 .one-received-request {
   display: flex;
   padding: 0.6em 1em;
-  margin: 0.3em 1em 0.5em 0.3em;
+  margin: 0.5em;
   border-radius: 0.4em;
-  box-shadow: 1px 1px 2px #3797a4;
-  width: 350px;
+  width: 98%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .one-received-request p {
   margin-bottom: 0;
@@ -147,7 +119,7 @@
   margin-right: 10px;
   margin-top: 5px;
   color: #fff;
-  background-color: #3797a4;
+  background-color: $dark-blue;
   border-color: #3797a4;
   font-weight: bold;
   border: none;
@@ -159,17 +131,25 @@
 .request-button {
   background-color: #3797a4;
   border: none;
-  padding: 4px 8px;
+  padding: 4px 15px;
   color: white;
-  margin-right: 0.3em;
+  margin-right: 1em;
+  margin-top: 0.3em;
   border-radius: 4px;
   font-size: 1em;
 }
 .request-button:hover {
   color: white;
+  background-color: $dark-blue;
   text-decoration: none;
 }
 .btn-box {
   display: flex;
   justify-content: center;
+}
+.request-title {
+  color: #1f6f8b;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
 }
