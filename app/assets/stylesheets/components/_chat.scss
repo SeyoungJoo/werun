@@ -1,3 +1,8 @@
+.chat-body{
+  height: 100vh;
+  padding-bottom: 20em;
+}
+
 .chat-page {
   display: flex;
   justify-content: space-between;
@@ -11,7 +16,7 @@
   font-family: $headers-font;
   background-color: white;
   border-radius: 4px;
-  // box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 .chat-bar-title {
   display: inline-block;
@@ -21,7 +26,7 @@
   background-color: $blue;
   margin-bottom: 1em;
   color: $white;
-  border-radius: 4px;
+  border-radius: 0 0% 70% 70%;
 }
 .chat-bar-title h3 {
   margin-bottom: 0;
@@ -40,8 +45,8 @@
   padding: 5px 20px;
   font-size: 1.2em;
   margin-bottom: 0.3em;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 3px auto;
+  border: 1px dotted $blue;
 }
 .chatbar-line a {
   width: 100%;
@@ -52,10 +57,10 @@
 .chatbar-line.active {
   display: flex;
   padding: 7px 20px;
-  background-color: white;
+  background-color: $beige;
   width: 100%;
   font-size: 1.2em;
-  border: 2px solid $blue;
+  border: 1px dotted $blue;
 }
 
 .chatbar-line.active a {
@@ -65,7 +70,7 @@
 .chatroom {
   height: 69vh;
   flex-grow: 1;
-  padding: 15px 20px;
+  padding: 32px;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -73,7 +78,7 @@
 }
 
 .chat-part {
-  height: 55vh;
+  height: 50vh;
   overflow-y: scroll;
   margin-bottom: 20px;
 }
@@ -161,11 +166,12 @@
   padding: 6px 12px;
   display: inline-block;
   text-align: center;
-  font-size: 1.15em;
-  border: 2px solid $blue;
-  margin: 0;
+  font-size: 16px;
+  border: 1px solid $blue;
+  margin: 10px 0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
 .calendar-button a {
   color: $blue;
 }
@@ -187,7 +193,6 @@
   border-radius: 50%;
   background: cover;
   object-fit: cover;
-  margin: 0 10px;
 }
 
 .chat-avatar-small {

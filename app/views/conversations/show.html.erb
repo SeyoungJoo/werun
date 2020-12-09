@@ -1,15 +1,13 @@
+<div class="chat-body">
 <div class="container">
-  <h1 class="header-style text-center"><i class="fa fa-comments" aria-hidden="true"></i>Chat with your running buddies</h1>
+  <h1 class="header-style text-center"><i class="fa fa-comments" aria-hidden="true"></i> Chat with your running buddies</h1>
 
   <div class="chat-page">
-
     <div class="col-md-3">
-      <div class="chat-bar-title">
-        <h3>My buddies</h3>
-      </div>
       <div class="chat-bar">
-
-
+        <div class="chat-bar-title">
+          <h3>My buddies</h3>
+        </div>
           <% @conversations.each do |conversation| %>
             <% if @user.id == conversation.user1_id %>
               <div class="chatbar-line <%= 'active' if @current_tab == conversation.user2 %>">
@@ -23,13 +21,11 @@
               </div>
             <% end %>
           <% end %>
-
-
       </div>
-        <div class="buttons">
-          <%= link_to "➕ Add schedule to calendar", new_runner_event_path(@partner), class: 'calendar-button' %>
-        </div>
 
+        <div class="buttons">
+         <%= link_to " 📆 Add running schedule with #{@conversation.user2.first_name}", new_runner_event_path(@partner), class: 'calendar-button' %> 
+        </div>
     </div>
 
 
@@ -51,4 +47,5 @@
     </div>
   </div>
 
+</div>
 </div>
