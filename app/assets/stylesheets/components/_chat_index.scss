@@ -1,0 +1,25 @@
+.chat-body-index{
+  width: 100%;
+  padding-bottom: 20em;
+}
+
+.chat-page-index{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-bar-index{
+  top: 70px;
+  padding:0px;
+  height: 52vh;
+  width: 20em;
+  font-family: $headers-font;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
