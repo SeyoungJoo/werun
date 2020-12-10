@@ -1,4 +1,6 @@
-
+#query.form-control {
+  width: 300px;
+}
 .tracks-list {
   padding-left: 0;
 }
@@ -28,6 +30,16 @@
 
 .track-keywords {
   display: inline;
+}
+.add-track {
+  color: #fff;
+  background-color: $light-blue;
+  padding: 8px 16px 11px 16px;
+  border-color: #3797a4;
+  border-radius: 2px;
+}
+.add-track:hover {
+  text-decoration: none;
 }
 
 .one-keyword {

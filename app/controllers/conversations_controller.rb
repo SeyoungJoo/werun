@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   layout "message"
-  
+
   def index
     @conversations = policy_scope(Conversation).order(created_at: :desc)
     @user = current_user
@@ -28,7 +28,7 @@ class ConversationsController < ApplicationController
       @current_tab = @conversation.user1
 
     end
-
+    @current_tab = "Messages"
     @received_requests = current_user.received_requests
     @pending_requests =[]
 
