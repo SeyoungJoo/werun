@@ -26,12 +26,13 @@
 .request-received-box {
   background-color: $beige;
   margin-bottom: 3em;
-  padding: 0 0 2em 0;
+  padding: 0.5em;
   box-shadow: rgba(100, 100, 100, 0.5) 0px 2px 8px 0px;
 }
 .request-sent-box {
   background-color: $beige;
   margin-bottom: 3em;
+  padding: 0.5em;
   box-shadow: rgba(100, 100, 100, 0.5) 0px 2px 8px 0px;
 }
 .user-info-text {
@@ -61,15 +62,15 @@
 }
 .all-buddies {
   display: flex;
-  // justify-content: space-between;
+  padding: 0.5em;
   flex-wrap: wrap;
   background-color: $beige;
   box-shadow: rgba(100, 100, 100, 0.5) 0px 2px 8px 0px;
 }
 .buddy-card {
   display: flex;
-  padding: 0.6em 1em;
-  margin: 0.5em 0.3em;
+  padding: 0.6em;
+  margin: 0.3em 0.4em;
   border-radius: 0.4em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: $light-blue;
@@ -96,7 +97,7 @@
   border-radius: 0.4em;
   background-color: $light-blue;
   // box-shadow: $light-blue 0px 2px 8px 0px;
-  width: 16em;
+  width: 15em;
 }
 .one-sent-request p {
   margin-bottom: 0;
@@ -157,6 +158,6 @@
 .request-title {
   color: #1f6f8b;
   margin-left: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 0.75em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
 }

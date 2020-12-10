@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.user1 = current_user
+    @user2 = User.find(params[:runner_id])
 
     @received_requests = current_user.received_requests
     @pending_requests =[]
