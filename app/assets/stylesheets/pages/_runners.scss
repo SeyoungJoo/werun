@@ -1,5 +1,5 @@
 .map-page{
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 
@@ -10,8 +10,9 @@
 .container{
   width: 100vw;
   position: relative;
-  height: 100px;
-  margin-top: 80px;
+  height: auto;
+  margin-top: 65px;
+  margin-bottom: 65px;
 }
 
 .header-style{
