@@ -3,16 +3,15 @@
 }
 .event-content {
   position: absolute;
-  left: 30%;
-  top: 35%;
-  background-color: #73c3cd;
+  left: 29%;
+  top: 33%;
+  background-color: $beige;
   border-radius: 4px;
-  // border: 1px solid black;
+  border: 3px solid $blue;
   padding: 10px 20px;
   font-family: $body-font;
   font-size: 1.4em;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-
 }
 .modal-close {
   cursor: pointer;

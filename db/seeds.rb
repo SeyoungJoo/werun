@@ -102,7 +102,7 @@ user5 = User.new(
   level: "average",
   email: "justin@gmail.com",
   password: 123456,
-  latitude: 37.565557, 
+  latitude: 37.565557,
   longitude: 127.013014,
   gender: "male",
   preferred_time: "morning",
@@ -165,7 +165,7 @@ user8 = User.new(
   level: "average",
   email: "julia@gmail.com",
   password: 123456,
-  latitude: 37.563095, 
+  latitude: 37.563095,
   longitude: 127.010736,
   gender: "female",
   preferred_time: "evening",
@@ -186,7 +186,7 @@ user9 = User.new(
   level: "average",
   email: "suyeon@gmail.com",
   password: 123456,
-  latitude: 37.472954, 
+  latitude: 37.472954,
   longitude: 126.990243,
   gender: "female",
   preferred_time: "evening",
@@ -270,7 +270,7 @@ user13 = User.new(
   level: "average",
   email: "vikas@gmail.com",
   password: 123456,
-  latitude: 37.551247, 
+  latitude: 37.551247,
   longitude: 127.007577,
   gender: "male",
   preferred_time: "evening",
@@ -291,7 +291,7 @@ user14 = User.new(
   level: "average",
   email: "stephanie@gmail.com",
   password: 123456,
-  latitude: 37.472228, 
+  latitude: 37.472228,
   longitude: 127.099472,
   gender: "female",
   preferred_time: "evening",
@@ -464,15 +464,15 @@ Track9.save!
 request1 = Request.create!(
   receiver: user1,
   sender: user2,
-  status: "Pending",
+  status: "Approved",
   start_time: Time.now(),
   end_time: Time.now() + 1.hour
 )
 
 request2 = Request.create!(
   receiver: user3,
-  sender: user4,
-  status: "Approved",
+  sender: user2,
+  status: "Rejected",
   start_time: Time.now(),
   end_time: Time.now() + 2.hour
 )
@@ -480,48 +480,48 @@ request2 = Request.create!(
 request3 = Request.create!(
   receiver: user1,
   sender: user4,
-  status: "Rejected",
+  status: "Pending",
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
 
 event1 = Event.create!(
   user1_id: user1.id,
-  user2_id: user2.id,
-  start_time: Time.now(),
-  end_time: Time.now() + 2.hour,
+  user2_id: user4.id,
+  start_time: DateTime.strptime("12/08/2020 9:00", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/08/2020 10:00", "%m/%d/%Y %H:%M"),
   location: "Hangang Park"
 )
 
 event2 = Event.create!(
-  user1_id: user1.id,
+  user1_id: user3.id,
   user2_id: user4.id,
-  start_time: Time.now() - 37.hour,
-  end_time: Time.now() - 35.hour,
+  start_time: DateTime.strptime("12/02/2020 9:30", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/02/2020 10:30", "%m/%d/%Y %H:%M"),
   location: "Seoul forest"
 )
 
 event3 = Event.create!(
   user1_id: user2.id,
-  user2_id: user4.id,
-  start_time: Time.now() + 28.hour,
-  end_time: Time.now() + 30.hour,
+  user2_id: user1.id,
+  start_time: DateTime.strptime("12/12/2020 10:00", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/12/2020 11:00", "%m/%d/%Y %H:%M"),
   location: "Cheonggyecheon"
 )
 
 event4 = Event.create!(
   user1_id: user2.id,
   user2_id: user3.id,
-  start_time: Time.now() + 48.hour,
-  end_time: Time.now() + 50.hour,
+  start_time: DateTime.strptime("12/14/2020 9:00", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/14/2020 10:00", "%m/%d/%Y %H:%M"),
   location: "Namsan Park"
 )
 
 event5 = Event.create!(
   user1_id: user3.id,
   user2_id: user1.id,
-  start_time: Time.now() + 120.hour,
-  end_time: Time.now() + 121.hour,
+  start_time: DateTime.strptime("12/06/2020 03:30", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/06/2020 04:30", "%m/%d/%Y %H:%M"),
   location: "Bukhansan national park"
 )
 

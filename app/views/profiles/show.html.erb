@@ -1,139 +1,143 @@
 <div class="profile-page">
   <div class="container">
-  <h1 class="header-style text-center"><i class="fas fa-id-card"></i> My Dashboard</h1>
+    <h1 class="header-style text-center"><i class="fas fa-id-card"></i> My Dashboard</h1>
 
-  <div class="chat-page">
-    <div class="col-md-3 user-info-box">
-      <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
-      <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
-      <div class="user-info-text">
-        <p><%= current_user.age %> years old </p>
-        <p><i class="fas fa-venus-mars"></i> <%= current_user.gender %></p>
-        <p><i class="fas fa-map-marker-alt"></i> <%= current_user.address %></p>
-        <p><i class="far fa-envelope"></i> <%= current_user.email %></p>
-        <p><i class="fas fa-running"></i> I'm a <%= current_user.level %> runner</p>
-        <p><i class="far fa-calendar-check"></i> <%= current_user.preferred_day %> / <%= current_user.preferred_time %> </p>
+    <div class="chat-page">
+      <div class="col-md-3 user-info-box">
+        <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
+        <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <div class="user-info-text">
+          <p><%= current_user.age %> years old </p>
+          <p><i class="fas fa-venus-mars"></i> <%= current_user.gender %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= current_user.address %></p>
+          <p><i class="far fa-envelope"></i> <%= current_user.email %></p>
+          <p><i class="fas fa-running"></i> I'm a <%= current_user.level %> runner</p>
+          <p><i class="far fa-calendar-check"></i> <%= current_user.preferred_day %> / <%= current_user.preferred_time %> </p>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <%= month_calendar(events: @events) do |date, events| %>
+          <%= date.day %>
+
+          <% events.each do |event| %>
+            <div>
+              <% if current_user == event.user1 %>
+                <p class="event-click" id="event-click-<%= event.id %>"><strong><%= event.start_time.strftime("%H:%M") %></strong> - <%= event.user2.first_name %></p>
+                <div class="event-modal" data-event-id="<%= event.id %>">
+                  <div class="event-content">
+                    <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
+                    <h5 class="text-center mb-3">Running session</h5>
+                    <p>Running buddy: <%= event.user2.first_name %> <%= event.user2.last_name %></p>
+                    <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
+                    <p>Meeting point: <%= event.location %></p>
+                  </div>
+                </div>
+              <% else %>
+                <p class="event-click" id="event-click-<%= event.id %>"><strong><%= event.start_time.strftime("%H:%M") %></strong> - <%= event.user1.first_name %></p>
+                <div class="event-modal" data-event-id="<%= event.id %>">
+                  <div class="event-content">
+                    <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
+                    <h5 class="text-center mb-3">Running session</h5>
+                    <p>Running buddy: <%= event.user1.first_name %> <%= event.user1.last_name %></p>
+                    <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
+                    <p>Meeting point: <%= event.location %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
 
-    <div class="col-md-9">
-      <%= month_calendar(events: @events) do |date, events| %>
-        <%= date.day %>
+    <div class="buddies-part">
+      <p class="part-title">My running buddies</p>
+      <div class="all-buddies">
+      <% @received_requests.each do |request| %>
+        <% if request.status == 'Approved' %>
+            <div class="buddy-card">
+              <%= cl_image_tag request.sender.image.key, class: "avatar-buddy" %>
+              <div class="buddy-card-text">
+                <p><strong><%= request.sender.first_name%> <%= request.sender.last_name%></strong></p>
+                <p><i class="fas fa-map-marker-alt"></i> <%= request.sender.address %></p>
+                <p><i class="fas fa-running"></i> I'm a <%= request.sender.level %> runner</p>
+                <p><i class="far fa-calendar-check"></i> <%= request.sender.preferred_day %> / <%= request.sender.preferred_time %> </p>
+                <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
+                  <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+      <% @sent_requests.each do |request| %>
+        <% if request.status == 'Approved' %>
+          <div class="buddy-card">
+          <%= cl_image_tag request.receiver.image.key, class: "avatar-buddy" %>
+          <div class="buddy-card-text">
+            <p><strong><%= request.receiver.first_name%> <%= request.receiver.last_name%></strong></p>
+            <p><i class="fas fa-map-marker-alt"></i> <%= request.receiver.address %></p>
+            <p><i class="fas fa-running"></i> I'm a <%= request.receiver.level %> runner</p>
+            <p><i class="far fa-calendar-check"></i> <%= request.receiver.preferred_day %> / <%= request.receiver.preferred_time %> </p>
+            <%= form_with(url: "/runners/#{request.receiver.id}/conversations", method: "post") do %>
+              <%= submit_tag("Chat with #{request.receiver.first_name}", class: "chat-button mt-2") %>
+            <% end %>
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
 
-        <% events.each do |event| %>
-          <div>
-            <% if current_user == event.user1 %>
-              <p class="event-click" id="event-click-<%= event.id %>">Run with <%= event.user2.first_name %></p>
-              <div class="event-modal" data-event-id="<%= event.id %>">
-                <div class="event-content">
-                  <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
-                  <h5 class="text-center mb-3">Running session</h5>
-                  <p>Running buddy: <%= event.user2.first_name %> <%= event.user2.last_name %></p>
-                  <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
-                  <p>Meeting point: <%= event.location %></p>
+    <div class="requests-part">
+      <p class="part-title">Buddy Requests</p>
+      <div class="request-box">
+
+        <div class="request-received-box">
+          <h4 class="request-title">Received</h4>
+
+          <% @received_requests.each do |request| %>
+            <% if request.status == 'Pending' %>
+              <div class="one-received-request">
+                <div>
+                <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
+                </div>
+                <div>
+                  <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
+                  <p><%= request.sender.age %> years old</p>
+                  <p><i class="fas fa-map-marker-alt"></i><%= request.sender.address %></p>
+                  <p><i class="fas fa-running"></i> I'm a <%= request.sender.level %> runner</p>
+                  <p><i class="fa fa-info" aria-hidden="true"></i> <%= request.sender.introduction %></p>
+                  <div class="btn-box">
+                    <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
+                      <%= submit_tag("Approve", class: "request-button") %>
+                    <% end %>
+                    <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
+                      <%= submit_tag("Reject", class: "request-button") %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             <% else %>
-              <p class="event-click" id="event-click-<%= event.id %>">Run with <%= event.user1.first_name %></p>
-              <div class="event-modal" data-event-id="<%= event.id %>">
-                <div class="event-content">
-                  <p class="modal-close text-right"><i class="fa fa-times" aria-hidden="true"></i></p>
-                  <h5 class="text-center mb-3">Running session</h5>
-                  <p>Running buddy: <%= event.user1.first_name %> <%= event.user1.last_name %></p>
-                  <p>Time: <%= event.start_time.strftime("%I:%M %p") %> ~ <%= event.end_time.strftime("%I:%M %p") %></p>
-                  <p>Meeting point: <%= event.location %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="request-sent-box">
+          <div class="sent-box-align">
+            <h4 class="request-title">Sent</h4>
+            <% @sent_requests.each do |request| %>
+              <% unless request.status == 'Approved' %>
+                <div class="one-sent-request">
+                  <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
+                  <p>Current Status : <%= request.status %></p>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="buddies-part">
-    <p class="part-title">My running buddies</p>
-    <div class="all-buddies">
-    <% @received_requests.each do |request| %>
-      <% if request.status == 'Approved' %>
-          <div class="buddy-card">
-            <%= cl_image_tag request.sender.image.key, class: "avatar-buddy" %>
-            <div class="buddy-card-text">
-              <p><strong><%= request.sender.first_name%> <%= request.sender.last_name%></strong></p>
-              <p><i class="fas fa-map-marker-alt"></i> <%= request.sender.address %></p>
-              <p><i class="fas fa-running"></i> I'm a <%= request.sender.level %> runner</p>
-              <p><i class="far fa-calendar-check"></i> <%= request.sender.preferred_day %> / <%= request.sender.preferred_time %> </p>
-              <%= form_with(url: "/runners/#{request.sender.id}/conversations", method: "post") do %>
-                <%= submit_tag("Chat with #{request.sender.first_name}", class: "chat-button mt-2") %>
-              <% end %>
-            </div>
-          </div>
-      <% end %>
-    <% end %>
-    <% @sent_requests.each do |request| %>
-      <% if request.status == 'Approved' %>
-        <div class="buddy-card">
-        <%= cl_image_tag request.receiver.image.key, class: "avatar-buddy" %>
-        <div class="buddy-card-text">
-          <p><strong><%= request.receiver.first_name%> <%= request.receiver.last_name%></strong></p>
-          <p><i class="fas fa-map-marker-alt"></i> <%= request.receiver.address %></p>
-          <p><i class="fas fa-running"></i> I'm a <%= request.receiver.level %> runner</p>
-          <p><i class="far fa-calendar-check"></i> <%= request.receiver.preferred_day %> / <%= request.receiver.preferred_time %> </p>
-          <%= form_with(url: "/runners/#{request.receiver.id}/conversations", method: "post") do %>
-            <%= submit_tag("Chat with #{request.receiver.first_name}", class: "chat-button mt-2") %>
-          <% end %>
-        </div>
-        </div>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-
-  <div class="requests-part">
-    <p class="part-title">Buddy Requests</p>
-    <div class="request-box">
-
-      <div class="request-received-box">
-        <h4 class="request-title">Received</h4>
-
-        <% @received_requests.each do |request| %>
-          <% if request.status == 'Pending' %>
-            <div class="one-received-request">
-              <div>
-              <%= cl_image_tag request.sender.image.key, height: 200, width: 200, class: "avatar-request" %>
-              </div>
-              <div>
-                <p><strong><%= request.sender.first_name %> <%= request.sender.last_name %></strong></p>
-                <p><%= request.sender.age %> years old</p>
-                <p><i class="fas fa-map-marker-alt"></i><%= request.sender.address %></p>
-                <p><i class="fas fa-running"></i> I'm a <%= request.sender.level %> runner</p>
-                <p><i class="fa fa-info" aria-hidden="true"></i> <%= request.sender.introduction %></p>
-                <div class="btn-box">
-                  <%= form_with(url: "/requests/#{request.id}/approve", method: "post") do %>
-                    <%= submit_tag("Approve", class: "request-button") %>
-                  <% end %>
-                  <%= form_with(url: "/requests/#{request.id}/reject", method: "post") do %>
-                    <%= submit_tag("Reject", class: "request-button") %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <% else %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="request-sent-box">
-        <div class="sent-box-align">
-          <h4 class="request-title">Sent</h4>
-          <% @sent_requests.each do |request| %>
-            <div class="one-sent-request">
-              <p>Name: <%= request.receiver.first_name %> <%= request.receiver.last_name %></p>
-              <p>Current Status : <%= request.status %></p>
-            </div>
-          <% end %>
         </div>
       </div>
     </div>
+
   </div>
 </div>

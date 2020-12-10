@@ -1,6 +1,6 @@
 <div class="event-page">
 <div class="event-container">
-<h1 class="event-header">Book your running schedule with</h1>
+<h1 class="event-header">Book your running schedule with <%= @user2.first_name %></h1>
 
   <%= simple_form_for [ @user2, @event ], url: runner_events_path do |f| %>
     <%= f.input :location, as: :string %>
