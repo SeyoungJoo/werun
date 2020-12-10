@@ -5,19 +5,22 @@
 
 
     <div class="form-row mb-5">
+
       <%= form_tag tracks_path, class:"form-inline mt-3 mb-3", method: :get do%>
 
         <div>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control mr-1",
+          class: "form-control",
           placeholder: "Search",
           autocomplete: 'off'
         %>
-        </div>
+
         <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
-        </div>
+        <%= link_to "Share your own track", new_track_path, class: "btn btn-primary" %>
+      </div>
+    </div>
 
     <div class="row">
       <div class="cards col-md-6 tracks-list">

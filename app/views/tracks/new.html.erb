@@ -1,2 +1,14 @@
-<h1>Tracks#new</h1>
-<p>Find me in app/views/tracks/new.html.erb</p>
+<div class="event-page">
+  <div class="event-container">
+    <h1 class="event-header">Share your own track</h1>
+
+    <%= simple_form_for @track do |f| %>
+      <%= f.input :name, as: :string %>
+      <%= f.input :address, as: :string %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :keyword, as: :text %>
+      <%= f.input :image, as: :file %>
+      <%= f.submit "Add a new track", class: "event-button" %>
+    <% end %>
+  </div>
+</div>
