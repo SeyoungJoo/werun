@@ -1,6 +1,6 @@
 .chat-body{
   height: 100vh;
-  padding-bottom: 20em;
+  padding-bottom: 5em;
 }
 
 .chat-page {
@@ -9,10 +9,10 @@
 }
 
 .chat-bar {
-  position: sticky;
-  top: 70px;
+  // position: sticky;
+  // top: 70px;
   padding: 0;
-  height: 56.5vh;
+  height: 59.5vh;
   font-family: $headers-font;
   background-color: white;
   border-radius: 4px;
@@ -165,7 +165,7 @@
   font-weight: bold;
   color: $blue;
   padding: 6px 12px;
-  margin-top: 2em;
+  margin-top: 0.7em;
   display: inline-block;
   text-align: center;
   font-size: 16px;
