@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
-
+  layout "message"
+  
   def index
     @conversations = policy_scope(Conversation).order(created_at: :desc)
     @user = current_user

@@ -25,9 +25,9 @@
 
         <div class="buttons">
           <% if @conversation.user2.first_name == current_user.first_name %>
-            <%= link_to " 📆 Add running schedule with #{@conversation.user1.first_name}", new_runner_event_path(@partner), class: 'calendar-button' %>
+            <%= link_to " 📆 Add running session with #{@conversation.user1.first_name}", new_runner_event_path(@partner), class: 'calendar-button' %>
           <% else %>
-            <%= link_to " 📆 Add running schedule with #{@conversation.user2.first_name}", new_runner_event_path(@partner), class: 'calendar-button' %>
+            <%= link_to " 📆 Add running session with #{@conversation.user2.first_name}", new_runner_event_path(@partner), class: 'calendar-button' %>
           <% end %>
         </div>
     </div>

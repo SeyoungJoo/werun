@@ -13,6 +13,7 @@
     <meta property="og:image" content="<%= image_path('facebook.jpg') %>">
     <meta property="og:description" content="We Run is the best website for runners who want to find running buddies easily.">
 
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,9 +22,9 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar2' %>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-      <%= render 'shared/footer' %>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
   </body>
 </html>
