@@ -479,7 +479,7 @@ request2 = Request.create!(
 
 request3 = Request.create!(
   receiver: user1,
-  sender: user4,
+  sender: user7,
   status: "Pending",
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
