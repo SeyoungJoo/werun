@@ -14,13 +14,13 @@ user1 = User.new(
   last_name: "Jung",
   address: "Seoul Shindang 22",
   age: 28,
-  level: "fast",
+  level: "average",
   email: "christine@gmail.com",
   password: 123456,
-  latitude: 37.568700,
-  longitude: 127.010572,
+  latitude: 37.472228,
+  longitude: 127.099472,
   gender: "female",
-  preferred_time: "morning",
+  preferred_time: "evening",
   preferred_day: "weekend",
   pet: false,
   introduction: "I am originally from the States and just moved to Seoul. I am a regular runner and want to explore new running rails with beautiful scenary in Seoul. I also love outdoor activities like hiking or cycling, so anyone who shares same hobbies please DM me :)"
@@ -288,11 +288,11 @@ user14 = User.new(
   last_name: "Parks",
   address: "Seoul Jagok-dong",
   age: 27,
-  level: "average",
+  level: "fast",
   email: "stephanie@gmail.com",
   password: 123456,
-  latitude: 37.472228,
-  longitude: 127.099472,
+  latitude: 37.568700,
+  longitude: 127.010572,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekend",
@@ -326,8 +326,8 @@ user15.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/
 user15.save!
 
 conversation1 = Conversation.create!(
-  user1_id: user1.id,
-  user2_id: user2.id
+  user1_id: user14.id,
+  user2_id: user4.id
 )
 
 conversation2 = Conversation.create!(
@@ -463,7 +463,7 @@ Track9.save!
 
 request1 = Request.create!(
   receiver: user4,
-  sender: user1,
+  sender: user14,
   status: "Approved",
   start_time: Time.now(),
   end_time: Time.now() + 1.hour
@@ -478,15 +478,15 @@ request2 = Request.create!(
 )
 
 request3 = Request.create!(
-  receiver: user14,
+  receiver: user1,
   sender: user10,
-  status: "Pending",
+  status: "Approved",
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
 )
 
 request4 = Request.create!(
-  receiver: user14,
+  receiver: user1,
   sender: user11,
   status: "Approved",
   start_time: Time.now(),
@@ -494,26 +494,26 @@ request4 = Request.create!(
 )
 
 event1 = Event.create!(
-  user1_id: user1.id,
+  user1_id: user14.id,
   user2_id: user4.id,
-  start_time: DateTime.strptime("12/08/2020 9:00", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("12/08/2020 10:00", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("12/02/2020 9:00", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/02/2020 10:00", "%m/%d/%Y %H:%M"),
   location: "Hangang Park"
 )
 
 event2 = Event.create!(
   user1_id: user3.id,
   user2_id: user4.id,
-  start_time: DateTime.strptime("12/02/2020 9:30", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("12/02/2020 10:30", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("12/08/2020 9:30", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/08/2020 10:30", "%m/%d/%Y %H:%M"),
   location: "Seoul forest"
 )
 
 event3 = Event.create!(
-  user1_id: user2.id,
+  user1_id: user11.id,
   user2_id: user1.id,
-  start_time: DateTime.strptime("12/12/2020 10:00", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("12/12/2020 11:00", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("12/17/2020 10:00", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/17/2020 11:00", "%m/%d/%Y %H:%M"),
   location: "Cheonggyecheon"
 )
 
