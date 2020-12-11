@@ -462,27 +462,35 @@ Track9.image.attach(io: file, filename: 'track9photo.png', content_type: 'image/
 Track9.save!
 
 request1 = Request.create!(
-  receiver: user1,
-  sender: user2,
+  receiver: user4,
+  sender: user1,
   status: "Approved",
   start_time: Time.now(),
   end_time: Time.now() + 1.hour
 )
 
 request2 = Request.create!(
-  receiver: user3,
-  sender: user2,
-  status: "Rejected",
+  receiver: user4,
+  sender: user3,
+  status: "Approved",
   start_time: Time.now(),
   end_time: Time.now() + 2.hour
 )
 
 request3 = Request.create!(
-  receiver: user1,
-  sender: user7,
+  receiver: user14,
+  sender: user10,
   status: "Pending",
   start_time: Time.now() - 1.hour,
   end_time: Time.now() + 1.hour
+)
+
+request4 = Request.create!(
+  receiver: user14,
+  sender: user11,
+  status: "Approved",
+  start_time: Time.now(),
+  end_time: Time.now() + 2.hour
 )
 
 event1 = Event.create!(
