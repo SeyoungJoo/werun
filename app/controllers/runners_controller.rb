@@ -1,6 +1,6 @@
 class RunnersController < ApplicationController
   def index
-    @runners = policy_scope(User).order(created_at: :desc)
+    @runners = policy_scope(User).order(id: :asc)
     if params[:address].present?
       address_query = "address ILIKE :query"
       @runners = @runners.where(address_query, query: "%#{params[:address_query]}%")
