@@ -478,7 +478,7 @@ request2 = Request.create!(
 )
 
 request3 = Request.create!(
-  receiver: user14,
+  receiver: user1,
   sender: user10,
   status: "Pending",
   start_time: Time.now() - 1.hour,
@@ -486,7 +486,7 @@ request3 = Request.create!(
 )
 
 request4 = Request.create!(
-  receiver: user14,
+  receiver: user1,
   sender: user11,
   status: "Approved",
   start_time: Time.now(),
@@ -494,7 +494,7 @@ request4 = Request.create!(
 )
 
 event1 = Event.create!(
-  user1_id: user1.id,
+  user1_id: user14.id,
   user2_id: user4.id,
   start_time: DateTime.strptime("12/08/2020 9:00", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("12/08/2020 10:00", "%m/%d/%Y %H:%M"),
