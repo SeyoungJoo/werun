@@ -326,8 +326,8 @@ user15.image.attach(io: file, filename: 'user15photo.png', content_type: 'image/
 user15.save!
 
 conversation1 = Conversation.create!(
-  user1_id: user1.id,
-  user2_id: user2.id
+  user1_id: user14.id,
+  user2_id: user4.id
 )
 
 conversation2 = Conversation.create!(
@@ -496,16 +496,16 @@ request4 = Request.create!(
 event1 = Event.create!(
   user1_id: user14.id,
   user2_id: user4.id,
-  start_time: DateTime.strptime("12/08/2020 9:00", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("12/08/2020 10:00", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("12/02/2020 9:00", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/02/2020 10:00", "%m/%d/%Y %H:%M"),
   location: "Hangang Park"
 )
 
 event2 = Event.create!(
   user1_id: user3.id,
   user2_id: user4.id,
-  start_time: DateTime.strptime("12/02/2020 9:30", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("12/02/2020 10:30", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("12/08/2020 9:30", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("12/08/2020 10:30", "%m/%d/%Y %H:%M"),
   location: "Seoul forest"
 )
 
