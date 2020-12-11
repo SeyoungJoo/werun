@@ -17,8 +17,8 @@ user1 = User.new(
   level: "average",
   email: "christine@gmail.com",
   password: 123456,
-  latitude: 37.472228,
-  longitude: 127.099472,
+  latitude: 37.568700,
+  longitude: 127.010572,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekend",
@@ -291,8 +291,8 @@ user14 = User.new(
   level: "fast",
   email: "stephanie@gmail.com",
   password: 123456,
-  latitude: 37.568700,
-  longitude: 127.010572,
+  latitude: 37.472228,
+  longitude: 127.099472,
   gender: "female",
   preferred_time: "evening",
   preferred_day: "weekend",
@@ -332,7 +332,7 @@ conversation1 = Conversation.create!(
 
 conversation2 = Conversation.create!(
   user1_id: user3.id,
-  user2_id: user4.id
+  user2_id: user1.id
 )
 
 Track1 = Track.create!(
