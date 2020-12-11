@@ -526,7 +526,7 @@ event4 = Event.create!(
 )
 
 event5 = Event.create!(
-  user1_id: user3.id,
+  user1_id: user10.id,
   user2_id: user1.id,
   start_time: DateTime.strptime("12/06/2020 03:30", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("12/06/2020 04:30", "%m/%d/%Y %H:%M"),
