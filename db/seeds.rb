@@ -105,7 +105,7 @@ user5 = User.new(
   latitude: 37.565557,
   longitude: 127.013014,
   gender: "male",
-  preferred_time: "morning",
+  preferred_time: "evening",
   preferred_day: "weekend",
   pet: false,
   introduction: "I am preparing for a marathon next year. I am looking for a running mate who is also preparing for a marathon and wnat to run with me everyday"
