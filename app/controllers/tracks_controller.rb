@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index]
   def index
     @tracks = policy_scope(Track).order(created_at: :desc)
 
@@ -20,6 +21,7 @@ class TracksController < ApplicationController
     end
 
     @current_tab = "Tracks"
+    if current_user
     @received_requests = current_user.received_requests
     @pending_requests =[]
 
@@ -29,6 +31,7 @@ class TracksController < ApplicationController
       end
     end
   end
+  end
 
   def show
     @track = Track.find(params[:id])
@@ -36,7 +39,6 @@ class TracksController < ApplicationController
     @sent_requests = current_user.sent_requests
     @pending_requests =[]
     @current_tab = "Tracks"
-
     @received_requests.each do |request|
       if request.status == "Pending"
         @pending_requests.push(request)
