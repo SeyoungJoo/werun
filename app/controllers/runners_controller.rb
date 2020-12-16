@@ -1,7 +1,6 @@
 class RunnersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
   def index
-    @runners = policy_scope(User).order(created_at: :desc)
+    @runners = policy_scope(User).order(id: :asc)
     if params[:address].present?
       address_query = "address ILIKE :query"
       @runners = @runners.where(address_query, query: "%#{params[:address_query]}%")
@@ -25,8 +24,7 @@ class RunnersController < ApplicationController
 
 
     @markers = @runners.geocoded.map do |runner|
-     
-        if current_user && runner == current_user
+        if runner == current_user
           {
           lat: runner.latitude,
           lng: runner.longitude,
@@ -42,14 +40,12 @@ class RunnersController < ApplicationController
       end
     end
     @current_tab = "Map"
-    if current_user
-      @received_requests = current_user.received_requests
-      @pending_requests =[]
+    @received_requests = current_user.received_requests
+    @pending_requests =[]
 
-      @received_requests.each do |request|
-        if request.status == "Pending"
-          @pending_requests.push(request)
-        end
+    @received_requests.each do |request|
+      if request.status == "Pending"
+        @pending_requests.push(request)
       end
     end
   end
