@@ -4,7 +4,11 @@
 
     <div class="chat-page">
       <div class="col-md-3 user-info-box">
+       <% if current_user.image.attached? %>
         <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
+         <% else %>
+          <%= image_tag "logo.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% end %>
         <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
         <div class="user-info-text">
           <p><%= current_user.age %> years old </p>
