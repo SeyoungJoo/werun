@@ -7,7 +7,7 @@
        <% if current_user.image.attached? %>
         <%= cl_image_tag @user.image.key, crop: :fill, class: "user-avatar" %>
          <% else %>
-          <%= image_tag "logo.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "logo.jpg", class: "avatar-square-profile" %>
          <% end %>
         <h4 class="user-info-name"><%= current_user.first_name %> <%= current_user.last_name %></h4>
         <div class="user-info-text">
