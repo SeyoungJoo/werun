@@ -69,3 +69,17 @@
   font-size: 18px;
   padding-top: 40px;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .cards-container {
+    flex-direction: column;
+  }
+
+  .description-box {
+    width:100%;
+  }
+}
