@@ -12,7 +12,7 @@
   font-family: $headers-font;
   text-align: center;
   font-size: 40px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .discover-button {
@@ -26,13 +26,13 @@
   letter-spacing: 1px;
 }
 
-.discover-button:hover{
+.discover-button:hover {
   background-color: $blue;
   color: $beige;
   text-decoration: none;
 }
 
-.description-box{
+.description-box {
   width: 80rem;
   margin: 0 auto;
   padding: 100px;
@@ -52,19 +52,20 @@
   letter-spacing: 2px;
 }
 
-.card-container{
+.card-container {
   width: 250px;
   text-align: center;
+  margin: auto;
 }
 
-.img-circular{
+.img-circular {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.card-description{
+.card-description {
   font-family: $body-font;
   font-size: 18px;
   padding-top: 40px;
@@ -80,6 +81,6 @@
   }
 
   .description-box {
-    width:100%;
+    width: 100%;
   }
 }
