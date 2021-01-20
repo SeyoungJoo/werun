@@ -1,13 +1,13 @@
-.map-page{
+.map-page {
   height: auto;
   width: 100%;
 }
 
-.text-header{
+.text-header {
   text-align: center;
 }
 
-.container{
+.container {
   width: 100vw;
   position: relative;
   height: auto;
@@ -15,41 +15,41 @@
   margin-bottom: 65px;
 }
 
-.header-style{
+.header-style {
   color: $dark-blue;
   font-size: 30px;
   padding-bottom: 20px;
   font-family: $logo-font;
 }
 
-.runners-list{
- padding-left: 52px;
+.runners-list {
+  padding-left: 52px;
 }
 
 .current-user-img {
-  height:100px;
-  width:100px;
-  margin-bottom:20px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
   border-radius: 50%;
   border-radius: 2px solid $blue;
   margin-left: 5px;
 }
 
 .card-img-top {
-  height:100px;
-  width:100px;
-  margin-bottom:20px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
   border-radius: 50%;
   margin-left: 5px;
 }
 
-.highlight{
+.highlight {
   opacity: 50%;
   transform: scale(1.05);
-  transition:  0.5s ease;
+  transition: 0.5s ease;
 }
 
-.find{
+.find {
   margin-left: 32px;
   color: $blue;
   text-decoration: none;
@@ -57,4 +57,15 @@
   border: 1px solid $blue;
   padding: 8px 18px;
   font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .map {
+  }
 }

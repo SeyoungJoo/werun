@@ -75,12 +75,29 @@
   .navbar {
     flex-direction: column;
   }
-
   .cards-container {
     flex-direction: column;
+    flex-grow: 1;
   }
 
   .description-box {
-    width: 100%;
+    width: 50%;
+  }
+
+  .find-button {
+    margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .description-box {
+    width: 80%;
+  }
+
+  .how-it-works {
+    align-items: center;
   }
 }
