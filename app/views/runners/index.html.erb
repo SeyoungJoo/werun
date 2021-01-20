@@ -4,7 +4,7 @@
   <div class="text-header">
    <h1 class="header-style"><i class="fas fa-search-location"></i>Find out other Runners near you</h1>
     
-    <div class="form-row mb-5">
+    <div class="form-row mb-5 search-form">
       <%= form_tag runners_path, class:"form-inline mt-3 mb-3", method: :get do%>
 
         <div>
@@ -38,7 +38,11 @@
       <% end %>
     </div>
 
-    <div class="row">
+    <div class="row runners-page"> 
+    <div>
+      <button class="runner-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
       <div class="col-5 runner-cards">
         <% @runners.each do |runner| %>
           <% if runner == current_user %>
@@ -81,16 +85,17 @@
           <% end %>
         <% end %>
      </div>
+    </div>
       
      <div class="col-7 map">
         <div id="map"
+              class="mapOpen"
               style="width: 100%; height: 100vh;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
 
-        <button class="map-toggle"></button>
-
+       
       </div>
 
   </div>

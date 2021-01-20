@@ -59,13 +59,50 @@
   font-weight: bolder;
 }
 
+.runner-toggle {
+  position: absolute;
+  left: 16px;
+  color: $blue;
+  border: none;
+  font-size: 28px;
+  display: none;
+  z-index: 2;
+}
+
+.runner-cards.open {
+  display: block;
+  z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .runners-page {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .map {
+@media screen and (max-width: 1000px) {
+  .runner-toggle {
+    display: block;
+  }
+  .runner-cards {
+    display: none;
+  }
+
+  .mapOpen {
+    margin: auto;
+    text-align: center;
+    transform: translate(40%);
+  }
+
+  .search-form {
+    margin: 0 auto;
+    align-items: center;
   }
 }

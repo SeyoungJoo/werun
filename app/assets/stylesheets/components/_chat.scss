@@ -1,4 +1,4 @@
-.chat-body{
+.chat-body {
   height: 90vh;
 }
 
@@ -13,7 +13,7 @@
   font-family: $headers-font;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .chat-bar-title {
   display: inline-block;
@@ -65,13 +65,12 @@
 }
 
 .chatroom {
-  height: 67vh;
+  height: 70vh;
   flex-grow: 1;
   padding: 32px;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .chat-part {
@@ -91,7 +90,7 @@
 }
 
 .current-user {
-  background-color:rgba(55, 151, 164, 0.2);;
+  background-color: rgba(55, 151, 164, 0.2);
   border-radius: 10px;
   color: $blue;
   padding: 8px 8px 0 8px;
@@ -200,4 +199,36 @@
 }
 .type {
   display: flex;
+}
+
+@media screen and (max-width: 500px) {
+  .send-button,
+  .type-box {
+    padding: 2px;
+    font-size: 13px;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .type {
+    flex-direction: column;
+  }
+
+  .chat-bar {
+    height: 45vh;
+  }
+
+  .calendar-button {
+    margin-bottom: 16px;
+  }
+
+  .chat-page {
+    flex-direction: column;
+  }
+
+  .chatroom {
+    width: 95%;
+    margin: 0 auto;
+  }
 }
