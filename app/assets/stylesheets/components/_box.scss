@@ -166,9 +166,6 @@
   width: 75%;
 }
 
-@media screen and (max-width: 1000px) {
-}
-
 @media screen and (max-width: 768px) {
   .chat-page {
     flex-direction: column;
@@ -180,7 +177,7 @@
     font-size: 0.5em;
   }
 
-  .calendar-heading {
-    margin-top: 24px;
+  .all-buddies {
+    justify-content: center;
   }
 }
