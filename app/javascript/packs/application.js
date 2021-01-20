@@ -27,7 +27,7 @@ import { initSelect2 } from '../plugins/init_select2';
 import { init_popup } from '../plugins/initcard';
 import { init_track_popup } from '../plugins/init_trackcard';
 import { initEventModal } from '../plugins/modal';
-
+import { mapBtn } from '../channels/map-toggle';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
@@ -37,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   init_popup();
   init_track_popup();
   initEventModal();
+  mapBtn();
   var clipboard = new ClipboardJS('.btn');
 
   clipboard.on('success', function(e) {

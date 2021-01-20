@@ -6,24 +6,24 @@
 }
 
 .track-card-img {
-    height: 10em;
-    width: 18em;
-    // margin-left: 1em;
-    border-radius: 0.3em
-  }
+  height: 10em;
+  width: 18em;
+  // margin-left: 1em;
+  border-radius: 0.3em;
+}
 
 .card-body {
   padding: 10px 20px;
 }
 
 .card-body h3 {
-    font-size: 25px;
-    font-family: $body-font;
-  }
-  .cards :hover {
-    opacity: .8;
-    text-decoration: none;
-  }
+  font-size: 25px;
+  font-family: $body-font;
+}
+.cards :hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
 .card-body p {
   margin-bottom: 0.4em;
 }
@@ -51,41 +51,72 @@
   border-radius: 32px;
   font-size: 13px;
 }
-  .highlight{
-    opacity: 50%;
-    transform: scale(1.05);
-    transition:  0.5s ease;
+.highlight {
+  opacity: 50%;
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
+.track-card {
+  background-color: $blue;
+  margin-bottom: 15px;
+  background-size: cover;
+  height: 250px;
+  width: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 25% 0 0 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+}
+
+.track-card h3 {
+  font-size: 24px;
+}
+
+.track-card p {
+  font-size: 14px;
+}
+.track-img {
+  height: 100%;
+  width: 50%;
+  border-radius: 25% 0 0 0;
+}
+.track-link-hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+  .track-map {
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .track-card{
-    background-color: $blue;
-    margin-bottom: 15px;
-    background-size: cover;
-    height: 250px;
-    width: 520px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 25% 0 0 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-    font-size: 16px;
+  .track-card {
+    height: 180px;
+    width: 370px;
   }
 
   .track-card h3 {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .track-card p {
-    font-size: 14px;
+    font-size: 10px;
   }
-  .track-img{
-    height: 100%;
-    width: 50%;
-    border-radius: 25% 0 0 0;
+
+  .one-keyword {
+    font-size: 11px;
+    padding: 2px;
+    margin: 0;
+    font-weight: lighter;
   }
-  .track-link-hover {
-    text-decoration: underline;
+
+  .card-body {
+    padding: 4px;
   }
+}

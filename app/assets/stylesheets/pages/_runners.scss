@@ -1,13 +1,13 @@
-.map-page{
+.map-page {
   height: auto;
   width: 100%;
 }
 
-.text-header{
+.text-header {
   text-align: center;
 }
 
-.container{
+.container {
   width: 100vw;
   position: relative;
   height: auto;
@@ -15,41 +15,41 @@
   margin-bottom: 65px;
 }
 
-.header-style{
+.header-style {
   color: $dark-blue;
   font-size: 30px;
   padding-bottom: 20px;
   font-family: $logo-font;
 }
 
-.runners-list{
- padding-left: 52px;
+.runners-list {
+  padding-left: 52px;
 }
 
 .current-user-img {
-  height:100px;
-  width:100px;
-  margin-bottom:20px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
   border-radius: 50%;
   border-radius: 2px solid $blue;
   margin-left: 5px;
 }
 
 .card-img-top {
-  height:100px;
-  width:100px;
-  margin-bottom:20px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
   border-radius: 50%;
   margin-left: 5px;
 }
 
-.highlight{
+.highlight {
   opacity: 50%;
   transform: scale(1.05);
-  transition:  0.5s ease;
+  transition: 0.5s ease;
 }
 
-.find{
+.find {
   margin-left: 32px;
   color: $blue;
   text-decoration: none;
@@ -57,4 +57,84 @@
   border: 1px solid $blue;
   padding: 8px 18px;
   font-weight: bolder;
+}
+
+.runners-page {
+  justify-content: space-between;
+}
+
+.runner-toggle {
+  position: relative;
+  left: 10px;
+  color: $blue;
+  border: none;
+  font-size: 28px;
+  display: none;
+  z-index: 2;
+  width: 2em;
+  margin-bottom: 3px;
+}
+
+.runner-cards.open {
+  display: block;
+  z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .form-inline {
+    flex-direction: column;
+    flex-grow: 1;
+    .form-control {
+      font-size: 14px;
+    }
+  }
+
+  .search-option-button {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .search-form {
+    margin: 0 auto;
+  }
+
+  .runner-card {
+    width: 330px;
+  }
+  .runner-img {
+    width: 13em;
+  }
+
+  .runner-card-header {
+    font-size: 14px;
+  }
+  .runner-card-location {
+    font-size: 11px;
+  }
+
+  .text-header {
+    margin: 16px 0;
+  }
+
+  .card-container {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .runners-page {
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .runner-toggle {
+    display: block;
+  }
+  .runner-cards {
+    display: none;
+  }
 }
