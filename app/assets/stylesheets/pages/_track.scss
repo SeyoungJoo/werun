@@ -18,7 +18,7 @@
 }
 .share-btn {
   background-color: $blue;
-  padding:5px;
+  padding: 5px;
   border-radius: 4px;
   color: white;
   display: block;
@@ -41,4 +41,24 @@
   display: block;
   padding-left: 1.25rem;
   padding-right: 1.25em;
+}
+
+@media screen and (max-width: 768px) {
+  .description {
+    font-size: 18px;
+  }
+
+  .copy-button,
+  .buddy-request-button {
+    margin: 0;
+    padding: 4px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .track-images {
+    width: 90%;
+    align-items: center;
+    margin: 0 auto;
+  }
 }

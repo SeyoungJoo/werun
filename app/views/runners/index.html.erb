@@ -33,17 +33,16 @@
         </div>
 
         <div>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= submit_tag "Search", class: "btn btn-primary search-option-button" %>
         </div>
       <% end %>
     </div>
 
     <div class="row runners-page"> 
-    <div>
       <button class="runner-toggle">
         <i class="fas fa-bars"></i>
       </button>
-      <div class="col-5 runner-cards">
+      <div class="col-md-5 runner-cards">
         <% @runners.each do |runner| %>
           <% if runner == current_user %>
           <% else %>
@@ -59,43 +58,39 @@
              <p class="runner-card-location">🏃‍♂️ <%= runner.level %></p>
              <p class="runner-card-location">📆 <%= runner.preferred_time %></p>
            </div>
-      </div>
-
-      <div class="popup-card" id="popup-card" data-runner-id="<%= runner.id %>">
-        <span class="close">x</span>
-        <% if runner.image.attached? %>
-          <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
-        <% else %>
-          <%= image_tag "logo.jpg", crop: :fill, class: "runner-card-img" %>
-        <% end %>
-        <div class="runner-card-body">
-          <strong><%= runner.first_name%> <%= runner.last_name%></strong><br/>
-          <%= runner.gender %><br/>
-          🏡 <%= runner.address %><br/>
-          preference: <%= runner.preferred_day %> & <%= runner.preferred_time %><br/><br/>
-          <%= runner.introduction%><br/><br/>
-          <%=link_to "Buddy request",
-            runner_requests_path(runner),
-            method: :post,
-            data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
-            class: "btn btn-md btn-primary buddy-request-button"
-          %>
-        </div>
-      </div>
+          </div>
+          <div class="popup-card" id="popup-card" data-runner-id="<%= runner.id %>">
+            <span class="close">x</span>
+            <% if runner.image.attached? %>
+              <%= cl_image_tag runner.image.key, crop: :fill, class: "runner-card-img" %>
+            <% else %>
+              <%= image_tag "logo.jpg", crop: :fill, class: "runner-card-img" %>
+            <% end %>
+            <div class="runner-card-body">
+              <strong><%= runner.first_name%> <%= runner.last_name%></strong><br/>
+              <%= runner.gender %><br/>
+              🏡 <%= runner.address %><br/>
+              preference: <%= runner.preferred_day %> & <%= runner.preferred_time %><br/><br/>
+              <%= runner.introduction%><br/><br/>
+              <%=link_to "Buddy request",
+                runner_requests_path(runner),
+                method: :post,
+                data: { confirm: "Do you want to send a buddy request?", commit: 'Sure!' },
+                class: "btn btn-md btn-primary buddy-request-button"
+              %>
+            </div>
+          </div>
+            <% end %>
           <% end %>
-        <% end %>
-     </div>
-    </div>
+         </div>
       
-     <div class="col-7 map">
+     <div class="col-md-7 map">
         <div id="map"
               class="mapOpen"
               style="width: 100%; height: 100vh;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
-       
       </div>
 
   </div>

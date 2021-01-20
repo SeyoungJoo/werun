@@ -59,14 +59,20 @@
   font-weight: bolder;
 }
 
+.runners-page {
+  justify-content: space-between;
+}
+
 .runner-toggle {
-  position: absolute;
-  left: 16px;
+  position: relative;
+  left: 10px;
   color: $blue;
   border: none;
   font-size: 28px;
   display: none;
   z-index: 2;
+  width: 2em;
+  margin-bottom: 3px;
 }
 
 .runner-cards.open {
@@ -75,9 +81,43 @@
 }
 
 @media screen and (max-width: 500px) {
-  .runners-page {
+  .form-inline {
+    flex-direction: column;
+    flex-grow: 1;
+    .form-control {
+      font-size: 14px;
+    }
+  }
+
+  .search-option-button {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .search-form {
     margin: 0 auto;
-    text-align: center;
+  }
+
+  .runner-card {
+    width: 330px;
+  }
+  .runner-img {
+    width: 13em;
+  }
+
+  .runner-card-header {
+    font-size: 14px;
+  }
+  .runner-card-location {
+    font-size: 11px;
+  }
+
+  .text-header {
+    margin: 16px 0;
+  }
+
+  .card-container {
+    margin: 0;
   }
 }
 
@@ -85,24 +125,16 @@
   .navbar {
     flex-direction: column;
   }
-}
 
-@media screen and (max-width: 1000px) {
+  .runners-page {
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+  }
   .runner-toggle {
     display: block;
   }
   .runner-cards {
     display: none;
-  }
-
-  .mapOpen {
-    margin: auto;
-    text-align: center;
-    transform: translate(40%);
-  }
-
-  .search-form {
-    margin: 0 auto;
-    align-items: center;
   }
 }

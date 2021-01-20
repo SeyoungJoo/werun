@@ -110,7 +110,13 @@
   }
 
   .one-keyword {
-    font-size: 9px;
-    padding: 1px;
+    font-size: 11px;
+    padding: 2px;
+    margin: 0;
+    font-weight: lighter;
+  }
+
+  .card-body {
+    padding: 4px;
   }
 }
