@@ -19,6 +19,6 @@ Map 페이지에서는 위치와 선호도 (달리기스피드, 선호하는 요
 
 
 WeRun is an application for finding running buddy around easily.
-http://www.we-runners.run/
+https://werunners.herokuapp.com/
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
