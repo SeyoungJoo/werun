@@ -493,6 +493,14 @@ request4 = Request.create!(
   end_time: Time.now() + 2.hour
 )
 
+request5 = Request.create!(
+  receiver: user4,
+  sender: user9,
+  status: "Pending",
+  start_time: Time.now(),
+  end_time: Time.now() + 2.hour
+)
+
 event1 = Event.create!(
   user1_id: user14.id,
   user2_id: user4.id,
