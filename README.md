@@ -75,7 +75,8 @@ If user clicks the user card, the modal pops up 💥
 <br/>
 2. Since we became friends after applying for a friend, let's start chatting.
 
-![](https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
+[](https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
+(https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
 
 "Hi..."
 
