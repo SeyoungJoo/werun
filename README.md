@@ -89,15 +89,19 @@ This feature makes to manage all the running schedules easily.
 
 
 <br/>
-4. Track Page.
+4. + Bobus: Track Page
+
 It's a page where user can share running track information with each other. 
 User can search with running track keyword.
 
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/63498427/137626037-e95d5e24-d655-4dc7-90ed-cff4af73af7e.gif)
 
+
 The track has a show page. User can share the link from here and send it through the chatroom, and that's it!
 
 
 ### 1/20 update: add media query for responsive website
+
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/63498427/137626094-8af889df-36b8-4fa7-8a49-05028a09a872.gif)
 
 
