@@ -55,9 +55,9 @@ SQL
 ## Then, Let's Build! 😍
 
 1. Let's type where I live on search box and see what runners are in my neighborhood.
+2. 
 ![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+![](https://images.velog.io/images/syjoo/post/31799cfd-4c34-4ace-88c9-b40c82d9102a/4.gif)
 
 맵은 mapbox API를 이용했고 위지 포인트는 기본 디폴트 되어있는 것을 유저 이미지로 바꿔주었어요. 로그인한 당사자가 어디있는지 보여줄 수 있도록 유저이미지가 아닌 흰색 사람 아이콘을 넣어줬습니다.
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
@@ -82,6 +82,7 @@ If user clicks the user card, the modal pops up 💥
 "Hi..."
 
 ![](https://images.velog.io/images/syjoo/post/00afd6dc-6a44-4931-8df7-e13ce3527729/werun3.JPG)
+
 User can select friend to talk here (from the message tab on Navbar)
 
 
@@ -91,13 +92,16 @@ User can select friend to talk here (from the message tab on Navbar)
 ![](https://images.velog.io/images/syjoo/post/7c1bd235-4e7a-4de4-a7dd-119353876e23/werun1_5.gif)
 This feature makes to manage all the running schedules easily.
 
+
 <br/>
 4. Track Page.
 It's a page where user can share running track information with each other. 
 User can search with running track keyword.
+
 ![](https://images.velog.io/images/syjoo/post/2b57b7c5-6754-4c1a-aed9-c26803ace690/werun1.gif)
 
 ![](https://images.velog.io/images/syjoo/post/e4deac6e-2c3c-45ce-9cb5-0838fb9872b1/werun1_10.gif)
+
 The track has a show page. User can share the link from here and send it through the chatroom, and that's it!
 
 
