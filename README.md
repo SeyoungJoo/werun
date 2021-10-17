@@ -56,18 +56,18 @@ SQL
 
 1. Let's type where I live on search box and see what runners are in my neighborhood.
 
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-![](https://images.velog.io/images/syjoo/post/31799cfd-4c34-4ace-88c9-b40c82d9102a/4.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/63498427/137625741-6a077b21-f8e5-4a93-a0b4-595badc773dc.gif)
+
 
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
 
 <br/>
-![](https://images.velog.io/images/syjoo/post/c96cb83d-8532-4a19-b13e-d916f236f9e4/werun1_2.gif)
+
 
 Additional searches according to running speed, gender, and preferred date are also possible. because it's very important to have the same speed when running with someone!
 
 <br/>
-![](https://images.velog.io/images/syjoo/post/89174690-0662-47d1-81e8-389b4b0d8075/werun1_3.gif)
+
 
 If user puts the mouse on the map, it's linked to the user card and sparkles!
 If user clicks the user card, the modal pops up 💥
