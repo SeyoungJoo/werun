@@ -58,6 +58,15 @@ SQL
 
 ![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
 ![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+
+
+![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+
+![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+
+
 ![](https://images.velog.io/images/syjoo/post/31799cfd-4c34-4ace-88c9-b40c82d9102a/4.gif)
 
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
