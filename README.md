@@ -57,16 +57,6 @@ SQL
 1. Let's type where I live on search box and see what runners are in my neighborhood.
 
 ![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-
-
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
-
-
 ![](https://images.velog.io/images/syjoo/post/31799cfd-4c34-4ace-88c9-b40c82d9102a/4.gif)
 
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
@@ -86,7 +76,6 @@ If user clicks the user card, the modal pops up 💥
 2. Since we became friends after applying for a friend, let's start chatting.
 
 [](https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
-(https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
 
 "Hi..."
 
