@@ -55,11 +55,11 @@ SQL
 ## Then, Let's Build! 😍
 
 1. Let's type where I live on search box and see what runners are in my neighborhood.
-2. 
+
+![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
 ![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
 ![](https://images.velog.io/images/syjoo/post/31799cfd-4c34-4ace-88c9-b40c82d9102a/4.gif)
 
-맵은 mapbox API를 이용했고 위지 포인트는 기본 디폴트 되어있는 것을 유저 이미지로 바꿔주었어요. 로그인한 당사자가 어디있는지 보여줄 수 있도록 유저이미지가 아닌 흰색 사람 아이콘을 넣어줬습니다.
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
 
 <br/>
