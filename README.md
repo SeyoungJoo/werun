@@ -77,9 +77,8 @@ If user clicks the user card, the modal pops up 💥
 <br/>
 2. Since we became friends after applying for a friend, let's start chatting.
 
-[](https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/63498427/137625890-406cb8a4-57b0-4aba-ada0-9d4b41b4ef62.gif)
 
-"Hi..."
 
 ![](https://images.velog.io/images/syjoo/post/00afd6dc-6a44-4931-8df7-e13ce3527729/werun3.JPG)
 
@@ -89,7 +88,8 @@ User can select friend to talk here (from the message tab on Navbar)
 <br/>
 3. Let's add the running session on my schedule.
 
-![](https://images.velog.io/images/syjoo/post/7c1bd235-4e7a-4de4-a7dd-119353876e23/werun1_5.gif)
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/63498427/137625968-4679f211-0477-43bb-a2d1-2b373bf49707.gif)
+
 This feature makes to manage all the running schedules easily.
 
 
