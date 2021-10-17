@@ -56,18 +56,20 @@ SQL
 
 1. Let's type where I live on search box and see what runners are in my neighborhood.
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/63498427/137625741-6a077b21-f8e5-4a93-a0b4-595badc773dc.gif)
-
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/63498427/137625815-d60396a9-0395-4f81-bac7-621b76881f6f.gif)
 
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
 
 <br/>
 
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/63498427/137625741-6a077b21-f8e5-4a93-a0b4-595badc773dc.gif)
+
 Additional searches according to running speed, gender, and preferred date are also possible. because it's very important to have the same speed when running with someone!
 
 <br/>
 
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/63498427/137625850-700e9133-9ebd-47e6-856c-68e4d5181f27.gif)
 
 If user puts the mouse on the map, it's linked to the user card and sparkles!
 If user clicks the user card, the modal pops up 💥
