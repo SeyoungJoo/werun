@@ -57,15 +57,18 @@ SQL
 
 1. Let's type where I live on search box and see what runners are in my neighborhood.
 ![](https://images.velog.io/images/syjoo/post/507bf0b0-3c75-4b2e-a660-e2b620348f57/werun1_1.gif)
+
 맵은 mapbox API를 이용했고 위지 포인트는 기본 디폴트 되어있는 것을 유저 이미지로 바꿔주었어요. 로그인한 당사자가 어디있는지 보여줄 수 있도록 유저이미지가 아닌 흰색 사람 아이콘을 넣어줬습니다.
 The map feature made with mapbox API. and I put a white icon instead of a user image so that user can see where the logged in party is.
 
 <br/>
 ![](https://images.velog.io/images/syjoo/post/c96cb83d-8532-4a19-b13e-d916f236f9e4/werun1_2.gif)
+
 Additional searches according to running speed, gender, and preferred date are also possible. because it's very important to have the same speed when running with someone!
 
 <br/>
 ![](https://images.velog.io/images/syjoo/post/89174690-0662-47d1-81e8-389b4b0d8075/werun1_3.gif)
+
 If user puts the mouse on the map, it's linked to the user card and sparkles!
 If user clicks the user card, the modal pops up 💥
 
@@ -73,7 +76,9 @@ If user clicks the user card, the modal pops up 💥
 2. Since we became friends after applying for a friend, let's start chatting.
 
 ![](https://images.velog.io/images/syjoo/post/ecdf41f9-1975-4b25-8040-9b2d8d70af90/werun1_4.gif)
+
 "Hi..."
+
 ![](https://images.velog.io/images/syjoo/post/00afd6dc-6a44-4931-8df7-e13ce3527729/werun3.JPG)
 User can select friend to talk here (from the message tab on Navbar)
 
