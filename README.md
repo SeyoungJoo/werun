@@ -80,11 +80,6 @@ If user clicks the user card, the modal pops up 💥
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/63498427/137625890-406cb8a4-57b0-4aba-ada0-9d4b41b4ef62.gif)
 
 
-![](https://images.velog.io/images/syjoo/post/00afd6dc-6a44-4931-8df7-e13ce3527729/werun3.JPG)
-
-User can select friend to talk here (from the message tab on Navbar)
-
-
 <br/>
 3. Let's add the running session on my schedule.
 
@@ -98,12 +93,11 @@ This feature makes to manage all the running schedules easily.
 It's a page where user can share running track information with each other. 
 User can search with running track keyword.
 
-![](https://images.velog.io/images/syjoo/post/2b57b7c5-6754-4c1a-aed9-c26803ace690/werun1.gif)
-
-![](https://images.velog.io/images/syjoo/post/e4deac6e-2c3c-45ce-9cb5-0838fb9872b1/werun1_10.gif)
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/63498427/137626037-e95d5e24-d655-4dc7-90ed-cff4af73af7e.gif)
 
 The track has a show page. User can share the link from here and send it through the chatroom, and that's it!
 
 
 ### 1/20 update: add media query for responsive website
-![](https://images.velog.io/images/syjoo/post/7cb39e0d-8202-4fa4-b2ec-aba793d3c55c/bandicam%202021-01-20%2019-42-15-978.gif)
+
+
