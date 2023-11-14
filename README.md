@@ -1,6 +1,7 @@
 
 ### WeRun is an application for finding running buddy around easily.
 ### 👉 [Visit Website](https://werunners.herokuapp.com)
+### 👉 [Visit Website](https://werunners.herokuapp.com)
 
 ## Why? decided to build We Run? 🤔
 I'm a big fan of running. And I've been working abroad as a travel photographer over the past few years. I wanted to meet people while running, but I was not in a place to register the gym because I was a nomad worker, and also I saw people usually go to pubs to make friends, but I don't drink, so I want to make friends with things I like which was running. I tried MeetUp, but it was mostly for group running so I decided to make the app with find 1:1 running buddy more easily.
